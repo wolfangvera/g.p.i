@@ -17,7 +17,7 @@ section{
     color:rgb(29, 157, 195);
     padding-right: 10%;
     width: 40%;
-    text-align: center;    
+    text-align: center;   
 }
 
 .description {
@@ -84,9 +84,10 @@ section{
     border: none;
     outline: none;
     background-color: rgb(29, 157, 195);
-    color: rgb(64, 59, 73);
+    color: white;
     width: 160px;
     height: 40px;
+    font-weight: 700;
 
 
 }
