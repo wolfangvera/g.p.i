@@ -7,6 +7,7 @@ body{
 
 section{
     width: 50%;
+    display: inline-flex;
     margin: 5% 0% 3% 4%;
 
 }
@@ -25,16 +26,16 @@ section{
 }
 
 ::placeholder{
-    color: rgb(224, 208, 201);
+    color: black;
 }
 .section2{
-    background-color: blue;
+    background-color: white;
     width: 35%;
     
     
 }
 .section2ParteDos{
-    color: white;
+    color: rgb(29, 157, 195);
     padding: 5px 5px;
     text-align: center;
 }
@@ -42,13 +43,13 @@ section{
     font-size: 28px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     float: left;
-    border-bottom: 7px solid rgb(224, 208, 201);
+    border-bottom: 5px solid rgb(29, 157, 195);
     margin-bottom: 50px;
     padding: 13px 0px;
 
 }
 .estilo{
-    color:rgb(224, 208, 201);
+    color:rgb(29, 157, 195);
     width: 100px;
     height: 60px;
     font-size: 60px;
@@ -59,8 +60,8 @@ section{
     overflow: hidden;
     font-size: 25px;
     padding: 8px 8px;
-    border-bottom: 4px solid rgb(224, 208, 201);
-    color: rgb(224, 208, 201);
+    border-bottom: 4px solid rgb(29, 157, 195);
+    color: black;
     
 
 }
@@ -68,7 +69,7 @@ section{
     border: none;
     outline: none;
     background: none;
-    color: white;
+    color: black;
     font-size: 16px;
     float: left;
     padding: 5px 5px;
@@ -82,7 +83,7 @@ section{
     font-size: 14px;
     border: none;
     outline: none;
-    background-color: rgb(224, 208, 201);
+    background-color: rgb(29, 157, 195);
     color: rgb(64, 59, 73);
     width: 160px;
     height: 40px;
@@ -90,7 +91,7 @@ section{
 
 }
 .pad{
-    margin: 10px;
+    margin: 12px;
     float: left;
 }
 .boton:hover{
