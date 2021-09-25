@@ -1,9 +1,18 @@
 body{
-    
-    
-   
-    
+    padding:0px;
+    margin:0px
+}
 
+.navbar {
+    list-style:none;
+    display:flex;
+    justify-content:space-around;
+}
+
+
+.navbar>li>a {
+    
+    color:black;
 }
 .sectionustedhaingresado {
     font-size: 15px;
