@@ -9,24 +9,27 @@
     <title>Admin ventas</title>
     <link rel="shortcut icon" href="/media/logobuho_white.png" type="image/x-icon">
     <link rel="stylesheet" href="/styles/estilos_ventas.css" type="text/css">
+    <script src="https://kit.fontawesome.com/53ffee8fae.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
         <ul class="navbar">
-            <li> 
-            <img  src="media/logobuho.png" alt="logo" class="logo"/>   
+            <li>
+                <img src="media/logobuho.png" alt="logo" class="logo" />
             </li>
-            <li style="padding-top:20px">
-                <button class="button">Inicio</button> </li>
-            <li style="padding-top:20px"> <button class="button">Gestión de Ventas</button></li>
-            <li style="padding-top:20px"> <button class="button">Gestión de Vendedores</button></li>
-            <li style="padding-top:20px"> <button class="button">Gestión de Usuarios y Roles</button></li>
+            <li style="padding-top:20px"> <button class="botones boton_impar">Inicio</button> </li>
+            <li style="padding-top:20px"> <button class="botones boton_par">Gestión de Ventas</button></li>
+            <li style="padding-top:20px"> <button class="botones boton_impar">Gestión de Vendedores</button></li>
+            <li style="padding-top:20px"> <button class="botones boton_par">Gestión de Usuarios y Roles</button></li>
     </header>
     <main>
-        <section>
+        <div class="buscar">
+            <button> Buscar:</button>
+            <input placeholder="ID" />
 
-        </section>
+        </div>
+        <input type="datetime-local" />
 
     </main>
     <footer></footer>
