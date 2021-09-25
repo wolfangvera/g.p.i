@@ -6,47 +6,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de ventas</title>
-    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/estilos_admon_ventas.css">
 </head>
 
 <body>
-    <header style="background-color:rgb(92, 95, 99)">
-        <a href="./index.html" style="font-family:JetBrains Mono; font-size: 20px">
-            <img src="./media/logobuho.png" alt="logo corporativo" width="110px"
-                style="margin-top:12px;margin-left:12px" />
-            Genius-Software world
-        </a>
+    <header class="header">
+
+
+        <ul class="navbar">
+            <li>
+                <ul>
+                    <li><a href="./index.html" style="font-family:JetBrains Mono; font-size: 20px">
+                            <img src="./media/logobuho.png" alt="logo corporativo" width="110px"
+                                style="margin-top:12px;margin-left:12px" />
+                        </a>
+                    </li>
+                    <li style="margin-left:12px">Genius Software World</li>
+
+                </ul>
+
+
+            <li class="botones boton_nav"> Inicio</li>
+            <li class="botones boton_nav"> Gestión de ventas </li>
+            <li class="botones boton_nav"> Usuario/Roles</li>
+            <li class="botones boton_nav"> Vendedores</li>
+        </ul>
     </header>
 
     <main>
 
-        <ul class="navbar">
-            <li> Inicio</li>
-            <li> Gestión de ventas </li>
-            <li> Usuario/Roles</li>
-            <li> Vendedores</li>
-            <section class="text-right">
-                <ul >
-                    <li>Usted ha ingresado como: <br> Cargo: <br> Actualizar perfil</li>
-                    <li><img src="./media/logobuho.png" width="100">
-                        <!-- Información de la persona que esta registrando la venta-->
-                    </li>
-                </ul>
-            </section>
 
-        </ul>
-
-
-
-
-        <section id="Seccion1">
-
+        <section class="info_usuario">
+            <ul>
+                <li>Usted ha ingresado como: <br> Cargo: <br> Actualizar perfil</li>
+                <li><img src="./media/logobuho.png" width="100">
+                    <!-- Información de la persona que esta registrando la venta-->
+                </li>
+            </ul>
         </section>
+
+        <div class="campo_registro">
+            <ul>
+                <li>
+
+                    <label> Ingrese ID de compra
+                        <input type="text" placeholder="ID" />
+                    </label>
+                </li>
+                <li>
+                    <label>Valor total de la compra<input type="number" placeholder="Valor total">
+                    </label>
+                </li>
+                <li> <label>
+                        <input type="text" placeholder="Descripción de la compra" style="height:100px;" />
+                        Decripción</label>
+                </li>
+
+            </ul>
+
+
+        </div>
+
+
+
+
+
+
     </main>
 
 
-    <footer>
-
+    <footer class="footer">
+        hello
     </footer>
 
 </body>

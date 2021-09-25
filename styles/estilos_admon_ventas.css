@@ -1,0 +1,89 @@
+.header{
+    background-color:gray;
+
+}
+body{
+    margin:0px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;   
+}
+.navbar{
+
+    display:flex;
+    justify-content:space-between;
+    padding:0px;
+    margin:0px;
+    font-weight: bolder;
+    font-family:"JetBrains Mono";
+    font-size:10px;
+}
+
+
+
+.info_usuario {
+    list-style-type:none;
+    display:flex;
+    position:absolute;
+    right: 12px;
+}
+.info_usuario>ul{
+    display:flex;
+    text-align:right;
+}
+
+.botones {
+    font-weight: bolder;
+    font-family:"JetBrains Mono";
+    font-size:15px;
+    border:0;
+    padding: 5px 5px;
+    border-radius: 10px;
+}
+
+.botones:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    
+}
+.boton_nav {
+    background-color: aqua;
+    height:40px;
+    align-self: center;
+    
+
+}
+.boton_nav:hover{
+    box-shadow:4px 4px black
+}
+
+.text-right{
+    display:flex;
+    justify-content:space-between;
+    text-align:right
+}
+
+
+
+.campo_registro{
+    position:relative;
+    top:200px;
+    left:200px;
+    border:1px solid;
+    border-color:black;
+    width:70%;
+    height:max-content;
+    
+    
+}
+
+.footer {
+  background-color:gray;
+  position:absolute;
+  bottom:0;
+ 
+  height:100px;
+  width:100%;
+}
+
