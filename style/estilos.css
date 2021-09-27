@@ -1,0 +1,28 @@
+.contenedor{
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    font-size: medium;
+    margin: 10px;
+    padding: 8px;
+
+}
+th{
+    color: white;
+    text-align: center;
+    padding: 15px 30px;
+    background-color: rgb(29, 157, 195);
+    font-size: x-large;
+}
+table{
+    width: 90%;
+    border-collapse: collapse;
+    border-color: rgb(29, 157, 195);
+    
+}
+td{
+    padding: 20px;
+}
+tr:hover{
+    background-color: rgba(89, 192, 89, 0.431);
+    
+}
