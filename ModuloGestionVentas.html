@@ -29,17 +29,21 @@
         <nav>
             <ul class="navbar">
                 <li>
-                    <button class="boton_principal">Inicio</button>
+                    <button class="boton_principal">Registro de productos</button>
                 </li>
                 <li>
-                    <button class="boton_principal">Módulo Gestión de ventas</button>
+                    <button class="boton_principal">Gestión de productos</button>
                 </li>
                 <li>
-                    <button class="boton_principal">Módulo Usuario/Roles</button>
+                    <button class="boton_principal">Registro de ventas</button>
                 </li>
                 <li>
-                    <button class="boton_principal">Módulo Vendedores</button>
+                    <button class="boton_principal">Gestión de ventas</button>
                 </li>
+                <li>
+                    <button class="boton_principal">Gestión de usuarios</button>
+                </li>
+            
                 <li>
                     <section class="info_usuario">
                         <ul class="ordenar_info_usuario">
@@ -70,60 +74,78 @@
 
 
 
-        <div class="ingreso_info" style="border:1px solid">
+        <section class="Cuadro_ingreso" >
 
-            <ul>
-                <li>
-                    <ul>
-                        <li>
-                            <label>ID</label>
-                            <input type="number">
-                        </li>
-                        <li>
-                            <label>VALOR TOTAL</label>
-                        </li>
-                        <li>
-                            <input type="number" placeholder="$" />
-                        </li>
-                        <li>
-                            <LABEL>DESCRIPCIÓN</LABEL>
-                        </li>
-                        <li>
-                            <input type="text" class="descri">
-                        </li>
-                    </ul>
+            <ul class="ingreso_info">
+
+
+                <li class="label">
+                    <label >ID VENTA</label>
+                    <input  type="number">
                 </li>
                 <li>
-                    <ul class="fechas">
+                    <label class="label">VALOR TOTAL DE VENTA</label>
+                    <input type="number" placeholder="$" />
+                </li>
+                <li>
+                    <label class="label">
+                        FECHA
+                        <input  type="datetime-local">
+                    </label>
+                </li>
+                <li for="vendedor"> Datos del vendedor
+                    <ul class="info_vendedor"> 
                         <li>
                             <label class="label">
-                                FECHA
-                                <input type="datetime-local">
+                                Documento
+                                <input  type="text">
                             </label>
                         </li>
                         <li>
                             <label class="label">
-                                FECHA DE PAGO
-                                <input type="datetime-local">
+                                Nombre Vendedor
+                                <input  type="text">
                             </label>
                         </li>
                     </ul>
+
                 </li>
                 <li>
-                    <input type="button" value="Registrar">
+                    <table class="tabla_registro">
+                        <thead>
+                            <th>ID Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio unitario</th>
+                        </thead>
+                        <tbody>
+                            <td><input type="text"> </td>
+                            <td><input type="text"> </td>
+                            <td><input type="text"> </td>
+                        </tbody>
+                    </table>
+                    <button class="boton adicion_producto"> Adicionar producto</button>
                 </li>
+
+
+
+                
+                    <button class="boton registro_venta">REGISTRAR VENTA</button>
+                
+
+
+
 
             </ul>
 
-        </div>
+        </section>
 
-        <a href="/siguiente">
-            <span>siguiente</span>
-        </a>
 
 
     </main>
-    <footer></footer>
+    <footer class="footer">
+        Nombre compañía
+        Politica
+    </footer>
 </body>
 
 </html>
