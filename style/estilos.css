@@ -115,3 +115,8 @@ section{
     height: 40px;
     font-weight: 700;
 }
+.botonDos:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 3px 3px white;
+}
