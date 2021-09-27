@@ -11,7 +11,7 @@ th{
     text-align: center;
     padding: 15px 30px;
     background-color: rgb(29, 157, 195);
-    font-size: x-large;
+    font-size: larger;
 }
 table{
     width: 90%;
@@ -25,4 +25,16 @@ td{
 tr:hover{
     background-color: rgba(89, 192, 89, 0.431);
     
+}
+select{
+    font-size: medium;
+    padding: 5px;
+    border-radius: 9px;
+    outline: none;
+}
+label{
+    padding: 0px 40px 0px 0px;
+}
+.estil{
+    width: 340px;
 }
