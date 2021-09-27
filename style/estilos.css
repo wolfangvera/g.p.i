@@ -103,3 +103,15 @@ section{
 .contraseña{
     color:rgb(29, 157, 195);
 }
+.botonDos{
+    margin: 30px;
+    border-radius: 15px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    background-color: rgb(89, 192, 89);
+    color: white;
+    width: 160px;
+    height: 40px;
+    font-weight: 700;
+}
