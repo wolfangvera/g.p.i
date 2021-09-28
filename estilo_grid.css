@@ -1,0 +1,14 @@
+body {
+    display:grid;
+    grid-template-columns:repeat(4.5px);
+    grid-template-rows: auto;
+    grid-template-areas:"header header header"
+                        "main . sidebar"
+                        "footer footer footer"
+}
+
+.logo {
+    width:50px;
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
