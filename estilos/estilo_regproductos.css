@@ -133,6 +133,7 @@ transform: scale(1.05);
 .ingreso_info {
     align-items: center;   
 }
+
 .ingreso_producto {
     display:flex;
     
@@ -168,44 +169,10 @@ table {
     border-collapse:collapse;   
 }
 
-caption {
-    font-weight:bolder;
-}
-th,td {
-    font-size: small;
-    width: 25%;
-    text-align: center;
-   vertical-align: center;
-   border:1px solid black;
- 
-}
-
 input {
     text-align: center;
 }
 
-table>td {
-    border-radius:5px;
-}
-
-td>input {
-    width:95%;
-    align-items:  center;
-}
-
-
-.bt_adicion_producto {
-    font-size:small;
-    font-family: "JetBrains Mono";
-    background-color:rgb(29,157,195);
-    color:white;
-    border-radius: 4px;
-    position:relative;
-    left: auto;
-    right: auto;
-    
-
-}
 .bt_registro_producto{
     font-size:15px;
     font-family: "JetBrains Mono";
@@ -214,15 +181,9 @@ td>input {
     border-radius: 4px;
     position: absolute;
     width:145px;
-    left: 44%;
+    left: 44%;   
+}
 
-    
-    
-}
-.info_cliente {
-    margin: 15px;
- 
-}
 .option {
     text-align: center;
     font-size: small;
