@@ -1,18 +1,20 @@
-
-
-  .descri{
-      width: 220px;
-      height: 70px;
-      
-    }
+a:link {
+    color:black;
+    text-decoration:none;
+}
    
+a:visited {
+    color:black;
+    text-decoration:none;
+}
 
 header {
     background-color:rgb(74, 190, 20);
     font-weight:bolder;
-    
-
-    
+    box-shadow: 0 3px 10px rgb(0,0,0/10%);   
+}
+ul {
+    list-style:none;
 }
  
 .logo {
@@ -41,12 +43,15 @@ body{
    
 }
 
+
 .navbar {
     list-style:none;
     display:flex;
     justify-content:space-around;
     padding:0px;
     margin:0.5px;
+    top:5px;
+
     
 }
 
@@ -68,6 +73,7 @@ body{
     background-color:rgb(29,157,195);
     color:white;
     border-radius: 6px;
+    
 }
 
 .boton_principal:hover{
@@ -84,10 +90,6 @@ transform: scale(1.05);
 
 
 
-ul {
-    list-style:none;
-}
-
 .ordenar_info_usuario {
  
     text-align: right;
@@ -95,17 +97,28 @@ ul {
     font-weight:bolder;
     color:rgb(29,157,195);
  
-    padding-right:0px;
+    
+    
   
 }
 
-.ingreso_info {
-    display: grid;
+.Cuadro_ingreso {
     background-color: rgb(223, 223, 223);
     border:1px solid black;
     width: 50vw;
-    position: relative;
-    left:18em;
+    margin-left:auto;
+    margin-right: auto;
+    margin-bottom: 80px;
+    
+    
+}
+
+.ingreso_info {
+    align-items: center;
+    
+    
+    
+    
 }
 
 .fecha {
@@ -124,35 +137,35 @@ ul {
 
 
 
-.tabla_registro {
-    border:1px solid black;
-    margin:20px;
-    padding:4px;
 
-    
-}
 
 .footer {
     background-color: rgb(29,157,195);
-    position: absolute;
+    position: fixed;
     bottom:0px;
     width:100%;
     height:70px;
 }
-.adicion_producto {
-    display:flex;
-    margin-left: 5cm;
-}
+
 
 .registro_venta{
     margin-top:60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.label {
+    padding:10px;
 }
 
 .info_vendedor {
-    display:flex;
-    justify-content: left;
-    padding:0px;
+text-align: center;
+margin-top: 1cm;
+border-top: 1px solid black;
+border-bottom: 1px solid black;
 }
+
+
 
 .adicion_producto {
     font-size:small;
@@ -160,9 +173,38 @@ ul {
     background-color:rgb(29,157,195);
     color:white;
     border-radius: 4px;
+    
 
 }
+.seccion_tabla {
+    margin-top: 0.2cm;
+    border-top: 1px solid black;
+    text-align: center;   
+    font-size:medium;
+}
+table {
+    width:100%;
+}
+th,td {
+  width: 25%;
+   text-align: center;
+   vertical-align: center;
+   border: 0px solid #000;
+   border-collapse: collapse;
+    
+}
+table>td {
+    border-radius:5px;
+}
 
+td>input {
+    width:95%;
+    align: center;
+}
+
+.adicion_producto {
+    align-self: ;
+}
 .registro_venta{
     font-size:medium;
     font-family: "JetBrains Mono";

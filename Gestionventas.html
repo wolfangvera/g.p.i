@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilo_grid.css">
+    <title>Gestión de ventas</title>
+    <link rel="shortcut icon" href="/media/logobuho_white.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/53ffee8fae.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div>
+            <img class="logo" src="./media/logobuho.png" alt="logo corporativo" />
+
+        </div>
+        <div class="tittle">
+            <a href="index.html">
+                GENIUS -SOFTWARE WORLD </a>
+        </div>
+
+
+
+
+    </header>
+
+    <main>
+        <nav class="navbar">
+            <div class="navbar-button">
+                <ul class="lista-botones">
+                    <li>
+                        <button class="boton_principal">Registro de productos</button>
+                    </li>
+                    <li>
+                        <button class="boton_principal">Gestión de productos</button>
+                    </li>
+                    <li>
+                        <button class="boton_principal">Registro de ventas</button>
+                    </li>
+                    <li>
+                        <button class="boton_principal">Gestión de ventas</button>
+                    </li>
+                    <li>
+                        <button class="boton_principal">Gestión de usuarios</button>
+                    </li>
+                </ul>
+            </div>
+            <section class="info_usuario">
+                <ul class="ordenar_info_usuario">
+                    <li>
+                        <ul style="padding:0px 5px 0px 5px">
+                            <li>
+                                Usted ha ingresado como:<label>*Nombre usuario*</label>
+                            </li>
+                            <li>
+                                Cargo: <label> *Cargo*</label>
+                            </li>
+                            <li>Actualizar perfil</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <img src="./media/avatar-perfil-png-5.png" width="50px" style="border:1px solid black">
+
+                    </li>
+                </ul>
+            </section>
+            </li>
+            </ul>
+
+
+            </div>
+
+        </nav>
+
+
+
+        <section class="Cuadro_ingreso">
+
+            <ul class="ingreso_info">
+
+
+                <li class="label">
+                    <label>ID VENTA</label>
+                    <input type="number">
+                </li>
+                <li>
+                    <label class="label">VALOR TOTAL DE VENTA</label>
+                    <input type="number" placeholder="$" />
+                </li>
+                <li>
+                    <label class="label">
+                        FECHA
+                        <input type="datetime-local">
+                    </label>
+                </li>
+                <li for="vendedor"> Datos del vendedor
+                    <ul class="info_vendedor">
+                        <li>
+                            <label class="label">
+                                Documento
+                                <input type="text">
+                            </label>
+                        </li>
+                        <li>
+                            <label class="label">
+                                Nombre Vendedor
+                                <input type="text">
+                            </label>
+                        </li>
+                    </ul>
+
+                </li>
+                <li>
+                    <table class="tabla_registro">
+                        <thead>
+                            <th>ID Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio unitario</th>
+                        </thead>
+                        <tbody>
+                            <td><input type="text"> </td>
+                            <td><input type="text"> </td>
+                            <td><input type="text"> </td>
+                        </tbody>
+                    </table>
+                    <button class="boton adicion_producto"> Adicionar producto</button>
+                </li>
+
+
+
+
+                <button class="boton registro_venta">REGISTRAR VENTA</button>
+
+
+
+
+
+            </ul>
+
+        </section>
+
+
+
+    </main>
+    <footer class="footer">
+        Nombre compañía
+        Politica
+    </footer>
+</body>
+
+</html>
