@@ -101,7 +101,7 @@ transform: scale(1.05);
 
 
 .ordenar_info_usuario {
- 
+ display:flex;
     text-align: right;
     font-size:9.5px;
     font-weight:bolder;
