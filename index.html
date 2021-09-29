@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="./Multimedia/logobuho.png" type="image/x-icon">
     <title>Genius - Software - World</title>
     <script src="https://kit.fontawesome.com/bee51370cb.js" crossorigin="anonymous"></script>
+    <script src="javascrips.js"></script>
 </head>
 <body>
     <section class="section1NombreEmpresa">
@@ -30,14 +31,14 @@
             <div class="input">
                 <i class="fas fa-users estilo"></i>
                 <h4>¡Bienvenido!</h4>
-                <i class="fas fa-user-check pad"></i><input type="text" placeholder="Usuario..." name="" value="" class="eliminar">
+                <i class="fas fa-user-check pad"></i><input type="text" id="user" placeholder="Usuario..." class="eliminar">
                 
             </div>
             <div class="input">
                 <i class="fas fa-unlock pad"></i>
-                <input type="password" placeholder="Contraseña..." name="" value="" class="eliminar">
+                <input type="password" placeholder="Contraseña..."  id="password" class="eliminar">
             </div>
-            <input type="button" value="¡Ingresar ahora!" name="" class="boton">
+            <input type="button" value="¡Ingresar ahora!" onclick="Funcion()" class="boton" />
             <div>
                 <a href="/" class="contraseña">¿Has olvidado la contraseña?</a>
             </div>
