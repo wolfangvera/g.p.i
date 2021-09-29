@@ -206,3 +206,13 @@ select {
     margin-left: 1cm;
     margin-right:auto;
 }
+
+.cuadro_listado {
+    /*ESTO SE MODIFICA */
+    border:1px solid black;
+    height: 50vh;
+    text-align: center;
+    justify-content: center;
+    text-decoration-line: overline  ;
+text-decoration-line: line-through;
+}
