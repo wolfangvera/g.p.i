@@ -31,7 +31,9 @@ ul {
 }
  
 .logo {
-    width:50px;
+    width:65px;
+    margin-left: 5px;
+    
 }
 
 .tittle{
@@ -50,9 +52,13 @@ body{
     padding:0px;
     margin:0px;
     font-family:"JetBrains Mono";
+    font-weight:bolder;
    
 }
 
+h2 {
+    text-align: center;
+}
 
 .navbar {
     list-style:none;
@@ -127,21 +133,11 @@ transform: scale(1.05);
 .ingreso_info {
     align-items: center;   
 }
-
-.fecha {
-   display:flex;
-   justify-content:left;
-   padding-left:0px;
-   padding-top: 40px;
-}
-
-.label {
-    padding-left: 20px;
-    font-size:15px;
-    font-weight:bolder;
+.ingreso_producto {
+    display:flex;
     
-   
 }
+
 
 
 footer {
@@ -154,9 +150,7 @@ footer {
 
 
 
-.label {
-    padding:10px;
-}
+
 
 .info_venta {
     text-align: end;
@@ -179,8 +173,8 @@ caption {
 }
 th,td {
     font-size: small;
-  width: 25%;
-   text-align: center;
+    width: 25%;
+    text-align: center;
    vertical-align: center;
    border:1px solid black;
  
@@ -212,7 +206,7 @@ td>input {
     
 
 }
-.bt_registro_venta{
+.bt_registro_producto{
     font-size:15px;
     font-family: "JetBrains Mono";
     background-color:rgb(29,157,195);
@@ -229,7 +223,7 @@ td>input {
     margin: 15px;
  
 }
-.info_vendedor {
+.option {
     text-align: center;
     font-size: small;
     font-weight: bolder;
@@ -238,15 +232,16 @@ td>input {
 
 }
 
+
+    
 select {
     background:transparent;
     border-radius: 5px;
     font-size: 14px;
     height: 30px;
     padding: 5px;
-    width: 200px;
-    align-items: center;
-    margin-left: auto;
+    width: 150px;
+    align-items: right;
+    margin-left: 1cm;
     margin-right:auto;
 }
-    
