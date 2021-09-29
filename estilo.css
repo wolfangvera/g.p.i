@@ -1,3 +1,7 @@
+html {
+    min-height: 100%;
+    position: relative;
+}
 a:link {
     color:black;
     text-decoration:none;
@@ -11,7 +15,16 @@ a:visited {
 header {
     background-color:rgb(74, 190, 20);
     font-weight:bolder;
-    box-shadow: 0 3px 10px rgb(0,0,0/10%);   
+    position:absolute;
+    top:0; 
+    padding-top: 10px;
+    width: 100%;
+    height: 70px;
+}
+.header {
+    display:flex;
+    margin:0px;
+    padding:5px;
 }
 ul {
     list-style:none;
@@ -19,12 +32,6 @@ ul {
  
 .logo {
     width:50px;
-}
-
-.header {
-    display:flex;
-    margin:0px;
-    padding:5px;
 }
 
 .tittle{
@@ -35,7 +42,10 @@ ul {
     top:0.5cm;
     left:8cm;
 }
-
+main {
+    margin-bottom: 40px;
+    margin-top:80px;
+}
 body{
     padding:0px;
     margin:0px;
@@ -59,7 +69,7 @@ body{
     border:0px;
     font-family: "JetBrains Mono";
     position:absolute;
-    right:50%;
+    
 }
 
 .boton:hover {
@@ -72,7 +82,7 @@ body{
     font-family: "JetBrains Mono";
     background-color:rgb(29,157,195);
     color:white;
-    border-radius: 6px;
+    border-radius: 4px;
     
 }
 
@@ -108,17 +118,14 @@ transform: scale(1.05);
     width: 50vw;
     margin-left:auto;
     margin-right: auto;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
+    border-radius: 20px;
     
     
 }
 
 .ingreso_info {
-    align-items: center;
-    
-    
-    
-    
+    align-items: center;   
 }
 
 .fecha {
@@ -130,89 +137,116 @@ transform: scale(1.05);
 
 .label {
     padding-left: 20px;
-    font-size:10px;
+    font-size:15px;
     font-weight:bolder;
+    
    
 }
 
 
-
-
-
-.footer {
+footer {
     background-color: rgb(29,157,195);
-    position: fixed;
-    bottom:0px;
+    position: absolute;
+    bottom:0;
     width:100%;
-    height:70px;
+    height:40px;
 }
 
 
-.registro_venta{
-    margin-top:60px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .label {
     padding:10px;
 }
 
-.info_vendedor {
-text-align: center;
-margin-top: 1cm;
-border-top: 1px solid black;
-border-bottom: 1px solid black;
+.info_venta {
+    text-align: end;
 }
 
 
-
-.adicion_producto {
-    font-size:small;
-    font-family: "JetBrains Mono";
-    background-color:rgb(29,157,195);
-    color:white;
-    border-radius: 4px;
-    
-
-}
 .seccion_tabla {
     margin-top: 0.2cm;
-    border-top: 1px solid black;
+    border-top: 0px solid black;
     text-align: center;   
     font-size:medium;
 }
 table {
     width:100%;
+    border-collapse:collapse;   
+}
+
+caption {
+    font-weight:bolder;
 }
 th,td {
+    font-size: small;
   width: 25%;
    text-align: center;
    vertical-align: center;
-   border: 0px solid #000;
-   border-collapse: collapse;
-    
+   border:1px solid black;
+ 
 }
+
+input {
+    text-align: center;
+}
+
 table>td {
     border-radius:5px;
 }
 
 td>input {
     width:95%;
-    align: center;
+    align-items:  center;
 }
 
-.adicion_producto {
-    align-self: ;
-}
-.registro_venta{
-    font-size:medium;
+
+.bt_adicion_producto {
+    font-size:small;
     font-family: "JetBrains Mono";
     background-color:rgb(29,157,195);
     color:white;
     border-radius: 4px;
-   position:relative;
-    left:15vw;
+    position:relative;
+    left: auto;
+    right: auto;
+    
+
+}
+.bt_registro_venta{
+    font-size:15px;
+    font-family: "JetBrains Mono";
+    background-color:rgb(29,157,195);
+    color:white;
+    border-radius: 4px;
+    position: absolute;
+    width:145px;
+    left: 44%;
+
     
     
 }
+.info_cliente {
+    margin: 15px;
+ 
+}
+.info_vendedor {
+    text-align: center;
+    font-size: small;
+    font-weight: bolder;
+    margin:10px;
+    border:0px;
+
+}
+
+select {
+    background:transparent;
+    border-radius: 5px;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    width: 200px;
+    align-items: center;
+    margin-left: auto;
+    margin-right:auto;
+}
+    

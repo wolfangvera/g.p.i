@@ -43,7 +43,7 @@
                 <li>
                     <button class="boton_principal">Gestión de usuarios</button>
                 </li>
-            
+
                 <li>
                     <section class="info_usuario">
                         <ul class="ordenar_info_usuario">
@@ -74,77 +74,93 @@
 
 
 
-        <section class="Cuadro_ingreso" >
+        <section class="Cuadro_ingreso">
 
             <div class="ingreso_info">
 
+                <div class="info_venta">
+                    <div class="label">
+                        <label>ID VENTA</label>
+                        <input type="number">
+                    </div>
+                    <div class="label">
+                        <label>VALOR TOTAL DE VENTA</label>
+                        <input type="number" placeholder="$" />
+                    </div>
+                    <div class="label">
+                        <label>FECHA</label>
+                        <input type="date" style="width:159.9764px" />
 
-                <div >
-                    <label class="label" >ID VENTA</label>
-                    <input  type="number">
-                </div>
-                <div>
-                    <label class="label">VALOR TOTAL DE VENTA</label>
-                    <input type="number" placeholder="$" />
-                </div>
-                <div>
-                    <label class="label">FECHA</label>
-                        <input  type="datetime-local">
-                    
+                    </div>
                 </div>
                 <div class="seccion_tabla">
                     <table class="tabla_registro">
-                        <caption >Registro de productos</caption>
+                        <caption>Registro de productos</caption>
                         <thead>
                             <th>ID Producto</th>
                             <th>Cantidad</th>
                             <th>Precio unitario</th>
                         </thead>
                         <tbody>
-                            <td><input type="text"> </td>
-                            <td><input type="text"> </td>
-                            <td><input type="text"> </td>
+                            <td class="sinborde"><input type="text"> </td>
+                            <td class="sinborde"><input type="text"> </td>
+                            <td class="sinborde"><input type="text"> </td>
                         </tbody>
                     </table>
-                    <button class="boton adicion_producto"> Adicionar producto</button>
+                    <div>
+                        <button class="boton bt_adicion_producto"> Adicionar producto</button>
+                    </div>
                 </div>
 
-                <div class="info_vendedor"> 
-                    <table class="datos_vendedor">
-                        <caption >Datos del Vendedor</caption>
-                        <thead >
-                            <th style="border=1px">Identificación</th>
+                <div class="info_cliente">
+                    <table class="datos_cliente">
+                        <caption>Datos del Cliente</caption>
+                        <thead>
+                            <th>Identificación</th>
                             <th>Nombre</th>
-                            
+
                         </thead>
                         <tbody>
-                            <td><input type="text"> </td>
-                            <td><input type="text"> </td>
-                            
+                            <td class="sinborde"><input type="text"> </td>
+                            <td class="sinborde"><input type="text"> </td>
+
                         </tbody>
                     </table>
-                    
+
                 </div>
 
-             
-                              
+           
+                <div class="info_vendedor">
+                    <div> Vendedor 
+                        <select class="selector_vendedor"> 
+                            <option>seleccionar ..</option>
+                            <option> Vendedor 1</option>
+                            <option> Vendedor 1</option>
+                            <option> Vendedor 1</option>
+                        </select>
+                    </div>
+                </div>
 
 
-                
-                    <button class="boton registro_venta">REGISTRAR VENTA</button>
-                
+
+
+
+                <div class="center">
+                    <button class="boton bt_registro_venta">REGISTRAR VENTA</button>
+                </div>
 
 
 
 
-            </ul>
+
+            </div>
 
         </section>
 
 
 
     </main>
-    <footer class="footer">
+    <footer >
         Nombre compañía
         Politica
     </footer>
