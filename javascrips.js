@@ -1,9 +1,15 @@
 let Funcion = function(){
-    let numero = document.getElementsById("user").value;
-    return(
+    let usuario = document.getElementById("user").value;
+    let contraseña = document.getElementById("password").value;
+    if (usuario !="" && contraseña !=""){
+        return(
         
-        alert("Los datos ingresados fueron= " + "\n"+
-        "----> "+ "Usuario= "+ numero +  "\n" +
-        "----> "+ "Contraseña= "+ numero)
-    );
+            alert("Los datos ingresados fueron. " + "\n"+
+            "----> "+ "Usuario= "+ usuario +  "\n" +
+            "----> "+ "Contraseña= "+ contraseña)
+        );
+    } else {
+        alert("Faltan campos por llenar.")
+    }
+    
 }
