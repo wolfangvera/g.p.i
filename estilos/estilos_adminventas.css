@@ -35,8 +35,13 @@ ul {
     width:60px;
 }
 
-.ordenar_info_usuario{
-    
+.ordenar_info_usuario {
+ 
+    text-align: right;
+    font-size:9.5px;
+    font-weight:bolder;
+    color:rgb(29,157,195);
+  
 }
 
 .tittle{
@@ -135,5 +140,14 @@ th,td {
     vertical-align: center;
     border:1px solid black;
  
+}
+
+.cambio_pag {
+    display:flex;
+    justify-content: center;
+
+}
+.cambio_pag>li {
+    padding-left: 5px;
 }
 
