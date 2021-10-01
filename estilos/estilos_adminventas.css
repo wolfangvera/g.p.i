@@ -1,0 +1,154 @@
+html {
+    min-height: 100%;
+    position: relative;
+}
+a:link {
+    color:black;
+    text-decoration:none;
+}
+   
+a:visited {
+    color:black;
+    text-decoration:none;
+}
+
+header {
+    background-color:rgb(74, 190, 20);
+    font-weight:bolder;
+    position:absolute;
+    top:0; 
+    padding-top: 10px;
+    width: 100%;
+    height: 70px;
+}
+.header {
+    display:flex;
+    margin:0px;
+    padding:5px;
+    margin-left: 10px;
+}
+ul {
+    list-style:none;
+}
+ 
+.logo {
+    width:60px;
+}
+
+.ordenar_info_usuario {
+    display:flex;
+    text-align: right;
+    font-size:9.5px;
+    font-weight:bolder;
+    color:rgb(29,157,195);
+  
+}
+
+.tittle{
+    color:black;
+    font-size: 30px;
+    text-decoration: none;
+    position:absolute;
+    top:0.5cm;
+    left:8cm;
+}
+main {
+    margin-bottom: 40px;
+    margin-top:80px;
+}
+body{
+    padding:0px;
+    margin:0px;
+    font-family:"JetBrains Mono";
+   
+}
+
+.busqueda {
+    display:flex;
+    justify-content: center;
+    margin:10px;
+}
+
+.navbar {
+    list-style:none;
+    display:flex;
+    justify-content:space-around;
+    padding:0px;
+    margin:0.5px;
+    top:5px;
+
+    
+}
+
+.boton {
+    border:0px;
+    font-family: "JetBrains Mono";
+    position:absolute;
+    
+}
+
+.boton:hover {
+    cursor:pointer;
+    
+}
+.boton_principal {
+    border:0px;
+    font-size:large;
+    font-family: "JetBrains Mono";
+    background-color:rgb(29,157,195);
+    color:white;
+    border-radius: 4px;
+    
+}
+
+.boton_principal:hover{
+transform: scale(1.05);
+    box-shadow:2px 2px rgb(74,190,20);
+}
+
+.navbar li a {
+    text-decoration: none;
+    color:white;
+    background-color:black;
+}
+
+
+h2 {
+    text-align: center;
+} 
+footer {
+    background-color: rgb(29,157,195);
+    position: absolute;
+    z-index: 1;
+    bottom:0;
+    width:100%;
+    height:40px;
+}
+
+
+
+table {
+    width:80%;
+    margin-left: auto;
+    margin-right:auto;
+    border-collapse:collapse;   
+}
+
+th,td {
+    font-size: small;
+    width: 35vw;
+    text-align: center;
+    vertical-align: center;
+    border:1px solid black;
+ 
+}
+
+.cambio_pag {
+    display:flex;
+    justify-content: center;
+
+}
+.cambio_pag>li {
+    padding-left: 5px;
+}
+
