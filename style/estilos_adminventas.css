@@ -131,16 +131,20 @@ table {
     width:80%;
     margin-left: auto;
     margin-right:auto;
-    border-collapse:collapse;   
+    border-collapse:collapse;
+    margin-top:2%; 
+    border-color: rgb(29, 157, 195);
+    text-align:center; 
 }
 
-th,td {
-    font-size: small;
+td {
+    font-size:medium;
     width: 35vw;
     text-align: center;
     vertical-align: center;
     border:1px solid black;
- 
+    padding: 10px 10px;
+
 }
 
 .cambio_pag {
@@ -152,3 +156,19 @@ th,td {
     padding-left: 5px;
 }
 
+
+th{
+    color: white;
+    padding: 5px 30px;
+    background-color: rgb(29, 157, 195);
+    font-size: larger;
+}
+
+tr:hover{
+    background-color: rgba(89, 192, 89, 0.431);
+    
+}
+
+table td:nth-child(7) {
+    width: 1mm;
+   }
