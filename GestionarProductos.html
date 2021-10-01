@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/estilos/estilos_gestionproductos.css">
+    <link rel="shortcut icon" href="./Multimedia/logobuho.png" type="image/x-icon">
+    <title>Gestionar productos</title>
+    <!--<script src="https://kit.fontawesome.com/bee51370cb.js" crossorigin="anonymous"></script>--> <!-- para iconos de internet-->
+</head>
+
+
+
+<header>
+    <ul class="header">
+        <li>
+            <a href="index.html"> <img class="logo" src="./Multimedia/logobuho.png" alt="logo corporativo" />
+            </a>
+        </li>
+        <li> <a class="tittle" href="index.html">
+                GENIUS -SOFTWARE WORLD
+            </a></li>
+    </ul>
+</header>
+
+<body>
+
+    <main>
+        <nav>
+            <ul class="navbar">
+                <li>
+                    <button class="boton_principal">Registro de productos</button>
+                </li>
+                <li>
+                    <button class="boton_principal">Gestión de productos</button>
+                </li>
+                <li>
+                    <button class="boton_principal">Registro de ventas</button>
+                </li>
+                <li>
+                    <button class="boton_principal">Gestión de ventas</button>
+                </li>
+                <li>
+                    <button class="boton_principal">Gestión de usuarios</button>
+                </li>
+
+                <li>
+                    <section class="info_usuario">
+                        <ul class="ordenar_info_usuario">
+                            <li>
+                                <ul style="padding:0px 5px 0px 5px">
+                                    <li>
+                                        Usted ha ingresado como:<label>*Nombre usuario*</label>
+                                    </li>
+                                    <li>
+                                        Cargo: <label> *Cargo*</label>
+                                    </li>
+                                    <li>Actualizar perfil</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="./Multimedia/avatar-perfil-png-5.png" width="50px" style="border:1px solid black">
+
+                            </li>
+                        </ul>
+                    </section>
+                </li>
+            </ul>
+
+
+
+
+        </nav>
+        
+
+        <section1>
+ <h1>Gestionar Productos</h1>
+        <h3>Busqueda de productos</h3>
+            <label for="Busquedaproductos">
+            Ingrese el ID            
+                
+                <input type="search" name="Busquedaproductos" id="">
+                <button>Buscar</button>
+            </label>   
+            <label for="Busquedaproductos">
+                Ingrese Descripcion del producto         
+                    
+                    <input type="search" name="Busquedaproductos" id="">
+                    <button>Buscar</button>
+            </label>   
+           
+
+        </section1>
+
+
+        <section2>
+
+        <h3>Lista de productos</h3>
+            <!--Tabla de productos registrados para ver y editar -- Gestión - HU's 13 14 16 y 17  -->
+
+            <div class="contenedor">
+                <table border="1" align="center">
+                    <tr>
+                        <th>Identificador del producto</th>
+                        <th>Descripción del producto</th>
+                        <th>Estado</th>
+                        <th>Stock</th>
+                        <th>Vr. Unitario</th>
+                        <th>%Descuento</th>
+
+                    </tr>
+                    <tr>
+                        <td>**** </td>
+                        <td>****</td>
+                        <td>**** </td>
+                        <td>**** </td>
+                        <td>**** </td>
+                        <td>**** </td>
+                    </tr>
+                    <tr>
+                        <td>**** </td>
+                        <td>****</td>
+                        <td>**** </td>
+                        <td>**** </td>
+                        <td>**** </td>
+                        <td>**** </td>
+                    </tr>
+                    <tr>
+                        <td>**** </td>
+                        <td>****</td>
+                        <td>**** </td>
+                        <td>**** </td>
+                        <td>**** </td>
+                        <td>**** </td>
+                    </tr>
+                    <tr>
+                        <td>**** </td>
+                        <td>****</td>
+                        <td>**** </td>
+                        <td>**** </td>
+                        <td>**** </td>
+                        <td>**** </td>
+                    </tr>
+                    <tr>
+                        <td>**** </td>
+                        <td>****</td>
+                        <td>**** </td>
+                        <td>**** </td>
+                        <td>**** </td>
+                        <td>**** </td>
+                    </tr>
+                    <tr>
+                        <td>**** </td>
+                        <td>****</td>
+                        <td>**** </td>
+                        <td>**** </td>
+                        <td>**** </td>
+                        <td>**** </td>
+                    </tr>
+                    <tr>
+                        <td>**** </td>
+                        <td>****</td>
+                        <td>**** </td>
+                        <td>**** </td>
+                        <td>**** </td>
+                        <td>**** </td>
+                    </tr>
+                    
+                </table>
+            </div>
+
+        </section2>
+
+   
+        <br> 
+
+        <br> 
+
+        
+    <div>
+    
+        <Section3>
+            <h3>Modificar producto</h3>
+            <ul>
+            <label for="ListaEstadoProducto">
+            Estado del producto    
+                <select name="ListaEstadoProducto"> 
+                <option selected disabled="">Selecciona un estado</option>
+                <option>Disponible</option>
+                <option>No disponible</option>
+                </select>
+            </label>
+            <li>
+                <label>Descripción</label>
+                <input type="text" height="40px" />
+            </li>
+            <li>
+                <label>Vlr unitario</label>
+                <input type="number" placeholder="$" />
+
+            </li>
+            <li>
+                <label>Cantidad</label>
+                <input type="number" placeholder="" />
+
+            </li>
+            <li>
+                <label>%Descuento</label>
+                <input type="number" placeholder="" />
+
+            </li>
+            </ul>
+        <button>Guardar Cambios</button>
+<br>
+<br>
+        </section3>        
+        
+    </div>
+
+    
+
+    </main>
+
+
+
+    <footer class="footer">
+        Nombre compañía
+        Politica
+    </footer>
+
+</body>
+</html>
