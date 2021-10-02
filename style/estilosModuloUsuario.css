@@ -5,9 +5,21 @@
     margin: 5%;
     padding: 5%;
     align-self: center;
-
-
 }
+
+.logo {
+    width: 50px;
+}
+
+.tittle{
+    color:black;
+    font-size: 30px;
+    text-decoration: none;
+    position:absolute;
+    top:0.5cm;
+    left:8cm;
+}
+
 th{
     color: white;
     padding: 15px 30px;
