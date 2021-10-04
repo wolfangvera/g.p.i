@@ -6,7 +6,12 @@
     padding: 5%;
     align-self: center;
 }
-
+body{
+    padding:0px;
+    margin:0px;
+    font-family:"JetBrains Mono";
+   
+}
 .logo {
     width: 50px;
 }
@@ -18,6 +23,59 @@
     position:absolute;
     top:0.5cm;
     left:8cm;
+}
+
+main {
+    margin-bottom: 40px;
+    margin-top:80px;
+}
+
+.navbar {
+    list-style:none;
+    display:flex;
+    justify-content:space-around;
+    padding:0px;
+    margin:0.5px;
+    top:5px;
+
+    
+}
+ul {
+    list-style:none;
+}
+.ordenar_info_usuario {
+    display:flex;
+    text-align: right;
+    font-size:9.5px;
+    font-weight:bolder;
+    color:rgb(29,157,195);
+  
+}
+
+.boton {
+    border:0px;
+    font-family: "JetBrains Mono";
+    position:absolute;
+    
+}
+
+.boton:hover {
+    cursor:pointer;
+    
+}
+.boton_principal {
+    border:0px;
+    font-size:large;
+    font-family: "JetBrains Mono";
+    background-color:rgb(29,157,195);
+    color:white;
+    border-radius: 4px;
+    
+}
+
+.boton_principal:hover{
+transform: scale(1.05);
+    box-shadow:2px 2px rgb(74,190,20);
 }
 
 th{
@@ -43,6 +101,8 @@ tr:hover{
     background-color: rgba(89, 192, 89, 0.431);
     
 }
+
+
 
 select{
     font-size: medium;
@@ -78,14 +138,7 @@ header {
     margin-left: 10px;
 }
 
-footer {
-    background-color: rgb(29,157,195);
-    position: absolute;
-    z-index: 1;
-    bottom:0;
-    width:100%;
-    height:40px;
-}
+
 .botonModulo{
     text-align: center;
 }
@@ -106,5 +159,49 @@ footer {
     transform: scale(1.1);
 }
 
+a {
+    color:white;
+    text-decoration: none;
+    font-weight: bold;
+}
 
+h3{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    color: white;
+}
 
+.Redes {
+    text-align: center;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    padding-bottom:0;
+}
+
+.siguenos {
+    padding-right:5vw;
+    padding-left:5vw;
+    size:48px;
+    display:flex;
+    margin-bottom: 0;
+    
+}
+i {
+    font-size:xx-large;
+    padding: 10px;
+    color: white;
+}
+.info{
+    margin-bottom: 0;
+}
+footer {
+    background-color: rgb(29,157,195);
+    position: relative;
+    z-index: 1;
+    bottom:auto;
+    width:100%;
+    height:15vh;
+}

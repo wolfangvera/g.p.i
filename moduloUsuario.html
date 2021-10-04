@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/estilosModuloUsuario.css">
     <title>Gestión de usuarios</title>
+    <script src="https://kit.fontawesome.com/53ffee8fae.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <header>
         <ul class="header">
             <li>
-                <a href="index.html"> <img class="logo" src="./Multimedia2/logobuho.png" alt="logo corporativo" style="width:65px; margin-left: 5px">
-                    
-                
+                <a href="index.html"> <img class="logo" src="./Multimedia2/logobuho.png" alt="logo corporativo"
+                        style="width:65px; margin-left: 5px">
+
+
                 </a>
             </li>
             <li> <a class="tittle" href="index.html">
@@ -23,6 +27,63 @@
 
     </header>
     <main>
+
+        <nav>
+            <ul class="navbar">
+                <li>
+                    <form method="get" action="/Registro_productosF.html">
+                        <button href="" class="boton_principal">Registro de productos</button>
+                    </form>
+                </li>
+                <li>
+                    <form method="get" action="/GestionarProductos.html">
+                        <button class="boton_principal">Gestión de productos</button>
+                    </form>
+                </li>
+                <li>
+                    <form method="get" action="/Registro_ventas.html">
+                        <button class="boton_principal">Registro de ventas</button>
+                    </form>
+                </li>
+                <li>
+                    <form method="get" action="/Mod_listarventas.html">
+                        <button class="boton_principal">Gestión de ventas</button>
+                    </form>
+                </li>
+                <li>
+                    <form method="get" action="/moduloUsuario.html">
+                        <button class="boton_principal">Gestión de usuarios</button>
+                    </form>
+                </li>
+                <li>
+                    <section class="info_usuario">
+                        <ul class="ordenar_info_usuario">
+                            <li>
+                                <ul style="padding:0px 5px 0px 5px">
+                                    <li>
+                                        Usted ha ingresado como:<label>*Nombre usuario*</label>
+                                    </li>
+                                    <li>
+                                        Cargo: <label> *Cargo*</label>
+                                    </li>
+                                    <li>Actualizar perfil</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="./Multimedia2/avatar-perfil-png-5.png" width="50px"
+                                    style="border:1px solid black">
+
+                            </li>
+                        </ul>
+                    </section>
+                </li>
+            </ul>
+
+
+
+
+        </nav>
+
         <div class="contenedor">
             <table border="1" align="center">
                 <tr>
@@ -32,8 +93,8 @@
                     <th>Rol</th>
                 </tr>
                 <tr>
-                    <td> <input placeholder="Ej:01658" type= "text"> </td>
-                    <td><input placeholder="Ej:Pepito Perez" type= "text"> </td>
+                    <td> <input placeholder="Ej:01658" type="text"> </td>
+                    <td><input placeholder="Ej:Pepito Perez" type="text"> </td>
                     <td>
                         <select>
                             <option selected disabled="">Selecciona una opción</option>
@@ -48,7 +109,7 @@
                             <option selected disabled="">Selecciona una opción</option>
                             <option>Administrador</option>
                             <option>Vendedor</option>
-                            
+
                         </select>
                     </td>
                 </tr>
@@ -100,7 +161,7 @@
                     <td></td>
                     <td></td>
                 </tr>
-                
+
             </table>
             <div class="botonModulo">
 
@@ -109,10 +170,34 @@
         </div>
 
     </main>
-    <footer class="footer">
-        Nombre compañía
-        Politica
-    </footer>
-    
+
+    <footer >
+      
+        
+
+                <div class="row">
+                    
+
+                        <ul class="info">
+                            <li><a href="#">Acerca de nosotros</a></li>
+                            <li><a href="#">Contactanos</a></li>
+                            <small style="color:white">&copy; 2021</small>
+                        </ul>
+                   
+      
+                    <div class="Redes">
+                        <h3>Follow us</h3>
+                        <ul class="siguenos">
+                            <li><a href="#"><i class="fab fa-facebook "></i></a></li>
+                            <li><a href="#"><i class="fab fa-github "></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+        
+                        </ul>
+                    </div>
+                </div>
+        
+         </footer>
+
 </body>
+
 </html>

@@ -29,21 +29,30 @@
         <nav>
             <ul class="navbar">
                 <li>
-                    <button class="boton_principal">Registro de productos</button>
+                    <form method="get" action="/Registro_productosF.html">
+                        <button href="" class="boton_principal">Registro de productos</button>
+                    </form>
                 </li>
                 <li>
-                    <button class="boton_principal">Gestión de productos</button>
+                    <form method="get" action="/GestionarProductos.html">
+                        <button class="boton_principal">Gestión de productos</button>
+                    </form>
                 </li>
                 <li>
-                    <button class="boton_principal">Registro de ventas</button>
+                    <form method="get" action="/Registro_ventas.html">
+                        <button class="boton_principal">Registro de ventas</button>
+                    </form>
                 </li>
                 <li>
-                    <button class="boton_principal">Gestión de ventas</button>
+                    <form method="get" action="/Mod_listarventas.html">
+                        <button class="boton_principal">Gestión de ventas</button>
+                    </form>
                 </li>
                 <li>
-                    <button class="boton_principal">Gestión de usuarios</button>
+                    <form method="get" action="/moduloUsuario.html">
+                        <button class="boton_principal">Gestión de usuarios</button>
+                    </form>
                 </li>
-
                 <li>
                     <section class="info_usuario">
                         <ul class="ordenar_info_usuario">
@@ -59,7 +68,8 @@
                                 </ul>
                             </li>
                             <li>
-                                <img src="./Multimedia2/avatar-perfil-png-5.png" width="50px" style="border:1px solid black">
+                                <img src="./Multimedia2/avatar-perfil-png-5.png" width="50px"
+                                    style="border:1px solid black">
 
                             </li>
                         </ul>
@@ -119,7 +129,7 @@
                 <button class="boton bt_registro_producto">REGISTRAR PRODUCTO</button>
             </div>
             <div>
-                
+
                 <br>
                 <br>
                 <br>
@@ -194,14 +204,13 @@
                         <td>*Campo vacio*</td>
                     </tr>
                 </tbody>
-            </table>    
+            </table>
 
             <ul class="cambio_pag">
                 <li>
-                    <a href="/siguiente">
-                        <!--siguiente pagina-->
-                       Siguiente
-                    </a>
+                           <!--siguiente pagina-->
+                        Siguiente
+                  
                 </li>
                 <li>1</li>
                 <li>2</li>
@@ -209,19 +218,35 @@
                 <li>4</li>
                 <li>5</li>
                 <li>...</li>
-            </div>
-
-      
-            
+                </div>
         </section>
-
-
-
     </main>
-    <footer class="footer">
-        Nombre compañía
-        Politica
+
+
+    <footer>
+        <div class="row">
+
+
+            <ul class="info">
+                <li><a href="#">Acerca de nosotros</a></li>
+                <li><a href="#">Contactanos</a></li>
+                <small style="color:white">&copy; 2021</small>
+            </ul>
+
+
+            <div class="Redes">
+                <h3>Follow us</h3>
+                <ul class="siguenos">
+                    <li><a href="#"><i class="fab fa-facebook "></i></a></li>
+                    <li><a href="#"><i class="fab fa-github "></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+
+                </ul>
+            </div>
+        </div>
+
     </footer>
+
 </body>
 
 </html>

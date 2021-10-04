@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/style/estilos_gestionproductos.css">
     <link rel="shortcut icon" href="./Multimedia2/logobuho.png" type="image/x-icon">
     <title>Gestionar productos</title>
-    <!--<script src="https://kit.fontawesome.com/bee51370cb.js" crossorigin="anonymous"></script>--> <!-- para iconos de internet-->
+    <script src="https://kit.fontawesome.com/bee51370cb.js" crossorigin="anonymous"></script>
 </head>
 
 
@@ -30,21 +30,30 @@
         <nav>
             <ul class="navbar">
                 <li>
-                    <button class="boton_principal">Registro de productos</button>
+                    <form method="get" action="/Registro_productosF.html">
+                        <button href="" class="boton_principal">Registro de productos</button>
+                    </form>
                 </li>
                 <li>
-                    <button class="boton_principal">Gestión de productos</button>
+                    <form method="get" action="/GestionarProductos.html">
+                        <button class="boton_principal">Gestión de productos</button>
+                    </form>
                 </li>
                 <li>
-                    <button class="boton_principal">Registro de ventas</button>
+                    <form method="get" action="/Registro_ventas.html">
+                        <button class="boton_principal">Registro de ventas</button>
+                    </form>
                 </li>
                 <li>
-                    <button class="boton_principal">Gestión de ventas</button>
+                    <form method="get" action="/Mod_listarventas.html">
+                        <button class="boton_principal">Gestión de ventas</button>
+                    </form>
                 </li>
                 <li>
-                    <button class="boton_principal">Gestión de usuarios</button>
+                    <form method="get" action="/moduloUsuario.html">
+                        <button class="boton_principal">Gestión de usuarios</button>
+                    </form>
                 </li>
-
                 <li>
                     <section class="info_usuario">
                         <ul class="ordenar_info_usuario">
@@ -224,10 +233,33 @@
 
 
 
-    <footer class="footer">
-        Nombre compañía
-        Politica
-    </footer>
+    <footer >
+      
+        
+
+        <div class="row">
+            
+
+                <ul class="info">
+                    <li><a href="#">Acerca de nosotros</a></li>
+                    <li><a href="#">Contactanos</a></li>
+                    <small style="color:white">&copy; 2021</small>
+                </ul>
+           
+
+            <div class="Redes">
+                <h3>Follow us</h3>
+                <ul class="siguenos">
+                    <li><a href="#"><i class="fab fa-facebook "></i></a></li>
+                    <li><a href="#"><i class="fab fa-github "></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+
+                </ul>
+            </div>
+        </div>
+
+ </footer>
+
 
 </body>
 </html>
