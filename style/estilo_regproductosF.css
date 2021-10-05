@@ -51,7 +51,7 @@ main {
 body{
     padding:0px;
     margin:0px;
-    font-family:"JetBrains Mono",'Times New Roman', Times, serif;
+    font-family:'JetBrains Mono','Courier New', Courier, monospace;
     font-weight:bolder;
    
 }
@@ -131,9 +131,7 @@ transform: scale(1.05);
     text-align: center;   
 }
 
-form{
-     margin-left: 2vw;
-}
+
 .ingreso_producto {
     display:flex;
     justify-content:space-around;
