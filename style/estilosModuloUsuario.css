@@ -1,13 +1,17 @@
 .contenedor{
+    
+    
     background-color: rgb(223, 223, 223);
-    border:1px solid black;
-    width: auto;
+    border:0px solid black;
+    width: fit-content;
     margin-left:auto;
     margin-right: auto;
-    margin-bottom: 5vh;
+    height: max-content;
     border-radius: 20px;   
+    padding-bottom: 2vh;
+    padding-top: 5vh;
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
     
-
 
 }
 body{
@@ -60,6 +64,8 @@ ul {
     border:0px;
     font-family: "JetBrains Mono",'Times New Roman', Times, serif;
     position:absolute;
+        box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2);
+
     
 }
 
@@ -72,13 +78,14 @@ h2 {
     
 }
 .boton_principal {
-    border:1px solid;
+    border:0 solid;
     font-size:large;
     font-family: "JetBrains Mono",'Times New Roman', Times, serif;
     background-color:rgb(29,157,195);
     color:white;
     border-radius: 4px;
-    
+    box-shadow: 1px 1px 10px 0.5px rgb(74,190,20);
+    padding: 0px;
 }
 
 .boton_principal:hover{
@@ -86,27 +93,32 @@ transform: scale(1.05);
     box-shadow:2px 2px rgb(74,190,20);
 }
 
-th{
-    border: 1px solid black;
-    color: white;
-    padding: 5px 30px;
-    background-color: rgb(29, 157, 195);
-    font-size: larger;
-}
 
 table{
-    margin-top: 10vh;
+    padding-top: 15vh;
+    margin-left: 2vw;
+    margin-right:2vw;
     border-collapse: collapse;
-    border-color:1px solid black;
     text-align:center;
-    background-color: white;
+    background-color: transparent;
 
 }
-td{
-    padding: 15px 10px;
-    
-    
+
+table td,th {
+    width: 10vw;
+    text-align: center;
+    border:1px solid rgba(0, 0, 0, 0.3);
 }
+th{
+    font-size:15px;
+    color: white;
+    background-color: rgb(29, 157, 195);
+}
+
+td {
+    background-color:white;
+font-weight: normal;
+} 
 tr:hover{
     background-color: rgba(89, 192, 89, 0.431);
     
@@ -121,14 +133,13 @@ select{
     outline: none;
 }
 
-input{
-    margin: 1px;
-    padding: 1px;
-    border: 0;
-    width: 100%;
-    height: 100%;
-    font-size: medium;
-    font-family: "JetBrains Mono",'Times New Roman', Times, serif;
+input {
+    padding-top: 1vh;
+    padding-bottom: 0.5vh;
+    margin:1vw;
+    border:0px solid;
+    border-radius: 5px;
+    box-shadow: 1.5px 2px 3px 2px rgba(0, 0, 0, 0.2);
 
 }
 

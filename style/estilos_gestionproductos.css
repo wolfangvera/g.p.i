@@ -82,8 +82,10 @@ body{
 
 .boton {
     border:0px;
-    font-family:'JetBrains Mono','Courier New', Courier, monospace;
+    font-family: "JetBrains Mono",'Times New Roman', Times, serif;
     position:absolute;
+        box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2);
+
     
 }
 
@@ -92,13 +94,14 @@ body{
     
 }
 .boton_principal {
-    border:1px solid;
+    border:0 solid;
     font-size:large;
     font-family: "JetBrains Mono",'Times New Roman', Times, serif;
     background-color:rgb(29,157,195);
     color:white;
     border-radius: 4px;
-    
+    box-shadow: 1px 1px 10px 0.5px rgb(74,190,20);
+    padding: 0px;
 }
 
 .boton_principal:hover{
@@ -121,40 +124,40 @@ h2 {
 
 
 table {
-
-    margin-left: auto;
-    margin-right:auto;
-    border-collapse:collapse;   
-}
-
-th,td {
-    font-size: small;
-    width: 35vw;
-    text-align: center;
-    vertical-align: center;
-    border:1px solid black;
-    background-color:white;
+    margin-left: 2vw;
+    margin-right:2vw;
+    border-collapse:collapse;  
  
 }
 
+table td,th {
+    width: 10vw;
+    text-align: center;
+    border:1px solid rgba(0, 0, 0, 0.3);
+}
+
+td {
+    background-color:white;
+}
+
 th{
-    border: 1px solid black;
+    font-size:15px;
     color: white;
-    padding: 5px 30px;
     background-color: rgb(29, 157, 195);
-    font-size: larger;
 }
 
 
 tr:hover{
     background-color: rgba(89, 192, 89, 0.431);
-    
+
 }
+
+
 
 table td:nth-child(7) {
     width: 1mm;
    }
-
+ 
 
 .cambio_pag {
     display:flex;
@@ -171,20 +174,28 @@ a:link {
     text-decoration: none;
     font-weight: bold;
 }
+
 input {
-    border:1px solid;
+    padding-top: 1vh;
+    padding-bottom: 0.5vh;
+    margin:1vw;
+    border:0px solid;
     border-radius: 5px;
+    box-shadow: 1.5px 2px 3px 2px rgba(0, 0, 0, 0.2);
+
 }
 
 .informacion {
     background-color: rgb(223, 223, 223);
-    border:1px solid black;
+    border:0px solid black;
     width: fit-content;
     margin-left:auto;
     margin-right: auto;
-    margin-bottom: 5vh;
+    height: max-content;
     border-radius: 20px;   
-    
+    padding-bottom: 5vh;
+    padding-top: 1vh;
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -195,14 +206,14 @@ h3{
     color: black;
 }
 .busqueda_prod {
-    margin:2.5vw;
+    margin:1.5vw;
     text-align: center;
     display: flex;
     justify-content:space-around;
 }
 
 .bt_busqueda {
-    font-size:small;
+    font-size:medium;
     font-family: "JetBrains Mono",'Times New Roman', Times, serif;
     background-color:rgb(29,157,195);
     color:white;
@@ -210,6 +221,7 @@ h3{
     position:relative;
     left: auto;
     right: auto;
+    padding:0.5vw;
     
 
 }
