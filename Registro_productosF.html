@@ -82,29 +82,34 @@
 
         </nav>
 
-        <h2> Modulo Registro de Producto</h2>
+        <h2> Módulo Registro de Producto</h2>
         <section class="Cuadro_ingreso">
 
             <div class="ingreso_info">
 
                 <ul class="ingreso_producto">
                     <li>
-                        <label>ID producto</label>
-                        <input type="number">
+                        <form>
+                            <label>ID producto</label>
+                            <input type="number" required>
+                        </form>
+                        <form>
+                            <label>Descripción</label>
+                            <input type="text" required />
+                        </form>
                     </li>
                     <li>
-                        <label>Descripción</label>
-                        <input type="text" height="40px" />
-                    </li>
-                    <li>
-                        <label>Vlr unitario</label>
-                        <input type="number" placeholder="$" />
 
-                    </li>
-                    <li>
-                        <label>Cantidad</label>
-                        <input type="number" placeholder="" />
+                        <form>
+                            <label>Vlr unitario</label>
+                            <input type="number" placeholder="$" required />
 
+                        </form>
+                        <form>
+                            <label>Cantidad</label>
+                            <input type="number" placeholder="" required />
+
+                        </form>
                     </li>
                 </ul>
 
@@ -119,98 +124,93 @@
                         </select>
                     </div>
                 </div>
+                <div class="center">
+                    <button class="boton bt_registro_producto">Registrar producto</button>
+                </div>
             </div>
 
+            <hr>
 
 
+            <br>
 
+            <div class="seccion_tabla">
 
-            <div class="center">
-                <button class="boton bt_registro_producto">REGISTRAR PRODUCTO</button>
+                <table>
+                    <thead class="clase1">
+                        <th>ID Producto</th>
+                        <th>Descripcion</th>
+                        <th>Stock</th>
+                        <th>Estado</th>
+                        <th>Valor Unitario</th>
+                        <th>%Descuento</th>
+
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                        </tr>
+                        <tr>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                        </tr>
+                        <tr>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                        </tr>
+                        <tr>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                        </tr>
+                        <tr>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                        </tr>
+                        <tr>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                        </tr>
+                        <tr>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                            <td>*Campo vacio*</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div>
-
-                <br>
-                <br>
-                <br>
-                <br>
-            </div>
-
-            <table>
-                <thead class="clase1">
-                    <th>ID Producto</th>
-                    <th>Descripcion</th>
-                    <th>Stock</th>
-                    <th>Estado</th>
-                    <th>Valor Unitario</th>
-                    <th>%Descuento</th>
-
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                    </tr>
-                    <tr>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                    </tr>
-                    <tr>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                    </tr>
-                    <tr>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                    </tr>
-                    <tr>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                    </tr>
-                    <tr>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                    </tr>
-                    <tr>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                        <td>*Campo vacio*</td>
-                    </tr>
-                </tbody>
-            </table>
-
             <ul class="cambio_pag">
                 <li>
-                           <!--siguiente pagina-->
-                        Siguiente
-                  
+                    <!--siguiente pagina-->
+                    Siguiente
+
                 </li>
                 <li>1</li>
                 <li>2</li>

@@ -49,7 +49,7 @@ main {
 body{
     padding:0px;
     margin:0px;
-    font-family:"JetBrains Mono";
+    font-family:"JetBrains Mono",'Times New Roman', Times, serif;
    
 }
 
@@ -67,7 +67,7 @@ body{
 
 .boton {
     border:0px;
-    font-family: "JetBrains Mono";
+    font-family: "JetBrains Mono",'Times New Roman', Times, serif;
     position:absolute;
     
 }
@@ -77,9 +77,9 @@ body{
     
 }
 .boton_principal {
-    border:0px;
+    border:1px solid;
     font-size:large;
-    font-family: "JetBrains Mono";
+    font-family: "JetBrains Mono",'Times New Roman', Times, serif;
     background-color:rgb(29,157,195);
     color:white;
     border-radius: 4px;
@@ -137,9 +137,12 @@ transform: scale(1.05);
 .label {
     padding-left: 20px;
     font-size:15px;
-    font-weight:bolder;
-    
-   
+    font-weight:bolder; 
+}
+
+input {
+    border:1px solid;
+    border-radius: 5px;
 }
 
 h2 {
@@ -172,11 +175,10 @@ caption {
 }
 th,td {
     font-size: small;
-  width: 25%;
-   text-align: center;
-   vertical-align: center;
-   border:1px solid black;
- 
+    width: 25%;
+    text-align: center;
+    vertical-align: center;
+  
 }
 
 input {
@@ -195,7 +197,7 @@ td>input {
 
 .bt_adicion_producto {
     font-size:small;
-    font-family: "JetBrains Mono";
+    font-family: "JetBrains Mono",'Times New Roman', Times, serif;
     background-color:rgb(29,157,195);
     color:white;
     border-radius: 4px;
@@ -207,7 +209,7 @@ td>input {
 }
 .bt_registro_venta{
     font-size: medium;
-    font-family: "JetBrains Mono";
+    font-family: "JetBrains Mono",'Times New Roman', Times, serif;
     background-color: rgb(89, 192, 89);   
     color: white;
     border-radius: 15px;
@@ -223,14 +225,6 @@ td>input {
       text-align:center;
 }    
 
-    /*font-size:small;
-    font-family: "JetBrains Mono";
-    background-color:rgb(29,157,195);
-    color:white;
-    border-radius: 4px;
-    position:relative;
-    left: auto;
-    right: auto;*/
 .info_cliente {
     margin: 15px;
  

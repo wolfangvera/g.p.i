@@ -90,20 +90,21 @@
                 <div class="ingreso_info">
 
                     <div class="info_venta">
-                        <div class="label">
+                        <form class="label">
                             <label>ID VENTA</label>
-                            <input type="number">
-                        </div>
-                        <div class="label">
+                            <input type="number" required>
+                        </form>
+                        <form class="label">
                             <label>VALOR TOTAL DE VENTA</label>
-                            <input type="number" placeholder="$" />
-                        </div>
-                        <div class="label">
+                            <input type="number" placeholder="$" required />
+                        </form>
+                        <form class="label">
                             <label>FECHA</label>
-                            <input type="date" style="width:169.9764px" />
+                            <input type="date" style="width:169.9764px" required />
 
-                        </div>
+                        </form>
                     </div>
+                    <hr>
                     <div class="seccion_tabla">
                         <table class="tabla_registro">
                             <caption>Registro de productos</caption>
@@ -122,7 +123,7 @@
                             <button class="boton bt_adicion_producto"> Adicionar producto</button>
                         </div>
                     </div>
-
+                    <hr>
                     <div class="info_cliente">
                         <table class="datos_cliente">
                             <caption>Datos del Cliente</caption>
@@ -132,18 +133,19 @@
 
                             </thead>
                             <tbody>
-                                <td class="sinborde"><input type="text"> </td>
-                                <td class="sinborde"><input type="text"> </td>
+                                <td ><input type="text"> </td>
+                                <td ><input type="text"> </td>
 
                             </tbody>
                         </table>
 
                     </div>
-
+<hr>
 
                     <div class="info_vendedor">
                         <div> Vendedor
                             <select class="selector_vendedor">
+                                <--Aca se inserta la base de datos de vendedores-->
                                 <option>seleccionar ..</option>
                                 <option> Vendedor 1</option>
                                 <option> Vendedor 1</option>

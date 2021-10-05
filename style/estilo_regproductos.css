@@ -83,7 +83,7 @@ h2 {
     
 }
 .boton_principal {
-    border:0px;
+    border:1px solid;
     font-size:large;
     font-family: "JetBrains Mono";
     background-color:rgb(29,157,195);

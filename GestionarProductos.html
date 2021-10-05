@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -69,7 +70,8 @@
                                 </ul>
                             </li>
                             <li>
-                                <img src="./Multimedia2/avatar-perfil-png-5.png" width="50px" style="border:1px solid black">
+                                <img src="./Multimedia2/avatar-perfil-png-5.png" width="50px"
+                                    style="border:1px solid black">
 
                             </li>
                         </ul>
@@ -81,193 +83,205 @@
 
 
         </nav>
-        
-
-        <section1>
- <h1>Gestionar Productos</h1>
-        <h3>Busqueda de productos</h3>
-            <label for="Busquedaproductos">
-            Ingrese el ID            
-                
-                <input type="search" name="Busquedaproductos" id="">
-                <button>Buscar</button>
-            </label>   
-            <label for="Busquedaproductos">
-                Ingrese Descripcion del producto         
-                    
-                    <input type="search" name="Busquedaproductos" id="">
-                    <button>Buscar</button>
-            </label>   
-           
-
-        </section1>
 
 
-        <section2>
 
-        <h3>Lista de productos</h3>
-            <!--Tabla de productos registrados para ver y editar -- Gestión - HU's 13 14 16 y 17  -->
 
-            <div class="contenedor">
-                <table border="1" align="center">
-                    <tr>
-                        <th>Identificador del producto</th>
-                        <th>Descripción del producto</th>
-                        <th>Estado</th>
-                        <th>Stock</th>
-                        <th>Vr. Unitario</th>
-                        <th>%Descuento</th>
-                        <th>Editar/ Guardar</th>
+        <h2>Módulo Gestión de Productos</h2>
+        <div class="informacion">
+            <section1>
+               
+                <h3>Busqueda de productos</h3>
+                <div class="busqueda_prod">
+                    <form>
+                        <label for="Busquedaproductos"> ID </label>
+                        <input type="text" name="Busquedaproductos" id="">
+                    </form>
 
-                    </tr>
-                    <tr>
-                        <td>**** </td>
-                        <td>****</td>
-                        <td>**** </td>
-                        <td>**** </td>
-                        <td>**** </td>
-                        <td>**** </td>
-                        <td>
-                            <input type="button" value="Editar">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>**** </td>
-                        <td>****</td>
-                        <td>**** </td>
-                        <td>**** </td>
-                        <td>**** </td>
-                        <td>**** </td>
-                        <td>
-                            <input type="button" value="Editar">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>**** </td>
-                        <td>****</td>
-                        <td>**** </td>
-                        <td>**** </td>
-                        <td>**** </td>
-                        <td>**** </td>
-                        <td>
-                            <input type="button" value="Editar">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>**** </td>
-                        <td>****</td>
-                        <td>**** </td>
-                        <td>**** </td>
-                        <td>**** </td>
-                        <td>**** </td>
-                        <td>
-                            <input type="button" value="Editar">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>**** </td>
-                        <td>****</td>
-                        <td>**** </td>
-                        <td>**** </td>
-                        <td>**** </td>
-                        <td>**** </td>
-                        <td>
-                            <input type="button" value="Editar">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>**** </td>
-                        <td>****</td>
-                        <td>**** </td>
-                        <td>**** </td>
-                        <td>**** </td>
-                        <td>**** </td>
-                        <td>
-                            <input type="button" value="Editar">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>**** </td>
-                        <td>****</td>
-                        <td>**** </td>
-                        <td>**** </td>
-                        <td>**** </td>
-                        <td>**** </td>
-                        <td>
-                            <input type="button" value="Editar">
-                        </td>
-                    </tr>
-                    
-                </table>
-            </div>
+                    <form>
 
-        </section2>
+                        <label for="Busquedaproductos">
+                            Descripcion
+                        </label>
 
-   
-        <br> 
+                        <input type="text" name="Busquedaproductos" id="">
 
-        <br> 
+                    </form>
 
-        
-    <div>
-    
-        <Section3>
-            <h3>Modificar producto</h3>
-            <ul>
-            <label for="ListaEstadoProducto">
-            Estado del producto    
-                <select name="ListaEstadoProducto"> 
-                <option selected disabled="">Selecciona un estado</option>
-                <option>Disponible</option>
-                <option>No disponible</option>
-                </select>
-            </label>
-            <li>
-                <label>Descripción</label>
-                <input type="text" height="40px" />
-            </li>
-            <li>
-                <label>Vlr unitario</label>
-                <input type="number" placeholder="$" />
+                </div>
+                <div style="text-align: center;">
 
-            </li>
-            <li>
-                <label>Cantidad</label>
-                <input type="number" placeholder="" />
 
-            </li>
-            <li>
-                <label>%Descuento</label>
-                <input type="number" placeholder="" />
+                    <button class="boton bt_busqueda"> Buscar </button>
 
-            </li>
-            </ul>
-        <button>Guardar Cambios</button>
-<br>
-<br>
-        </section3>        
-        
-    </div>
+                </div>
 
-    
+            </section1>
+
+            <hr style="margin-top: 3vh">
+            <section2>
+
+                <h3>Lista de productos</h3>
+                <!--Tabla de productos registrados para ver y editar -- Gestión - HU's 13 14 16 y 17  -->
+
+                <div class="contenedor">
+                    <table >
+                        <tr>
+                            <th>Identificador del producto</th>
+                            <th>Descripción del producto</th>
+                            <th>Estado</th>
+                            <th>Stock</th>
+                            <th>Vr. Unitario</th>
+                            <th>%Descuento</th>
+                            <th>Editar/ Guardar</th>
+
+                        </tr>
+                        <tr>
+                            <td>**** </td>
+                            <td>****</td>
+                            <td>**** </td>
+                            <td>**** </td>
+                            <td>**** </td>
+                            <td>**** </td>
+                            <td>
+                                <input type="button" value="Editar">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>**** </td>
+                            <td>****</td>
+                            <td>**** </td>
+                            <td>**** </td>
+                            <td>**** </td>
+                            <td>**** </td>
+                            <td>
+                                <input type="button" value="Editar">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>**** </td>
+                            <td>****</td>
+                            <td>**** </td>
+                            <td>**** </td>
+                            <td>**** </td>
+                            <td>**** </td>
+                            <td>
+                                <input type="button" value="Editar">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>**** </td>
+                            <td>****</td>
+                            <td>**** </td>
+                            <td>**** </td>
+                            <td>**** </td>
+                            <td>**** </td>
+                            <td>
+                                <input type="button" value="Editar">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>**** </td>
+                            <td>****</td>
+                            <td>**** </td>
+                            <td>**** </td>
+                            <td>**** </td>
+                            <td>**** </td>
+                            <td>
+                                <input type="button" value="Editar">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>**** </td>
+                            <td>****</td>
+                            <td>**** </td>
+                            <td>**** </td>
+                            <td>**** </td>
+                            <td>**** </td>
+                            <td>
+                                <input type="button" value="Editar">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>**** </td>
+                            <td>****</td>
+                            <td>**** </td>
+                            <td>**** </td>
+                            <td>**** </td>
+                            <td>**** </td>
+                            <td>
+                                <input type="button" value="Editar">
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+
+            </section2>
+
+
+        </div>
+
+        <hr>
+        <div>
+
+            <Section3>
+                <h3>Modificar producto</h3>
+                <ul>
+                    <label for="ListaEstadoProducto">
+                        Estado del producto
+                        <select name="ListaEstadoProducto">
+                            <option selected disabled="">Selecciona un estado</option>
+                            <option>Disponible</option>
+                            <option>No disponible</option>
+                        </select>
+                    </label>
+                    <li>
+                        <label>Descripción</label>
+                        <input type="text" height="40px" />
+                    </li>
+                    <li>
+                        <label>Vlr unitario</label>
+                        <input type="number" placeholder="$" />
+
+                    </li>
+                    <li>
+                        <label>Cantidad</label>
+                        <input type="number" placeholder="" />
+
+                    </li>
+                    <li>
+                        <label>%Descuento</label>
+                        <input type="number" placeholder="" />
+
+                    </li>
+                </ul>
+                <button>Guardar Cambios</button>
+                <br>
+                <br>
+            </section3>
+
+        </div>
+
+
 
     </main>
 
 
 
-    <footer >
-      
-        
+    <footer>
+
+
 
         <div class="row">
-            
 
-                <ul class="info">
-                    <li><a href="#">Acerca de nosotros</a></li>
-                    <li><a href="#">Contactanos</a></li>
-                    <small style="color:white">&copy; 2021</small>
-                </ul>
-           
+
+            <ul class="info">
+                <li><a href="#">Acerca de nosotros</a></li>
+                <li><a href="#">Contactanos</a></li>
+                <small style="color:white">&copy; 2021</small>
+            </ul>
+
 
             <div class="Redes">
                 <h3>Follow us</h3>
@@ -280,8 +294,9 @@
             </div>
         </div>
 
- </footer>
+    </footer>
 
 
 </body>
+
 </html>

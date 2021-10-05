@@ -59,7 +59,7 @@ main {
 body{
     padding:0px;
     margin:0px;
-    font-family:"JetBrains Mono";
+    font-family:"JetBrains Mono",'Times New Roman', Times, serif;
    
 }
 
@@ -82,7 +82,7 @@ body{
 
 .boton {
     border:0px;
-    font-family: "JetBrains Mono";
+    font-family: "JetBrains Mono",'Times New Roman', Times, serif;
     position:absolute;
     
 }
@@ -92,9 +92,9 @@ body{
     
 }
 .boton_principal {
-    border:0px;
+    border:1px solid;
     font-size:large;
-    font-family: "JetBrains Mono";
+    font-family: "JetBrains Mono",'Times New Roman', Times, serif;
     background-color:rgb(29,157,195);
     color:white;
     border-radius: 4px;
@@ -125,10 +125,46 @@ footer {
     height:40px;
 }
 
+select {
+    border-radius: 9px;
+}
 
+.bt_busqueda {
+    font-size:small;
+    font-family: "JetBrains Mono",'Times New Roman', Times, serif;
+    background-color:rgb(29,157,195);
+    color:white;
+    border-radius: 4px;
+    position:relative;
+    left: auto;
+    right: auto;
+    
 
+}
+
+.cuadro_info {
+    background-color: rgb(223, 223, 223);
+    border:1px solid black;
+    width: auto;
+    margin-left:auto;
+    margin-right: auto;
+    margin-bottom: 5vh;
+    border-radius: 20px;   
+    
+
+}
+
+input {
+    border:1px solid;
+    border-radius: 5px;
+}
+
+label{
+margin-left:5px;
+
+}
 table {
-    width:80%;
+    width:fit-content;
     margin-left: auto;
     margin-right:auto;
     border-collapse:collapse;
@@ -137,15 +173,25 @@ table {
     text-align:center; 
 }
 
-td {
-    font-size:medium;
+
+th,td {
+    font-size: small;
     width: 35vw;
     text-align: center;
     vertical-align: center;
     border:1px solid black;
-    padding: 10px 10px;
-
+    background-color:white;
+ 
 }
+
+th{
+    border: 1px solid black;
+    color: white;
+    padding: 5px 30px;
+    background-color: rgb(29, 157, 195);
+    font-size: larger;
+}
+
 
 .cambio_pag {
     display:flex;

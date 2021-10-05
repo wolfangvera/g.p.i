@@ -51,7 +51,7 @@ main {
 body{
     padding:0px;
     margin:0px;
-    font-family:"JetBrains Mono";
+    font-family:"JetBrains Mono",'Times New Roman', Times, serif;
     font-weight:bolder;
    
 }
@@ -74,7 +74,7 @@ h2 {
 
 .boton {
     border:0px;
-    font-family: "JetBrains Mono";
+    font-family: "JetBrains Mono",'Times New Roman', Times, serif;
     position:absolute;
     
 }
@@ -84,9 +84,9 @@ h2 {
     
 }
 .boton_principal {
-    border:0px;
+    border:1px solid;
     font-size:large;
-    font-family: "JetBrains Mono";
+    font-family: "JetBrains Mono",'Times New Roman', Times, serif;
     background-color:rgb(29,157,195);
     color:white;
     border-radius: 4px;
@@ -118,21 +118,26 @@ transform: scale(1.05);
 .Cuadro_ingreso {
     background-color: rgb(223, 223, 223);
     border:1px solid black;
-    width: 50vw;
     margin-left:auto;
     margin-right: auto;
     margin-bottom: 100px;
     border-radius: 20px;
+    width:fit-content;
     
     
 }
 
 .ingreso_info {
-    align-items: center;   
+    text-align: center;   
 }
 
+form{
+     margin-left: 2vw;
+}
 .ingreso_producto {
     display:flex;
+    justify-content:space-around;
+    text-align: right;
     
 }
 
@@ -143,10 +148,18 @@ transform: scale(1.05);
 }
 
 table {
-    width:80%;
+    width:auto;
     margin-left: auto;
     margin-right:auto;
-    border-collapse:collapse;   
+    border-collapse:collapse; 
+  
+}
+
+.seccion_tabla {
+    margin-top: 0.2cm;
+    border-top: 0px solid black;
+    text-align: center;   
+    font-size:medium;
 }
 
 th,td {
@@ -156,6 +169,7 @@ th,td {
     text-align: center;
     vertical-align: center;
     border:1px solid black;
+   
 }
 
 th{
@@ -168,7 +182,7 @@ th{
 
 tr:hover{
     background-color: rgba(89, 192, 89, 0.431);
-    
+   
 }
 
 table td:nth-child(7) {
@@ -182,19 +196,29 @@ table td:nth-child(7) {
 
 }
 
-input {
-    text-align: center;
+.center {
+    align-items:center;
 }
 
+
+
 .bt_registro_producto{
-    font-size:15px;
-    font-family: "JetBrains Mono";
+    font-size:small;
+    font-family: "JetBrains Mono",'Times New Roman', Times, serif;
     background-color:rgb(29,157,195);
     color:white;
     border-radius: 4px;
-    position: absolute;
-    width:145px;
-    left: 44%;   
+    position: relative;
+    left:auto;
+    right:auto;
+ 
+}
+
+input {
+    text-align: center;
+    border:1px solid;
+    border-radius: 5px;
+    
 }
 
 .option {
