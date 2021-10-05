@@ -79,8 +79,9 @@ transform: scale(1.05);
 }
 
 th{
+    border: 1px solid black;
     color: white;
-    padding: 15px 30px;
+    padding: 5px 30px;
     background-color: rgb(29, 157, 195);
     font-size: larger;
 }

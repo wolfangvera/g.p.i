@@ -68,7 +68,8 @@
                                 </ul>
                             </li>
                             <li>
-                                <img src="./Multimedia2/avatar-perfil-png-5.png" width="50px" style="border:1px solid black">
+                                <img src="./Multimedia2/avatar-perfil-png-5.png" width="50px"
+                                    style="border:1px solid black">
 
                             </li>
                         </ul>
@@ -81,108 +82,99 @@
 
         </nav>
 
+        <div>
+            <h2> Modulo Registro de Ventas</h2>
 
-        <h2> Modulo Registro de Ventas</h2>
+            <div class="Cuadro_ingreso">
 
-        <section class="Cuadro_ingreso">
+                <div class="ingreso_info">
 
-            <div class="ingreso_info">
+                    <div class="info_venta">
+                        <div class="label">
+                            <label>ID VENTA</label>
+                            <input type="number">
+                        </div>
+                        <div class="label">
+                            <label>VALOR TOTAL DE VENTA</label>
+                            <input type="number" placeholder="$" />
+                        </div>
+                        <div class="label">
+                            <label>FECHA</label>
+                            <input type="date" style="width:169.9764px" />
 
-                <div class="info_venta">
-                    <div class="label">
-                        <label>ID VENTA</label>
-                        <input type="number">
+                        </div>
                     </div>
-                    <div class="label">
-                        <label>VALOR TOTAL DE VENTA</label>
-                        <input type="number" placeholder="$" />
+                    <div class="seccion_tabla">
+                        <table class="tabla_registro">
+                            <caption>Registro de productos</caption>
+                            <thead>
+                                <th>ID Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio unitario</th>
+                            </thead>
+                            <tbody>
+                                <td class="sinborde"><input type="text"> </td>
+                                <td class="sinborde"><input type="text"> </td>
+                                <td class="sinborde"><input type="text"> </td>
+                            </tbody>
+                        </table>
+                        <div>
+                            <button class="boton bt_adicion_producto"> Adicionar producto</button>
+                        </div>
                     </div>
-                    <div class="label">
-                        <label>FECHA</label>
-                        <input type="date" style="width:169.9764px" />
 
+                    <div class="info_cliente">
+                        <table class="datos_cliente">
+                            <caption>Datos del Cliente</caption>
+                            <thead>
+                                <th>Identificación</th>
+                                <th>Nombre</th>
+
+                            </thead>
+                            <tbody>
+                                <td class="sinborde"><input type="text"> </td>
+                                <td class="sinborde"><input type="text"> </td>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+
+                    <div class="info_vendedor">
+                        <div> Vendedor
+                            <select class="selector_vendedor">
+                                <option>seleccionar ..</option>
+                                <option> Vendedor 1</option>
+                                <option> Vendedor 1</option>
+                                <option> Vendedor 1</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-                <div class="seccion_tabla">
-                    <table class="tabla_registro">
-                        <caption>Registro de productos</caption>
-                        <thead>
-                            <th>ID Producto</th>
-                            <th>Cantidad</th>
-                            <th>Precio unitario</th>
-                        </thead>
-                        <tbody>
-                            <td class="sinborde"><input type="text"> </td>
-                            <td class="sinborde"><input type="text"> </td>
-                            <td class="sinborde"><input type="text"> </td>
-                        </tbody>
-                    </table>
-                    <div>
-                        <button class="boton bt_adicion_producto"> Adicionar producto</button>
-                    </div>
-                </div>
-
-                <div class="info_cliente">
-                    <table class="datos_cliente">
-                        <caption>Datos del Cliente</caption>
-                        <thead>
-                            <th>Identificación</th>
-                            <th>Nombre</th>
-
-                        </thead>
-                        <tbody>
-                            <td class="sinborde"><input type="text"> </td>
-                            <td class="sinborde"><input type="text"> </td>
-
-                        </tbody>
-                    </table>
-
-                </div>
-
-           
-                <div class="info_vendedor">
-                    <div> Vendedor 
-                        <select class="selector_vendedor"> 
-                            <option>seleccionar ..</option>
-                            <option> Vendedor 1</option>
-                            <option> Vendedor 1</option>
-                            <option> Vendedor 1</option>
-                        </select>
-                    </div>
-                </div>
-
-
-
-
-
-                <div class="center">
-                    <button class="boton bt_registro_venta">REGISTRAR VENTA</button>
-                </div>
-
-
-
-
-
             </div>
+            <div class="bt_centrado">
+                <button class="boton bt_registro_venta">Registrar venta</button>
+            </div>
+        </div>
 
-        </section>
 
 
 
     </main>
-    <footer >
-      
-        
+    <footer>
+
+
 
         <div class="row">
-            
 
-                <ul class="info">
-                    <li><a href="#">Acerca de nosotros</a></li>
-                    <li><a href="#">Contactanos</a></li>
-                    <small style="color:white">&copy; 2021</small>
-                </ul>
-           
+
+            <ul class="info">
+                <li><a href="#">Acerca de nosotros</a></li>
+                <li><a href="#">Contactanos</a></li>
+                <small style="color:white">&copy; 2021</small>
+            </ul>
+
 
             <div class="Redes">
                 <h3>Follow us</h3>
@@ -195,7 +187,7 @@
             </div>
         </div>
 
- </footer>
+    </footer>
 
 </body>
 

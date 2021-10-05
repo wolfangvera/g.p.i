@@ -136,6 +136,25 @@ th,td {
  
 }
 
+th{
+    border: 1px solid black;
+    color: white;
+    padding: 5px 30px;
+    background-color: rgb(29, 157, 195);
+    font-size: larger;
+}
+
+
+tr:hover{
+    background-color: rgba(89, 192, 89, 0.431);
+    
+}
+
+table td:nth-child(7) {
+    width: 1mm;
+   }
+
+
 .cambio_pag {
     display:flex;
     justify-content: center;
