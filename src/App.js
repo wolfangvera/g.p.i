@@ -11,6 +11,11 @@ import PublicLayout from './layouts/PublicLayout.js';
 import InicioSesion from './pages/InicioSesion.js';
 import Registro from './pages/Registro.js';
 import Index from './pages/Index.js';
+import RegistroVenta from './pages/RegistroVenta.js';
+import GestionarProducto from './pages/GestionarProducto';
+import ModListarVentas from './pages/ModListarVentas';
+import ModuloUsuario from './pages/ModuloUsuario';
+import RegistroProductoF from './pages/RegistroProductoF';
 
 function App() {
   return (
@@ -28,10 +33,41 @@ function App() {
             </Switch>
           </AouthLayout>
         </Route>
+
         {/* <Route>
           <PrivateLayout>
           </PrivateLayout>
         </Route> */}
+        <Router>
+          <Switch>
+            <Route path={['/RegistroVenta', '/RegistroProductoF','/GestionarProducto','/ModListarVentas','/ModuloUsuario']}>
+              <PrivateLayout>
+                <Switch>
+                  <Route path='/RegistroVenta'>
+                    <RegistroVenta />
+                  </Route>
+                  <Route path='/RegistroProductoF'>
+                    <RegistroProductoF />
+                  </Route>
+                  <Route path='/ModListarVentas'>
+                    <ModListarVentas/>
+                  </Route>
+                  <Route path='/GestionarProducto'>
+                    <GestionarProducto />
+                  </Route>
+                  <Route path='/ModuloUsuario'>
+                    <ModuloUsuario />
+                  </Route>
+                </Switch>
+              </PrivateLayout>
+            </Route>
+          </Switch>
+
+
+        </Router>
+
+
+
         <Route path={['/']}>
           <PublicLayout>
             <Switch>

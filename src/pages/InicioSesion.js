@@ -25,7 +25,7 @@ const InicioSesion = () => {
                     </div>
                     <div className="input">
                         <i class="fas fa-unlock pad"></i>
-                        <input type="password" placeholder="Contraseña..." id="password" className="eliminar" required />
+                        <input type="password" placeholder="Contraseña..." id="password" required />
                     </div>
                     <input type="submit" value="¡Ingresar ahora!" onclick="Funcion()" className="boton" />
                     <div>

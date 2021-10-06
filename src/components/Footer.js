@@ -18,9 +18,9 @@ const Footer = () => {
                 <div className="Redes">
                     <h3>Follow us</h3>
                     <ul className="siguenos">
-                        <li  ><a href="#"><i class="fab fa-facebook "></i></a></li>
-                        <li  ><a href="#"><i class="fab fa-github "></i></a></li>
-                        <li  ><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                        <li  ><Link href="https://www.facebook.com"><i class="fab fa-facebook "></i></Link></li>
+                        <li  ><Link to="https://github.com/Santiago9j/ProyectoMinTIC"><i class="fab fa-github "></i></Link></li>
+                        <li  ><Link to="https://www.linkedin.com"><i class="fab fa-linkedin"></i></Link></li>
 
                     </ul> 
                 </div>

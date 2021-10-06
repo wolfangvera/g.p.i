@@ -1,0 +1,17 @@
+
+.ordenar_info_usuario {
+    list-style-type: none;
+    display: flex;
+    text-align: right;
+    font-size:9.5px;
+    font-weight:bolder;
+    color:rgb(29,157,195);
+    float:right;
+    right:0;
+
+}
+
+.ordenar_info_usuario ul {
+    list-style-type: none;
+}
+
