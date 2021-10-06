@@ -54,6 +54,8 @@
     background-size: cover; 
     background-attachment: fixed;
     background-position: center;
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+    
 }
 .headIndex{
     padding: 0;

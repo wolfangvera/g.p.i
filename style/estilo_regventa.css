@@ -1,7 +1,4 @@
-html {
-    min-height: 100%;
-    position: relative;
-}
+
 a:link {
     color:black;
     text-decoration:none;
@@ -12,7 +9,7 @@ a:visited {
     text-decoration:none;
 }
 
-header {
+.header {
     background-color:rgb(74, 190, 20);
     font-weight:bolder;
     position:absolute;
@@ -21,7 +18,7 @@ header {
     width: 100%;
     height: 70px;
 }
-.header {
+.lista_header {
     display:flex;
     margin:0px;
     padding:5px;
@@ -68,14 +65,14 @@ body{
     border:0px;
     font-family: "JetBrains Mono",'Times New Roman', Times, serif;
     position:absolute;
-        box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2);
 
     
 }
 
 .boton:hover {
     cursor:pointer;
-    
+    box-shadow: 2px 2px 10px 4px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
 }
 
 .boton_principal {
@@ -85,17 +82,16 @@ body{
     background-color:rgb(29,157,195);
     color:white;
     border-radius: 4px;
-    box-shadow: 1px 1px 10px 0.5px rgb(74,190,20);
     padding: 0px;
 }
 
 .boton_principal:hover{
 transform: scale(1.05);
-    box-shadow:2px 2px rgb(74,190,20);
+box-shadow: 1px 2px 10px 1px rgba(74,190,20);
 }
 
 
-.navbar li a {
+.navbar .li a {
     text-decoration: none;
     color:white;
     background-color:black;
@@ -140,23 +136,23 @@ transform: scale(1.05);
    padding-top: 40px;
 }
 
-.label {
+.form {
     padding-left: 20px;
     font-size:15px;
     font-weight:bolder; 
 }
 
-input {
+.input {
     padding-top: 1vh;
     padding-bottom: 0.5vh;
     margin:1vw;
     border:0px solid;
     border-radius: 5px;
     box-shadow: 1.5px 2px 3px 2px rgba(0, 0, 0, 0.2);
-
+        text-align: center;
 }
 
-h2 {
+.Titulo_RegVentas {
     text-align: center;
 } 
 
@@ -173,7 +169,7 @@ h2 {
     text-align: center;   
     font-size:medium;
 }
-table {
+.table {
     width:100%;
     border-collapse:collapse;   
 }
@@ -181,7 +177,7 @@ table {
 caption {
     font-weight:bolder;
 }
-th,td {
+.th,.td {
     font-size: small; 
     text-align: center;
     vertical-align: center;
@@ -189,13 +185,11 @@ th,td {
   
 }
 
-input {
-    text-align: center;
-}
 
 
 
-td>input {
+
+.td>.input {
     
     align-items:  center;
 }

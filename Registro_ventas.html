@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/style/estilo_regventa.css">
+    <li class="li" nk rel="stylesheet" type="text/css" href="/style/estilo_regventa.css">
     <title>Registro de ventas</title>
-    <link rel="shortcut icon" href="/Multimedia2/logobuho_white.png" type="image/x-icon">
+    <li class="li" nk rel="shortcut icon" href="/src/media/logobuho.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/53ffee8fae.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header>
-        <ul class="header">
-            <li>
-                <a href="index.html"> <img class="logo" src="./Multimedia2/logobuho.png" alt="logo corporativo" />
+    <header class="header">
+        <ul class="lista_header">
+            <li class="li" >
+                <a href="index.html"> <img class="logo" src="/src/media/logobuho.png" alt="logo corporativo" />
                 </a>
             </li>
-            <li> <a class="tittle" href="index.html">
+            <li class="li" > <a class="tittle" href="index.html">
                     GENIUS -SOFTWARE WORLD
                 </a></li>
         </ul>
@@ -28,46 +28,46 @@
     <main>
         <nav>
             <ul class="navbar">
-                <li>
+                <li class="li" >
                     <form method="get" action="/Registro_productosF.html">
                         <button href="" class="boton_principal">Registro de productos</button>
                     </form>
                 </li>
-                <li>
+                <li class="li" >
                     <form method="get" action="/GestionarProductos.html">
                         <button class="boton_principal">Gestión de productos</button>
                     </form>
                 </li>
-                <li>
+                <li class="li" >
                     <form method="get" action="/Registro_ventas.html">
                         <button class="boton_principal">Registro de ventas</button>
                     </form>
                 </li>
-                <li>
+                <li class="li" >
                     <form method="get" action="/Mod_listarventas.html">
                         <button class="boton_principal">Gestión de ventas</button>
                     </form>
                 </li>
-                <li>
+                <li class="li" >
                     <form method="get" action="/moduloUsuario.html">
                         <button class="boton_principal">Gestión de usuarios</button>
                     </form>
                 </li>
-                <li>
+                <li class="li" >
                     <section class="info_usuario">
                         <ul class="ordenar_info_usuario">
-                            <li>
+                            <li class="li" >
                                 <ul style="padding:0px 5px 0px 5px">
-                                    <li>
+                                    <li class="li" >
                                         Usted ha ingresado como:<label>*Nombre usuario*</label>
                                     </li>
-                                    <li>
+                                    <li class="li" >
                                         Cargo: <label> *Cargo*</label>
                                     </li>
-                                    <li>Actualizar perfil</li>
+                                    <li class="li" >Actualizar perfil</li>
                                 </ul>
                             </li>
-                            <li>
+                            <li class="li" >
                                 <img src="./Multimedia2/avatar-perfil-png-5.png" width="50px"
                                     style="border:1px solid black">
 
@@ -82,41 +82,41 @@
 
         </nav>
 
-        <div>
-            <h2> Modulo Registro de Ventas</h2>
+        <div class="Contenedor">
+            <h2 class="Titulo_RegVentas"> Modulo Registro de Ventas</h2>
 
             <div class="Cuadro_ingreso">
 
                 <div class="ingreso_info">
 
                     <div class="info_venta">
-                        <form class="label">
-                            <label>ID VENTA</label>
-                            <input type="number" required>
+                        <form class="form">
+                            <label class="label">ID VENTA</label>
+                            <input class="input" class="input" type="number" required>
                         </form>
-                        <form class="label">
-                            <label>VALOR TOTAL DE VENTA</label>
-                            <input type="number" placeholder="$" required />
+                        <form class="form">
+                            <label class="label">VALOR TOTAL DE VENTA</label>
+                            <input class="input" type="number" placeholder="$" required />
                         </form>
-                        <form class="label">
-                            <label>FECHA</label>
-                            <input type="date" style="width:169.9764px" required />
+                        <form class="form">
+                            <label class="label">FECHA</label>
+                            <input class="input" type="date" style="width:169.9764px" required />
 
                         </form>
                     </div>
                     <hr>
                     <div class="seccion_tabla">
                         <table class="tabla_registro">
-                            <caption>Registro de productos</caption>
-                            <thead>
-                                <th>ID Producto</th>
-                                <th>Cantidad</th>
-                                <th>Precio unitario</th>
+                            <caption class="Titulo_tabla">Registro de productos</caption>
+                            <thead class="thead">
+                                <th class="th">ID Producto</th>
+                                <th class="th">Cantidad</th>
+                                <th class="th">Precio unitario</th>
                             </thead>
                             <tbody>
-                                <td class="sinborde"><input type="text"> </td>
-                                <td class="sinborde"><input type="text"> </td>
-                                <td class="sinborde"><input type="text"> </td>
+                                <td class="td"><input class="input" type="text"> </td>
+                                <td class="td"><input class="input" type="text"> </td>
+                                <td class="td"><input class="input" type="text"> </td>
                             </tbody>
                         </table>
                         <div>
@@ -125,31 +125,31 @@
                     </div>
                     <hr>
                     <div class="info_cliente">
-                        <table class="datos_cliente">
-                            <caption>Datos del Cliente</caption>
-                            <thead>
-                                <th>Identificación</th>
-                                <th>Nombre</th>
+                        <table class="table">
+                            <caption class="caption">Datos del Cliente</caption>
+                            <thead class="thead">
+                                <th class="th">Identificación</th>
+                                <th class="th">Nombre</th>
 
                             </thead>
                             <tbody>
-                                <td ><input type="text"> </td>
-                                <td ><input type="text"> </td>
+                                <td class="td"><input class="input" type="text"> </td>
+                                <td class="td"><input class="input" type="text"> </td>
 
                             </tbody>
                         </table>
 
                     </div>
-<hr>
+                    <hr>
 
                     <div class="info_vendedor">
                         <div> Vendedor
                             <select class="selector_vendedor">
                                 <--Aca se inserta la base de datos de vendedores-->
-                                <option>seleccionar ..</option>
-                                <option> Vendedor 1</option>
-                                <option> Vendedor 1</option>
-                                <option> Vendedor 1</option>
+                                    <option>seleccionar ..</option>
+                                    <option> Vendedor 1</option>
+                                    <option> Vendedor 1</option>
+                                    <option> Vendedor 1</option>
                             </select>
                         </div>
                     </div>
@@ -172,8 +172,8 @@
 
 
             <ul class="info">
-                <li><a href="#">Acerca de nosotros</a></li>
-                <li><a href="#">Contactanos</a></li>
+                <li class="li"  class="li" ><a href="#">Acerca de nosotros</a></li>
+                <li class="li"  class="li" ><a href="#">Contactanos</a></li>
                 <small style="color:white">&copy; 2021</small>
             </ul>
 
@@ -181,9 +181,9 @@
             <div class="Redes">
                 <h3>Follow us</h3>
                 <ul class="siguenos">
-                    <li><a href="#"><i class="fab fa-facebook "></i></a></li>
-                    <li><a href="#"><i class="fab fa-github "></i></a></li>
-                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                    <li class="li" ><a href="#"><i class="fab fa-facebook "></i></a></li>
+                    <li class="li" ><a href="#"><i class="fab fa-github "></i></a></li>
+                    <li class="li" ><a href="#"><i class="fab fa-linkedin"></i></a></li>
 
                 </ul>
             </div>

@@ -1,0 +1,34 @@
+.footer {
+    background-color: rgb(29,157,195);
+    position: relative;
+    z-index: 1;
+    bottom:auto;
+    width:100%;
+    height:15vh;
+}
+.info{
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.Redes {
+    color:white;
+    align-items: center;
+    text-align: center;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    padding-bottom:0;
+}
+
+.siguenos {
+    list-style-type:none;
+    padding-right:5vw;
+    padding-left:5vw;
+    size:48px;
+    display:flex;
+    margin-bottom: 0;
+    
+}
