@@ -1,0 +1,124 @@
+.mainInicioSesion{
+    background-image: url(../media/fondoPaginaLogin.jpg);
+    background-size:100% ;
+    display:flex;
+
+}
+
+.sectionInicioSesion{
+    width: 50%;
+    display: inline-flex;
+    margin: 2% 0% 3% 4%;
+
+}
+.section1NombreEmpresa  {
+    font-size: 35px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:rgb(29, 157, 195);
+    padding-right: 10%;
+    width: 40%;
+    text-align: center;   
+}
+
+.description {
+    color:black;
+    text-align: center;    
+}
+
+::placeholder{
+    color: black;
+}
+.section2{
+    background-color: white;
+    width: 35%;
+    border-radius: 15px;
+
+    
+    
+}
+.section2ParteDos{
+    color: rgb(29, 157, 195);
+    padding: 5px 5px;
+    text-align: center;
+}
+.section2ParteDos > h2{
+    font-size: 28px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    float: left;
+    border-bottom: 5px solid rgb(29, 157, 195);
+    margin-bottom: 50px;
+    padding: 13px 0px;
+
+}
+.estilo{
+    color:rgb(29, 157, 195);
+    width: 100px;
+    height: 60px;
+    font-size: 60px;
+    
+}
+.input{
+    width: 100%;
+    overflow: hidden;
+    font-size: 25px;
+    padding: 8px 8px;
+    border-bottom: 4px solid rgb(29, 157, 195);
+    color: black;
+    
+
+}
+.input input{
+    border: none;
+    outline: none;
+    background: none;
+    color: black;
+    font-size: 16px;
+    float: left;
+    padding: 5px 5px;
+    margin:  15px 0px 0px 0px;
+
+}
+
+.boton{
+    margin: 30px;
+    border-radius: 15px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    background-color: rgb(29, 157, 195);
+    color: white;
+    width: 160px;
+    height: 40px;
+    font-weight: 700;
+
+
+}
+.pad{
+    margin: 12px;
+    float: left;
+}
+.boton:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 3px 3px white;
+}
+.contraseña{
+    color:rgb(29, 157, 195);
+}
+.botonDos{
+    margin: 30px;
+    border-radius: 15px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    background-color: rgb(89, 192, 89);
+    color: white;
+    width: 160px;
+    height: 40px;
+    font-weight: 700;
+}
+.botonDos:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 3px 3px white;
+}

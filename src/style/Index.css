@@ -1,0 +1,77 @@
+:root{
+    scroll-behavior: smooth;
+}
+.contenedor{
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden; 
+    margin: auto;
+    padding: 60px 0px;
+}
+.subtitulo{
+    text-align: center;
+    color: darkgray;
+    font-size: xx-large;
+    font-weight: 700;
+    padding: 20px 0px;
+}
+.contenedor-servicio{
+    display: flex;
+    justify-content: space-evenly; 
+    align-items: center;
+    flex-wrap: wrap;
+}
+.contenedor-servicio > img{
+    width: 40%;
+}
+.contenedor-parrafos{
+    width: 45%;
+
+}
+.service{
+    margin-bottom: 20px;
+}
+.n-service{
+    margin-bottom: 5%;
+}
+.Span{
+    color:white;
+    border-radius: 50%;
+    background-image:linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    text-align: center;
+    display: inline-block;
+    width: 30px;
+    height: 25px;
+    font-weight: 900;
+    line-height: 25px;
+    margin-right: 2%;
+
+}
+.sectionPart{
+    height: 80vh;
+    background-image: linear-gradient(to top, rgba(161, 140, 209, 0.335) 0%, rgba(251, 194, 235, 0.596) 100%), url("../media/S4-Software-Venta-Directa.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-attachment: fixed;
+    background-position: center;
+}
+.headIndex{
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    color: black;
+
+}
+.headIndex > h1{
+    font-size: 60px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 800;
+
+}
+.headIndex > p{
+    font-size: 28px;
+    font-weight: 700;
+}
