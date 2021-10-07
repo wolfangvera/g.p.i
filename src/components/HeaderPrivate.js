@@ -14,11 +14,11 @@ const HeaderPrivate = () => {
                         </a>
                     </li>
                     
-                    <li><Link to="#Mod_RegistroProductos"><button className="botonPrincipal">Registro de Productos</button></Link></li>
-                    <li><Link to="#Mod_GestionProductos"><button className="botonPrincipal">Gestión de Productos </button></Link></li>
-                    <li><Link to="#Mod_RegistroVentas"><button className="botonPrincipal">Registro de Ventas</button></Link></li>
-                    <li><Link to="#Mod_GestionVentas"><button className="botonPrincipal">Gestión de Ventas </button></Link></li>
-                    <li><Link to="#Mod_GestionUsuarios"><button className="botonPrincipal">Gestión de Usuarios </button></Link></li>
+                    <li><Link to='/RegistroProductoF'><button className="botonPrincipal">Registro de Productos</button></Link></li>
+                    <li><Link to="/GestionarProducto"><button className="botonPrincipal">Gestión de Productos </button></Link></li>
+                    <li><Link to="/RegistroVenta"><button className="botonPrincipal">Registro de Ventas</button></Link></li>
+                    <li><Link to="/ModListarVentas"><button className="botonPrincipal">Gestión de Ventas </button></Link></li>
+                    <li><Link to="/ModuloUsuario"><button className="botonPrincipal">Gestión de Usuarios </button></Link></li>
 
                 </ul>
             </nav>

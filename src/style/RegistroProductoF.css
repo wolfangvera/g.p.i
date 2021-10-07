@@ -1,0 +1,137 @@
+.Contenedor_RegProductos {
+    clear:both;
+    text-align:center;
+    margin-bottom: 5em;;
+}
+
+.ingreso_producto {
+    list-style:none;
+    display:flex;
+    justify-content:space-around;
+    text-align: right;
+    padding-top: 1em;
+}
+
+.input_producto {
+    padding-top: 1vh;
+    padding-bottom: 0.5vh;
+    margin:1vw;
+    border:0px solid;
+    border-radius: 5px;
+    box-shadow: 1.5px 2px 3px 2px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width:10.5em;
+    height: 1em;
+
+}
+
+.ingreso_info {
+    text-align: center;  
+    font-weight: bold; 
+}
+
+.Titulo_Tabla{ 
+    font-weight:bolder;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.select {
+    border:0px solid;
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    width: 150px;
+    align-items: right;
+    margin-left: 1cm;
+    margin-right:auto;
+}
+
+.form_producto {
+    padding-left: 20px;
+    font-size:15px; 
+    display: block;
+    
+}
+
+.bt_registro_producto{
+    font-size: medium;
+    background-color: rgb(89, 192, 89);   
+    color: white;
+    border-radius: 15px;
+    width: 160px;
+    height: 40px;
+    font-weight:bold;
+    position:relative;
+    left: auto;
+    right: auto;
+}
+
+.bt_registro_producto:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+    
+}
+
+.option {
+    text-align: center;
+    font-size: medium;
+    margin:10px;
+    border:0px;
+
+}
+
+
+.seccion_tabla {
+    margin-top: 0.2cm;
+    border-top: 0px solid black;
+    text-align: center;   
+    font-size:medium;
+}
+
+.Tabla_Productos {
+    margin-left: 2vw;
+    margin-right:2vw;
+    border-collapse:collapse;  
+ 
+}
+
+
+.td {
+    background-color:white;
+font-weight: normal;
+}
+
+.th{
+    font-size:15px;
+    color: white;
+    background-color: rgb(29, 157, 195);
+}
+
+.Tabla_Productos .td,.th {
+    width: 10vw;
+    text-align: center;
+    border:1px solid rgba(0, 0, 0, 0.3);
+}
+
+.td:hover{
+    background-color: rgba(89, 192, 89, 0.431); 
+}
+
+.Tabla_Productos .td:nth-child(7) {
+    width: 1mm;
+}
+
+
+.cambio_pag {
+    list-style-type: none;
+    display:flex;
+    justify-content: center;
+
+}
+
+.opt_cambio {
+    padding-left:0.25em;
+}

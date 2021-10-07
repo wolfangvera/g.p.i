@@ -1,4 +1,8 @@
 
+
+.Info_user{
+    clear:both;
+}
 .ordenar_info_usuario {
     list-style-type: none;
     display: flex;
