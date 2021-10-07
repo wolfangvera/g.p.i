@@ -54,7 +54,7 @@
     text-align: center;   
     font-size:medium;
 }
-.table {
+.tabla_cliente {
     width:100%;
     border-collapse:collapse;   
 }
@@ -134,12 +134,12 @@
     margin-right:auto;
 }
 
-.th,.td {
+.th_regventa,.td_regventa {
     font-size: small; 
     text-align: center;
     vertical-align: center;
 }
-.td>.input {
+.td_regventa>.input {
     
     align-items:  center;
 }

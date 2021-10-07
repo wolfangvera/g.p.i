@@ -27,14 +27,14 @@ const RegistroVenta = () => {
                         <table className="tabla_registro">
                             <caption className="Titulo_tabla">Registro de productos</caption>
                             <thead className="thead">
-                                <th className="th">ID Producto</th>
-                                <th className="th">Cantidad</th>
-                                <th className="th">Precio unitario</th>
+                                <th className="th_regventa">ID Producto</th>
+                                <th className="th_regventa">Cantidad</th>
+                                <th className="th_regventa">Precio unitario</th>
                             </thead>
                             <tbody>
-                                <td className="td"><input className="input_info" type="text" /> </td>
-                                <td className="td"><input className="input_info" type="text" /> </td>
-                                <td className="td"><input className="input_info" type="text" /> </td>
+                                <td className="td_regventa"><input className="input_info" type="text" /> </td>
+                                <td className="td_regventa"><input className="input_info" type="text" /> </td>
+                                <td className="td_regventa"><input className="input_info" type="text" /> </td>
                             </tbody>
                         </table>
                         <div>
@@ -43,16 +43,16 @@ const RegistroVenta = () => {
                     </div>
                     <hr />
                     <div className="info_cliente">
-                        <table className="table">
+                        <table className="tabla_cliente">
                             <caption className="Titulo_tabla">Datos del Cliente</caption>
                             <thead className="thead">
-                                <th className="th">Identificación</th>
-                                <th className="th">Nombre</th>
+                                <th className="th_regventa">Identificación</th>
+                                <th className="th_regventa">Nombre</th>
 
                             </thead>
                             <tbody>
-                                <td className="td"><input className="input_info" type="text" /> </td>
-                                <td className="td"><input className="input_info" type="text" /> </td>
+                                <td className="td_regventa"><input className="input_info" type="text" /> </td>
+                                <td className="td_regventa"><input className="input_info" type="text" /> </td>
 
                             </tbody>
                         </table>
