@@ -6,7 +6,7 @@ import '../style/PublicLayout.css'
 const PublicLayout = ({children}) => {
     return (
         <div className="configuracionGeneralPublicLayout">
-            <HeaderPublic />
+            <HeaderPublic/>
             <main>{children}</main>
             <Footer />
         </div>

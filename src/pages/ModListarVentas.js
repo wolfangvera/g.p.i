@@ -3,7 +3,7 @@ import '../style/ListarVentas.css'
 
 const ModListarVentas = () => {
     return (
-        <div className="contenedor">
+        <div className="contenedor_listarventas">
             <h2 className="titulo_pagina_listarventas">Módulo Administración de Ventas</h2>
 
             <div className="cuadro_info">

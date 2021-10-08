@@ -21,7 +21,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path={['/InicioSesion', '/Registro']}>
+        <Route path={['/Index','/InicioSesion', '/Registro']}>
           <AouthLayout>
             <Switch>
               <Route path='/InicioSesion'>
@@ -39,8 +39,7 @@ function App() {
           <PrivateLayout>
           </PrivateLayout>
         </Route> */}
-        <Router>
-          <Switch>
+     
             <Route path={['/RegistroVenta', '/RegistroProductoF','/GestionarProducto','/ModListarVentas','/ModuloUsuario']}>
               <PrivateLayout>
                 <Switch>
@@ -62,10 +61,8 @@ function App() {
                 </Switch>
               </PrivateLayout>
             </Route>
-          </Switch>
+   
 
-
-        </Router>
 
 
 
