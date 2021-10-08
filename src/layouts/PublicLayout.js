@@ -7,7 +7,7 @@ const PublicLayout = ({children}) => {
     return (
         <div className="configuracionGeneralPublicLayout">
             <HeaderPublic/>
-            <main>{children}</main>
+            <main className="bg-rd">{children}</main>
             <Footer />
         </div>
     )
