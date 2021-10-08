@@ -34,6 +34,7 @@ function App() {
           </AouthLayout>
         </Route>
 
+        
         {/* <Route>
           <PrivateLayout>
           </PrivateLayout>

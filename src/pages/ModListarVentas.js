@@ -3,227 +3,227 @@ import '../style/ListarVentas.css'
 
 const ModListarVentas = () => {
     return (
-        <div class="contenedor">
-            <h2 class="titulo_pagina_listarventas">Módulo Administración de Ventas</h2>
+        <div className="contenedor">
+            <h2 className="titulo_pagina_listarventas">Módulo Administración de Ventas</h2>
 
-            <div class="cuadro_info">
-                <div class="busqueda">
-                    <label class="label_listarventas">
-                        <button class="boton bt_busqueda"> Buscar </button>
-                        <input class="input_listarventas"
+            <div className="cuadro_info">
+                <div className="busqueda">
+                    <label className="label_listarventas">
+                        <button className="boton bt_busqueda"> Buscar </button>
+                        <input className="input_listarventas"
                             type="number" placeholder="Digite el # de orden" />
                     </label>
-                    <label class="label_listarventas"
+                    <label className="label_listarventas"
                         for="fecha desde:">
                         Fecha desde:
-                        <input class="input_listarventas"
+                        <input className="input_listarventas"
                             type="datetime-local" />
                     </label>
-                    <label class="label_listarventas"
+                    <label className="label_listarventas"
                         for="fecha desde:">
                         hasta:
-                        <input class="input_listarventas"
+                        <input className="input_listarventas"
                             type="datetime-local" />
                     </label>
                 </div>
                 <hr />
-                <section class="listado">
-                    <table class="table_listarventas">
-                        <thead class="clase1">
-                            <th class="th_listar"  >#Orden</th>
-                            <th class="th_listar" >Fecha</th>
-                            <th class="th_listar"> Responsable</th>
-                            <th class="th_listar"> Estado </th>
-                            <th class="th_listar"> Descripción</th>
-                            <th class="th_listar"> Precio Total</th>
-                            <th class="th_listar"> Editar/ Guardar</th>
+                <section className="listado">
+                    <table className="table_listarventas">
+                        <thead className="clase1">
+                            <th className="th_listar"  >#Orden</th>
+                            <th className="th_listar" >Fecha</th>
+                            <th className="th_listar"> Responsable</th>
+                            <th className="th_listar"> Estado </th>
+                            <th className="th_listar"> Descripción</th>
+                            <th className="th_listar"> Precio Total</th>
+                            <th className="th_listar"> Editar/ Guardar</th>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="td_listar"> *Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">
-                                    <select class="select_listarventas">
+                                <td className="td_listar"> *Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <select className="select_listarventas">
                                         <option selected disabled="">Selecciona una opción</option>
                                         <option>En proceso</option>
                                         <option>Cancelada</option>
                                         <option>Entregada</option>
                                     </select>
                                 </td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">
-                                    <input class="input_listarventas" type="button" value="Editar" />
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <input className="input_listarventas" type="button" value="Editar" />
                                 </td>
                             </tr>
                             <tr>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">
-                                    <select class="select_listarventas">
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <select className="select_listarventas">
                                         <option selected disabled="">Selecciona una opción</option>
                                         <option>En proceso</option>
                                         <option>Cancelada</option>
                                         <option>Entregada</option>
                                     </select>
                                 </td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">
-                                    <input class="input_listarventas"
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <input className="input_listarventas"
                                         type="button" value="Editar" />
                                 </td>
                             </tr>
                             <tr>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">
-                                    <select class="select_listarventas">
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <select className="select_listarventas">
                                         <option selected disabled="">Selecciona una opción</option>
                                         <option>En proceso</option>
                                         <option>Cancelada</option>
                                         <option>Entregada</option>
                                     </select>
                                 </td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">
-                                    <input class="input_listarventas" type="button" value="Editar" />
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <input className="input_listarventas" type="button" value="Editar" />
                                 </td>
                             </tr>
                             <tr>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">
-                                    <select class="select_listarventas">
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <select className="select_listarventas">
                                         <option selected disabled="">Selecciona una opción</option>
                                         <option>En proceso</option>
                                         <option>Cancelada</option>
                                         <option>Entregada</option>
                                     </select>
                                 </td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">
-                                    <input class="input_listarventas"
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <input className="input_listarventas"
                                         type="button" value="Editar" />
                                 </td>
                             </tr>
                             <tr>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">
-                                    <select class="select_listarventas" >
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <select className="select_listarventas" >
                                         <option selected disabled="">Selecciona una opción</option>
                                         <option>En proceso</option>
                                         <option>Cancelada</option>
                                         <option>Entregada</option>
                                     </select>
                                 </td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">
-                                    <input class="input_listarventas"
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <input className="input_listarventas"
                                         type="button" value="Editar" />
                                 </td>
                             </tr>
                             <tr>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">
-                                    <select class="select_listarventas">
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <select className="select_listarventas">
                                         <option selected disabled="">Selecciona una opción</option>
                                         <option>En proceso</option>
                                         <option>Cancelada</option>
                                         <option>Entregada</option>
                                     </select>
                                 </td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">
-                                    <input class="input_listarventas"
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <input className="input_listarventas"
                                         type="button" value="Editar" />
                                 </td>
                             </tr>
                             <tr>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">
-                                    <select class="select_listarventas" >
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <select className="select_listarventas" >
                                         <option selected disabled="">Selecciona una opción</option>
                                         <option>En proceso</option>
                                         <option>Cancelada</option>
                                         <option>Entregada</option>
                                     </select>
                                 </td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">
-                                    <input class="input_listarventas"
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <input className="input_listarventas"
                                         type="button" value="Editar" />
                                 </td>
                             </tr>
                             <tr>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">
-                                    <select class="select_listarventas">
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <select className="select_listarventas">
                                         <option selected disabled="">Selecciona una opción</option>
                                         <option>En proceso</option>
                                         <option>Cancelada</option>
                                         <option>Entregada</option>
                                     </select>
                                 </td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">
-                                    <input class="input_listarventas"
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <input className="input_listarventas"
                                         type="button" value="Editar" />
                                 </td>
                             </tr>
                             <tr>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">
-                                    <select class="select_listarventas">
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <select className="select_listarventas">
                                         <option selected disabled="">Selecciona una opción</option>
                                         <option>En proceso</option>
                                         <option>Cancelada</option>
                                         <option>Entregada</option>
                                     </select>
                                 </td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">
-                                    <input class="input_listarventas"
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <input className="input_listarventas"
                                         type="button" value="Editar" />
                                 </td>
                             </tr>
                             <tr>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">
-                                    <select class="select_listarventas">
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <select className="select_listarventas">
                                         <option selected disabled="">Selecciona una opción</option>
                                         <option>En proceso</option>
                                         <option>Cancelada</option>
                                         <option>Entregada</option>
                                     </select>
                                 </td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">*Campo vacio*</td>
-                                <td class="td_listar">
-                                    <input class="input_listarventas"
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <input className="input_listarventas"
                                         type="button" value="Editar" />
                                 </td>
                             </tr>
@@ -232,7 +232,7 @@ const ModListarVentas = () => {
 
 
                     </table>
-                    <ul class="cambio_pag">
+                    <ul className="cambio_pag">
                         <li>
                             <a href="/siguiente">
 

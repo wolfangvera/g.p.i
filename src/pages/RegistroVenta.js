@@ -76,7 +76,7 @@ const RegistroVenta = () => {
                 <button className="boton bt_registro_venta">Registrar venta</button>
             </div>
         </div>
-      
+
     )
 }
 

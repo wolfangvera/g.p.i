@@ -139,14 +139,15 @@
     text-align: center;
     vertical-align: center;
 }
-<<<<<<< HEAD
-.td_regventa>.input {
-=======
+
+
+
+
 .td_regventa>.input_info {
->>>>>>> ImplementacionModuloVentasReact
-    
     align-items:  center;
 }
+    
+    
 
 .Titulo_tabla {
     font-weight:bolder;
