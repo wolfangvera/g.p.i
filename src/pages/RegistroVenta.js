@@ -9,15 +9,15 @@ const RegistroVenta = () => {
                 <div className="ingreso_info">
                     <div className="info_venta">
                         <label className="form">
-                            <label className="label">ID VENTA</label>
+                            <label className="label_regventa">ID VENTA</label>
                             <input className="input_info" type="number" required />
                         </label>
                         <label className="form">
-                            <label className="label">VALOR TOTAL</label>
+                            <label className="label_regventa">VALOR TOTAL</label>
                             <input className="input_info" type="number" placeholder="$" required />
                         </label>
                         <label className="form">
-                            <label className="label">FECHA</label>
+                            <label className="label_regventa">FECHA</label>
                             <input className="input_info" type="date" required />
 
                         </label>
@@ -27,14 +27,14 @@ const RegistroVenta = () => {
                         <table className="tabla_registro">
                             <caption className="Titulo_tabla">Registro de productos</caption>
                             <thead className="thead">
-                                <th className="th">ID Producto</th>
-                                <th className="th">Cantidad</th>
-                                <th className="th">Precio unitario</th>
+                                <th className="th_regventa">ID Producto</th>
+                                <th className="th_regventa">Cantidad</th>
+                                <th className="th_regventa">Precio unitario</th>
                             </thead>
                             <tbody>
-                                <td className="td"><input className="input_info" type="text" /> </td>
-                                <td className="td"><input className="input_info" type="text" /> </td>
-                                <td className="td"><input className="input_info" type="text" /> </td>
+                                <td className="td_regventa"><input className="input_info" type="text" /> </td>
+                                <td className="td_regventa"><input className="input_info" type="text" /> </td>
+                                <td className="td_regventa"><input className="input_info" type="text" /> </td>
                             </tbody>
                         </table>
                         <div>
@@ -46,13 +46,13 @@ const RegistroVenta = () => {
                         <table className="table">
                             <caption className="Titulo_tabla">Datos del Cliente</caption>
                             <thead className="thead">
-                                <th className="th">Identificación</th>
-                                <th className="th">Nombre</th>
+                                <th className="th_regventa">Identificación</th>
+                                <th className="th_regventa">Nombre</th>
 
                             </thead>
                             <tbody>
-                                <td className="td"><input className="input_info" type="text" /> </td>
-                                <td className="td"><input className="input_info" type="text" /> </td>
+                                <td className="td_regventa"><input className="input_info" type="text" /> </td>
+                                <td className="td_regventa"><input className="input_info" type="text" /> </td>
 
                             </tbody>
                         </table>

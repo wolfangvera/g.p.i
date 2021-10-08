@@ -31,7 +31,7 @@
 .form {
     padding-left: 20px;
     font-size:15px;
-    font-weight:bolder; 
+    font-weight:bold;
     display: block;
     
 }
@@ -134,12 +134,12 @@
     margin-right:auto;
 }
 
-.th,.td {
+.th_regventa,.td_regventa {
     font-size: small; 
     text-align: center;
     vertical-align: center;
 }
-.td>.input {
+.td_regventa>.input_info {
     
     align-items:  center;
 }
