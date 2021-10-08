@@ -7,15 +7,14 @@ const GestionarProducto = () => {
             <h2 className="TituloPaginaP"> Gestionar Productos</h2>
             <div className="busquedaProducto">
                 <label className="Buscar_Producto">
-                    <button className="boton bt_busquedaP"> Buscar </button>
-                    <input className="input_BuscarproductoD"
+                <input className="input_BuscarproductoD"
                         type="number" placeholder="Digite ID de Producto" />
-
+                <button className="boton bt_busquedaP"> Buscar </button>
                 </label>
                 <label className="Buscar_Producto">
-                    <button className="boton bt_busquedaP"> Buscar </button>
-                    <input className="input_BuscarproductoD"
+                <input className="input_BuscarproductoD"
                         type="string" placeholder="Descripción de Producto" />
+                        <button className="boton bt_busquedaP"> Buscar </button>
                 </label>
             </div>
             <section className="listadoProductos">
