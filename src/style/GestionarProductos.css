@@ -6,6 +6,17 @@
     text-align:center;
     margin-bottom: 5em;;
 }
+.Cuadro_ModificarP {
+    background-color: rgb(223, 223, 223);
+    border:0px solid black;
+    width: fit-content;
+    margin-left:auto;
+    margin-right: auto;
+    height: max-content;
+    border-radius: 20px;   
+    padding-bottom: 5vh;
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+}
 .busquedaProducto {
     display:flex;
     justify-content: center;
@@ -39,6 +50,7 @@
 .table_listarProductos {
     margin-left: 2vw;
     margin-right:2vw;
+    text-align: center;
     border-collapse:collapse;  
 }
 
@@ -60,7 +72,6 @@
 .cambio_pag {
     display:flex;
     justify-content: center;
-
 }
 .cambio_pag>li {
     padding-left: 5px;
