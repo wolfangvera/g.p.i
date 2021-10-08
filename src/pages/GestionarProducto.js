@@ -4,7 +4,7 @@ import '../style/GestionarProductos.css'
 const GestionarProducto = () => {
     return (
         <div>
-            <h2 className="TituloPaginaP"> GEstionar Productos</h2>
+            <h2 className="TituloPaginaP"> Gestionar Productos</h2>
             <div className="busquedaProducto">
                 <label className="Buscar_Producto">
                     <button className="boton bt_busquedaP"> Buscar </button>
