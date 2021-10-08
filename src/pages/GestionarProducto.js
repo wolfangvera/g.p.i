@@ -16,7 +16,6 @@ const GestionarProducto = () => {
                     <button className="boton bt_busquedaP"> Buscar </button>
                     <input className="input_BuscarproductoD"
                         type="string" placeholder="Descripción de Producto" />
-
                 </label>
             </div>
             <section className="listadoProductos">
