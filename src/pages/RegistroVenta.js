@@ -9,15 +9,15 @@ const RegistroVenta = () => {
                 <div className="ingreso_info">
                     <div className="info_venta">
                         <label className="form">
-                            <label className="label">ID VENTA</label>
+                            <label className="label_regventa">ID VENTA</label>
                             <input className="input_info" type="number" required />
                         </label>
                         <label className="form">
-                            <label className="label">VALOR TOTAL</label>
+                            <label className="label_regventa">VALOR TOTAL</label>
                             <input className="input_info" type="number" placeholder="$" required />
                         </label>
                         <label className="form">
-                            <label className="label">FECHA</label>
+                            <label className="label_regventa">FECHA</label>
                             <input className="input_info" type="date" required />
 
                         </label>
