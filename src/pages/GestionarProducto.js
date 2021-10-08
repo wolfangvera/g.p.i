@@ -10,11 +10,13 @@ const GestionarProducto = () => {
                     <button className="boton bt_busquedaP"> Buscar </button>
                     <input className="input_BuscarproductoD"
                         type="number" placeholder="Digite ID de Producto" />
+                    
                 </label>
                 <label className="Buscar_Producto">
                     <button className="boton bt_busquedaP"> Buscar </button>
                     <input className="input_BuscarproductoD"
                         type="string" placeholder="Descripción de Producto" />
+                    
                 </label>
             </div>
             <section className="listadoProductos">
