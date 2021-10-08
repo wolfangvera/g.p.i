@@ -5,10 +5,10 @@ import Info_user from '../components/Info_user.js'
 
 const PrivateLayout = ({children}) => {
     return (
-        <div>
+        <div >
             <HeaderPrivate />
             <Info_user />
-            <main>{children}</main>
+            <main >{children}</main>
             <Footer />
         </div>
     )
