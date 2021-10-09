@@ -72,18 +72,18 @@ const GestionarProducto = () => {
                         </tbody>
                     </table>
                     <ul className="cambio_pag">
-                        <li>
-                            <a href="/siguiente">
-
-                                Siguiente
-                            </a>
-                        </li>
                         <li>1</li>
                         <li>2</li>
                         <li>3</li>
                         <li>4</li>
                         <li>5</li>
                         <li>...</li>
+                        <li>
+                            <a href="/siguiente">
+
+                                Siguiente
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
