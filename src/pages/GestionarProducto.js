@@ -3,7 +3,8 @@ import '../style/GestionarProductos.css'
 
 const GestionarProducto = () => {
     return (
-        <div>
+        <div className="contenedor_gestionP">
+            {/*
             <h2 className="TituloPaginaP"> Gestionar Productos</h2>
             <div className="busquedaProducto">
                 <label className="Buscar_Producto">
@@ -19,58 +20,7 @@ const GestionarProducto = () => {
             </div>
             <section className="listadoProductos">
                 <div className="listadoProductos">
-                    <table className="table_listarProductos">
-                        <thead className="clase1">
-                            <th className="th_listarP">ID</th>
-                            <th className="th_listarP">Descripción</th>
-                            <th className="th_listarP">Estado</th>
-                            <th className="th_listarP">Cantidad Stock</th>
-                            <th className="th_listarP">Vr. Unitario</th>
-                            <th className="th_listarP">%Desceunto</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                            </tr>
-                            <tr>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                            </tr>
-                            <tr>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                            </tr>
-                            <tr>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                            </tr>
-                            <tr>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                                <td className="td_listarP">*Campo vacio*</td>
-                            </tr>
-                        </tbody>
-                    </table>
+
                     <ul className="cambio_pag">
                         <li>1</li>
                         <li>2</li>
@@ -127,10 +77,119 @@ const GestionarProducto = () => {
                         <button className="boton bt_modificar_producto">Modificar producto</button>
                     </div>
                 </div>
-            </section>
+            </section>*/}
 
+            <h2 className="TituloPaginaP">Módulo Gestión de Productos</h2>
+            <div class="informacion">
+                <div className="Seccion1">
+
+                    <h3 className="subtitulo_busqueda">Busqueda de productos</h3>
+                    <div className="busquedaProducto">
+                        <label className="form_productoG">
+                            <label for="Busquedaproductos"> ID </label>
+                            <input className="input_BuscarproductoD" type="text" name="Busquedaproductos" id="" />
+                        </label>
+
+                        <label className="form_productoG">
+
+                            <label for="Busquedaproductos">
+                                Descripcion
+                            </label>
+
+                            <input className="input_BuscarproductoD" type="text" name="Busquedaproductos" id="" />
+
+                        </label>
+
+                    </div>
+                    <div className="centrar_boton" >
+
+
+                        <button class="boton bt_busquedaP "> Buscar </button>
+
+                    </div>
+
+                </div>
+
+                <hr />
+                <div className="Seccion2">
+
+                    <h3 className="subtitulo_busqueda">Lista de productos</h3>
+
+                    <div class="Contenedor_Modificar_producto">
+                        <table className="table_listarProductos">
+                            <thead className="clase1">
+                                <th className="th_listarP">ID</th>
+                                <th className="th_listarP">Descripción</th>
+                                <th className="th_listarP">Estado</th>
+                                <th className="th_listarP">Cantidad Stock</th>
+                                <th className="th_listarP">Vr. Unitario</th>
+                                <th className="th_listarP">%Descuento</th>
+                                <th className="th_listarP">Editar/ Guardar</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">
+                                        <button className="input_editar" >Editar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">
+                                        <button className="input_editar" >Editar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">
+                                        <button className="input_editar"  >Editar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">
+                                        <button className="input_editar" >Editar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">*Campo vacio*</td>
+                                    <td className="td_listarP">
+                                        <button className="input_editar" >Editar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
         </div>
-
     )
 }
 export default GestionarProducto
