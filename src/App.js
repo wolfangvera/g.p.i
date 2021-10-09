@@ -33,13 +33,6 @@ function App() {
             </Switch>
           </AouthLayout>
         </Route>
-
-        
-        {/* <Route>
-          <AouthLayout>
-          </AouthLayout>
-        </Route> */}
-
         <Route path={['/RegistroVenta', '/RegistroProductoF', '/GestionarProducto', '/ModListarVentas', '/ModuloUsuario']}>
           <PrivateLayout>
             <Switch>
@@ -61,11 +54,6 @@ function App() {
             </Switch>
           </PrivateLayout>
         </Route>
-
-
-
-
-
         <Route path={['/']}>
           <PublicLayout>
             <Switch>
