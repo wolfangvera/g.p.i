@@ -67,7 +67,6 @@
 
 .bt_adicion_producto {
     font-size:small;
-    font-family: "JetBrains Mono",'Times New Roman', Times, serif;
     background-color:rgb(29,157,195);
     color:white;
     border-radius: 4px;
@@ -90,8 +89,8 @@
     background-color: rgb(89, 192, 89);   
     color: white;
     border-radius: 15px;
-    width: 160px;
-    height: 40px;
+    width: 10em;
+    height: 2.5em;
     font-weight:bold;
     position:relative;
     left: auto;
@@ -101,8 +100,7 @@
 .bt_registro_venta:hover {
     cursor: pointer;
     transform: scale(1.02);
-    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
-    
+    box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.2);
 }
 
 .bt_centrado {
