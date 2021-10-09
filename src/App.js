@@ -21,7 +21,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path={['/InicioSesion', '/Registro']}>
+        <Route path={['/Index', '/InicioSesion', '/Registro']}>
           <AouthLayout>
             <Switch>
               <Route path='/InicioSesion'>
@@ -33,42 +33,27 @@ function App() {
             </Switch>
           </AouthLayout>
         </Route>
-
-        
-        {/* <Route>
+        <Route path={['/RegistroVenta', '/RegistroProductoF', '/GestionarProducto', '/ModListarVentas', '/ModuloUsuario']}>
           <PrivateLayout>
+            <Switch>
+              <Route path='/RegistroVenta'>
+                <RegistroVenta />
+              </Route>
+              <Route path='/RegistroProductoF'>
+                <RegistroProductoF />
+              </Route>
+              <Route path='/ModListarVentas'>
+                <ModListarVentas />
+              </Route>
+              <Route path='/GestionarProducto'>
+                <GestionarProducto />
+              </Route>
+              <Route path='/ModuloUsuario'>
+                <ModuloUsuario />
+              </Route>
+            </Switch>
           </PrivateLayout>
-        </Route> */}
-        <Router>
-          <Switch>
-            <Route path={['/RegistroVenta', '/RegistroProductoF','/GestionarProducto','/ModListarVentas','/ModuloUsuario']}>
-              <PrivateLayout>
-                <Switch>
-                  <Route path='/RegistroVenta'>
-                    <RegistroVenta />
-                  </Route>
-                  <Route path='/RegistroProductoF'>
-                    <RegistroProductoF />
-                  </Route>
-                  <Route path='/ModListarVentas'>
-                    <ModListarVentas/>
-                  </Route>
-                  <Route path='/GestionarProducto'>
-                    <GestionarProducto />
-                  </Route>
-                  <Route path='/ModuloUsuario'>
-                    <ModuloUsuario />
-                  </Route>
-                </Switch>
-              </PrivateLayout>
-            </Route>
-          </Switch>
-
-
-        </Router>
-
-
-
+        </Route>
         <Route path={['/']}>
           <PublicLayout>
             <Switch>
