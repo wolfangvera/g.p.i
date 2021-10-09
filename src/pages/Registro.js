@@ -3,39 +3,52 @@ import { Link } from 'react-router-dom'
 import '../style/Registro.css'
 const Registro = () => {
     return (
-        <main>
+        <div className="Container_registro">
             <h1 className="titulo_registro">A un paso de gestionar tus ventas... </h1>
             <div className="contenedor_registro">
                 <h1>Registrate</h1>
+                <hr />
                 <form className="formRegistro">
-                    <label>Nombre</label>
-                    <input type="text" required />
-                    <label>Apellidos</label>
-                    <input type="text" required />
-                    <label>Fecha de nacimiento </label>
-                    <input type="date" required /> 
-                    <label>Edad </label>
-                    <input type="number" required />
-                    <label>Celular </label>
-                    <input type="number" required />
-                    <label>Correo electrónico </label>
-                    <input type="email" required />
-                    <label>Nuevo usuario </label>
-                    <input type="text" required />
-                    <label>Nueva contraseña</label>
-                    <input type="password" required />
-                    <label>Contraseña (de nuevo) </label>
-                    <input type="password" required />
-                    <button type="submit" className="botonRegistro">¡Registrarse ahora!</button>
-                    <button type="reset" className="botonRegistro">Limpiar datos</button>
-                    <Link to="/InicioSesion">
-                        <button type="button" className="botonRegistro">¡Ya tengo una cuenta!</button> 
-                    </Link>
-        </form>
+                    <ul>
+                        <li>
+                            <label>Nombre</label>
+                            <input className="input_registro_user" type="text" required />
+                        </li>
+                        <li>
+                            <label>Correo electrónico </label>
+                            <input className="input_registro_user" type="email" required />
+                        </li>
+                        <li>
+                            <label>Contraseña</label>
+                            <input className="input_registro_user" type="password" required />
+                        </li>
+                    </ul>
+                    <div className="centrar_boton">
+                        <ul className="Lista_botones">
+                            <li>
+
+                                <button type="submit" className="botonRegistro">¡Registrarse ahora!</button>
+                            </li>
+
+                            <li>
+
+                                <button type="reset" className="botonRegistro">Limpiar datos</button>
+                            </li>
+
+                            <li>
+                                <Link to="/InicioSesion">
+                                    <button type="button" className="botonRegistro">¡Ya tengo una cuenta!</button>
+                                </Link>
+                            </li>
+
+                        </ul>
+                    </div>
+                </form>
+
 
             </div>
 
-        </main>
+        </div >
     )
 }
 
