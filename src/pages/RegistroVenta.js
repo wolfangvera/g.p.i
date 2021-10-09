@@ -10,7 +10,7 @@ const RegistroVenta = () => {
                     <div className="info_venta">
                         <label className="form">
                             <label className="label_regventa">ID VENTA</label>
-                            <input className="input_info" type="number" required />
+                            <input className="input_info" type="number" placeholder="ID" required />
                         </label>
                         <label className="form">
                             <label className="label_regventa">VALOR TOTAL</label>

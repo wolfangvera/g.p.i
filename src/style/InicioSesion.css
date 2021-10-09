@@ -26,15 +26,17 @@
 }
 
 ::placeholder{
-    color: black;
+    color:rgba(128, 128, 128, 0.664);
 }
 .section2{
     background-color: white;
     width: 35%;
     border-radius: 15px;
+  
+}
 
-    
-    
+#password{
+    margin-left: 9.375px;
 }
 .section2ParteDos{
     color: rgb(29, 157, 195);
@@ -100,9 +102,10 @@
 }
 .boton:hover{
     cursor: pointer;
-    transform: scale(1.1);
-    box-shadow: 3px 3px white;
+    transform: scale(1.05);
+    box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.2);
 }
+
 .contraseña{
     color:rgb(29, 157, 195);
 }
@@ -120,6 +123,6 @@
 }
 .botonDos:hover{
     cursor: pointer;
-    transform: scale(1.1);
-    box-shadow: 3px 3px white;
+    transform: scale(1.05);
+    box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.2);
 }

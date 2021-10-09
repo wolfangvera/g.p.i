@@ -14,11 +14,11 @@ const RegistroProductoF = () => {
                             <li>
                                 <label className="form_producto">
                                     <label className="label_producto">ID producto</label>
-                                    <input className="input_producto" type="number" required />
+                                    <input className="input_producto" type="number" placeholder="ID" required />
                                 </label >
                                 <label className="form_producto">
                                     <label className="label_producto">Descripción</label>
-                                    <input className="input_producto" type="text" required />
+                                    <input className="input_producto" type="text"  required />
                                 </label >
                             </li>
                             <li>

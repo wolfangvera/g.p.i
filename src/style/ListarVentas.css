@@ -33,7 +33,7 @@
 .bt_busqueda:hover {
         cursor: pointer;
         transform: scale(1.02);
-        box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.2);
     
 }
 .cuadro_info {
@@ -56,7 +56,23 @@
     border:0px solid;
     border-radius: 5px;
     box-shadow: 1.5px 2px 3px 2px rgba(0, 0, 0, 0.2);
+    color:rgba(0, 0, 0, 0.431);
 
+}
+
+
+.input_edit{
+    padding-top: 1vh;
+    padding-bottom: 0.5vh;
+    margin:1vw;
+    border:0px solid;
+    border-radius: 5px;
+    box-shadow: 1.5px 2px 3px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.input_edir::-webkit-input-placeholder{
+    color:black;
 }
 
 .label_listarventas{

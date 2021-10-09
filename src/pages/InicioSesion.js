@@ -21,19 +21,19 @@ const InicioSesion = () => {
                     <div className="input">
                         <i class="fas fa-users estilo"></i>
                         <h4>¡Bienvenido!</h4>
-                        <i class="fas fa-user-check pad"></i><input type="text" id="user" placeholder="Usuario..." className="eliminar" required />
+                        <i class="fas fa-user-check pad"></i><input type="text" id="user" placeholder="Usuario..." className="input_inicio" required />
                     </div>
                     <div className="input">
                         <i class="fas fa-unlock pad"></i>
-                        <input type="password" placeholder="Contraseña..." id="password" required />
+                        <input className="input_inicio" type="password" placeholder="Contraseña..." id="password" required />
                     </div>
-                    <input type="submit" value="¡Ingresar ahora!" onclick="Funcion()" className="boton" />
+                    <input type="submit" value="¡Ingresar ahora!" onclick="Funcion()" className="boton boton_ingreso" />
                     <div>
                         <a href="" className="contraseña">¿Has olvidado la contraseña?</a>
                     </div>
                     <Link to="/Registro">
 
-                        <input type="button" value="¡Registrarse!" name="" className="botonDos" />
+                        <input type="button" value="¡Registrarse!" name="" className="botonDos boton_registro" />
                     </Link>
                 </div>
             </section>

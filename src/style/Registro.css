@@ -1,7 +1,14 @@
+
+
 .titulo_registro{
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
-    color: rgb(70, 61, 61);  
+    color: rgb(58, 51, 51);  
+    padding-top: 2em;
+    margin-top:0;
+    text-shadow: 2.5px 2.5px 1px white, 0 0 1em rgb(105, 182, 98), 0 0 0.2em rgb(255, 255, 255);
+
+    
 }
 .contenedor_registro > h1{
     color: rgb(29, 157, 195);
@@ -23,6 +30,9 @@
     font-weight: 700;	
     width: 13em;
 } 
+.Titulo_registrate{
+    text-shadow: 2px 2px 1px white, 0 0 1em rgb(252, 252, 252), 0 0 0.2em rgb(255, 255, 255);
+}
 
 .botonRegistro:hover{
     cursor: pointer;

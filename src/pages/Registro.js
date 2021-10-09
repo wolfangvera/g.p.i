@@ -6,7 +6,7 @@ const Registro = () => {
         <div className="Container_registro">
             <h1 className="titulo_registro">A un paso de gestionar tus ventas... </h1>
             <div className="contenedor_registro">
-                <h1>Registrate</h1>
+                <h1 className="Titulo_registrate">Registrate</h1>
                 <hr />
                 <form className="formRegistro">
                     <ul>

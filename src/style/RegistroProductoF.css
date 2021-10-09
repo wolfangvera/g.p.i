@@ -25,6 +25,10 @@
 
 }
 
+.input_producto::-webkit-input-placeholder {
+    color:rgba(128, 128, 128, 0.664);
+}
+
 .ingreso_info {
     text-align: center;  
     font-weight: bold; 
@@ -71,7 +75,7 @@
 .bt_registro_producto:hover {
     cursor: pointer;
     transform: scale(1.02);
-    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.2);
     
 }
 

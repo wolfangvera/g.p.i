@@ -8,8 +8,9 @@ const ModListarVentas = () => {
 
             <div className="cuadro_info">
                 <div className="busqueda">
+                <button className="boton bt_busqueda"> Buscar </button>
                     <label className="label_listarventas">
-                        <button className="boton bt_busqueda"> Buscar </button>
+                        
                         <input className="input_listarventas"
                             type="number" placeholder="Digite el # de orden" />
                     </label>
@@ -54,7 +55,7 @@ const ModListarVentas = () => {
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">
-                                    <input className="input_listarventas" type="button" value="Editar" />
+                                    <input className="input_edit" type="button" value="Editar" />
                                 </td>
                             </tr>
                             <tr>
@@ -72,7 +73,7 @@ const ModListarVentas = () => {
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">
-                                    <input className="input_listarventas"
+                                    <input className="input_edit"
                                         type="button" value="Editar" />
                                 </td>
                             </tr>
@@ -91,7 +92,7 @@ const ModListarVentas = () => {
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">
-                                    <input className="input_listarventas" type="button" value="Editar" />
+                                    <input className="input_edit" type="button" value="Editar" />
                                 </td>
                             </tr>
                             <tr>
@@ -109,45 +110,7 @@ const ModListarVentas = () => {
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">
-                                    <input className="input_listarventas"
-                                        type="button" value="Editar" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="td_listar">*Campo vacio*</td>
-                                <td className="td_listar">*Campo vacio*</td>
-                                <td className="td_listar">*Campo vacio*</td>
-                                <td className="td_listar">
-                                    <select className="select_listarventas" >
-                                        <option selected disabled="">Selecciona una opción</option>
-                                        <option>En proceso</option>
-                                        <option>Cancelada</option>
-                                        <option>Entregada</option>
-                                    </select>
-                                </td>
-                                <td className="td_listar">*Campo vacio*</td>
-                                <td className="td_listar">*Campo vacio*</td>
-                                <td className="td_listar">
-                                    <input className="input_listarventas"
-                                        type="button" value="Editar" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="td_listar">*Campo vacio*</td>
-                                <td className="td_listar">*Campo vacio*</td>
-                                <td className="td_listar">*Campo vacio*</td>
-                                <td className="td_listar">
-                                    <select className="select_listarventas">
-                                        <option selected disabled="">Selecciona una opción</option>
-                                        <option>En proceso</option>
-                                        <option>Cancelada</option>
-                                        <option>Entregada</option>
-                                    </select>
-                                </td>
-                                <td className="td_listar">*Campo vacio*</td>
-                                <td className="td_listar">*Campo vacio*</td>
-                                <td className="td_listar">
-                                    <input className="input_listarventas"
+                                    <input className="input_edit"
                                         type="button" value="Editar" />
                                 </td>
                             </tr>
@@ -166,7 +129,7 @@ const ModListarVentas = () => {
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">
-                                    <input className="input_listarventas"
+                                    <input className="input_edit"
                                         type="button" value="Editar" />
                                 </td>
                             </tr>
@@ -185,7 +148,26 @@ const ModListarVentas = () => {
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">
-                                    <input className="input_listarventas"
+                                    <input className="input_edit"
+                                        type="button" value="Editar" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <select className="select_listarventas" >
+                                        <option selected disabled="">Selecciona una opción</option>
+                                        <option>En proceso</option>
+                                        <option>Cancelada</option>
+                                        <option>Entregada</option>
+                                    </select>
+                                </td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <input className="input_edit"
                                         type="button" value="Editar" />
                                 </td>
                             </tr>
@@ -204,7 +186,7 @@ const ModListarVentas = () => {
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">
-                                    <input className="input_listarventas"
+                                    <input className="input_edit"
                                         type="button" value="Editar" />
                                 </td>
                             </tr>
@@ -223,7 +205,26 @@ const ModListarVentas = () => {
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">
-                                    <input className="input_listarventas"
+                                    <input className="input_edit"
+                                        type="button" value="Editar" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <select className="select_listarventas">
+                                        <option selected disabled="">Selecciona una opción</option>
+                                        <option>En proceso</option>
+                                        <option>Cancelada</option>
+                                        <option>Entregada</option>
+                                    </select>
+                                </td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">*Campo vacio*</td>
+                                <td className="td_listar">
+                                    <input className="input_edit"
                                         type="button" value="Editar" />
                                 </td>
                             </tr>

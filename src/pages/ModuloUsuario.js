@@ -36,7 +36,7 @@ const ModuloUsuario = () => {
                                 </select>
                             </td>
                             <td className="tdMU">
-                                    <input className="inputMU" type="button" value="Editar" />
+                                    <input className="input_edit" type="button" value="Editar" />
                             </td>
                         </tr>
                         <tr className="trMU">
@@ -60,7 +60,7 @@ const ModuloUsuario = () => {
                                 </select>
                             </td>
                             <td className="tdMU">
-                                    <input className="inputMU" type="button" value="Editar" />
+                                    <input className="input_edit" type="button" value="Editar" />
                             </td>
                         </tr>
                         <tr className="trMU">
@@ -84,7 +84,7 @@ const ModuloUsuario = () => {
                                 </select>
                             </td>
                             <td className="tdMU">
-                                    <input className="inputMU" type="button" value="Editar" />
+                                    <input className="input_edit" type="button" value="Editar" />
                             </td>
                         </tr>
                         <tr className="trMU">
@@ -108,7 +108,7 @@ const ModuloUsuario = () => {
                                 </select>
                             </td>
                             <td className="tdMU">
-                                    <input className="inputMU" type="button" value="Editar" />
+                                    <input className="input_edit" type="button" value="Editar" />
                             </td>
                         </tr>
                         <tr className="trMU">
@@ -132,7 +132,7 @@ const ModuloUsuario = () => {
                                 </select>
                             </td>
                             <td className="tdMU">
-                                    <input className="inputMU" type="button" value="Editar" />
+                                    <input className="input_edit" type="button" value="Editar" />
                             </td>
                         </tr>
                         <tr className="trMU">
@@ -156,12 +156,12 @@ const ModuloUsuario = () => {
                                 </select>
                             </td>
                             <td className="tdMU">
-                                    <input className="inputMU" type="button" value="Editar" />
+                                    <input className="input_edit" type="button" value="Editar" />
                             </td>
                         </tr>
                     
                     </table>
-                    <div>
+                    <div className="bt_centrado">
         
                         <button className="botonModuloUsuarioMU" type="button" >Guardar cambios</button>
                     </div>
