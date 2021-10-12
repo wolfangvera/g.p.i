@@ -12,7 +12,7 @@ function getRegistro(req, res){
     })
 
 }
-function getRegistro(req, res){
+function getRegistros(req, res){
     Registro.find({}, (err, registro) =>{
         if (err) return res.status(500).send({message:"Error al realizar la peticion."})
         if (!registro) return res.status(404).send({message:"No existen usuarios"})
@@ -60,7 +60,7 @@ function deleteRegistro(req, res){
 
 module.exports = {
     getRegistro,
-    getRegistro,
+    getRegistros,
     saveRegistro,
     updateRegistro,
     deleteRegistro
