@@ -8,7 +8,7 @@ function getVenta(req, res){
         if(err) return res.status(500).send({message:"Error al realizar la peticion."})
         if (!venta) return res.status(404).send({message:"La venta no se ha realizado"})
 
-        res.status(200).send({venta})
+        res.status(200).send({venta:venta})
     })
 
 }
@@ -16,7 +16,7 @@ function getVentas(req, res){
     Venta.find({}, (err, ventas) =>{
         if (err) return res.status(500).send({message:"Error al realizar la peticion."})
         if (!ventas) return res.status(404).send({message:"Aun no hay ventas"})
-        res.send(200, {ventas : ventas})
+        res.status(200).send({ventas : ventas})
     })
 
 }
