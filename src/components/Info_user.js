@@ -2,30 +2,41 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../style/Info_user.css'
-import avatar from '../media/avatar.png'
+import { useAuth0 } from '@auth0/auth0-react'
+import { LogoutButton } from './Logout'
+
 
 const Info_user = () => {
+
+    const { user, isAuthenticated, isLoading } = useAuth0();
+        
+    if (isLoading) {
+        return <div>Loading...</div>
+    }
+
     return (
+        isAuthenticated && (
+
         <div className="Info_user">
             <ul class="ordenar_info_usuario">
                 <li>
                     <ul class="Opciones">
                         <li>
-                            Usted ha ingresado como:<label>*Nombre usuario*</label>
+                            Usted ha ingresado como: {user.name}
                         </li>
                         <li>
-                            Cargo: <label> *Cargo*</label>
+                            Email: {user.email}
                         </li>
-                        <li>Actualizar perfil</li>
+                        <li><LogoutButton/></li>
                     </ul>
                 </li>
                 
-                    <img src={avatar} class="avatar" alt="avatar" width="50px" />
+                    <img src={user.picture} class="avatar" alt="avatar"  />
                 
             </ul>
 
         </div>
-
+        )
     )
 }
 

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../style/HeaderPublic.css'
 import logoRegistro from '../media/logobuho.png'
+import { LogoutButton } from './Logout'
 
 const HeaderPublic = () => {
     return (
@@ -18,10 +19,12 @@ const HeaderPublic = () => {
                     <li><a href="#quienesSomos"><button className="botonHeaderPublic">¿Quiénes somos? </button></a></li>
                     <li><a href="#queHacemos"><button className="botonHeaderPublic">¿Qué hacemos?</button></a></li>
                     <li>
+                    
                         <Link to="/InicioSesion">
                             <button className="botonHeaderPublic">¡Iniciar ahora!</button>
                         </Link>
                     </li>
+                    <li><LogoutButton/></li>
                 </ul>
             </nav>
             
