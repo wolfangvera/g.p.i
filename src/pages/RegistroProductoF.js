@@ -39,8 +39,8 @@ const RegistroProductoF = () => {
 
                         <div className="option">
                             <div> Estado de producto
-                                <select className="select">
-                                    <option> Seleccione...</option>
+                                <select className="select" defaultValue="" required>
+                                    <option disabled value=""> Seleccione...</option>
                                     <option> Disponible</option>
                                     <option> No Disponible</option>
 

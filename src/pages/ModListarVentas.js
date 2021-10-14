@@ -45,8 +45,8 @@ const ModListarVentas = () => {
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">
-                                    <select className="select_listarventas">
-                                        <option selected disabled="">Selecciona una opción</option>
+                                    <select className="select_listarventas" defaultValue="" required>
+                                        <option disabled value="">Selecciona una opción</option>
                                         <option>En proceso</option>
                                         <option>Cancelada</option>
                                         <option>Entregada</option>
@@ -63,8 +63,8 @@ const ModListarVentas = () => {
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">
-                                    <select className="select_listarventas">
-                                        <option selected disabled="">Selecciona una opción</option>
+                                    <select className="select_listarventas" defaultValue="" required>
+                                        <option disabled value="">Selecciona una opción</option>
                                         <option>En proceso</option>
                                         <option>Cancelada</option>
                                         <option>Entregada</option>
@@ -82,8 +82,8 @@ const ModListarVentas = () => {
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">
-                                    <select className="select_listarventas">
-                                        <option selected disabled="">Selecciona una opción</option>
+                                    <select className="select_listarventas" defaultValue="" required>
+                                        <option disabled value="">Selecciona una opción</option>
                                         <option>En proceso</option>
                                         <option>Cancelada</option>
                                         <option>Entregada</option>
@@ -100,8 +100,8 @@ const ModListarVentas = () => {
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">
-                                    <select className="select_listarventas">
-                                        <option selected disabled="">Selecciona una opción</option>
+                                    <select className="select_listarventas" defaultValue="" required>
+                                        <option disabled value="">Selecciona una opción</option>
                                         <option>En proceso</option>
                                         <option>Cancelada</option>
                                         <option>Entregada</option>
@@ -119,8 +119,8 @@ const ModListarVentas = () => {
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">
-                                    <select className="select_listarventas" >
-                                        <option selected disabled="">Selecciona una opción</option>
+                                    <select className="select_listarventas" defaultValue="" required >
+                                        <option disabled value="">Selecciona una opción</option>
                                         <option>En proceso</option>
                                         <option>Cancelada</option>
                                         <option>Entregada</option>
@@ -138,8 +138,8 @@ const ModListarVentas = () => {
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">
-                                    <select className="select_listarventas">
-                                        <option selected disabled="">Selecciona una opción</option>
+                                    <select className="select_listarventas" defaultValue="" required>
+                                        <option disabled value="">Selecciona una opción</option>
                                         <option>En proceso</option>
                                         <option>Cancelada</option>
                                         <option>Entregada</option>
@@ -157,8 +157,8 @@ const ModListarVentas = () => {
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">
-                                    <select className="select_listarventas" >
-                                        <option selected disabled="">Selecciona una opción</option>
+                                    <select className="select_listarventas" defaultValue="" required >
+                                        <option disabled value="">Selecciona una opción</option>
                                         <option>En proceso</option>
                                         <option>Cancelada</option>
                                         <option>Entregada</option>
@@ -176,8 +176,8 @@ const ModListarVentas = () => {
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">
-                                    <select className="select_listarventas">
-                                        <option selected disabled="">Selecciona una opción</option>
+                                    <select className="select_listarventas" defaultValue="" required>
+                                        <option disabled value="">Selecciona una opción</option>
                                         <option>En proceso</option>
                                         <option>Cancelada</option>
                                         <option>Entregada</option>
@@ -195,8 +195,8 @@ const ModListarVentas = () => {
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">
-                                    <select className="select_listarventas">
-                                        <option selected disabled="">Selecciona una opción</option>
+                                    <select className="select_listarventas" defaultValue="" required>
+                                        <option disabled value="">Selecciona una opción</option>
                                         <option>En proceso</option>
                                         <option>Cancelada</option>
                                         <option>Entregada</option>
@@ -214,8 +214,8 @@ const ModListarVentas = () => {
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">*Campo vacio*</td>
                                 <td className="td_listar">
-                                    <select className="select_listarventas">
-                                        <option selected disabled="">Selecciona una opción</option>
+                                    <select className="select_listarventas" defaultValue="" required>
+                                        <option disabled value="">Selecciona una opción</option>
                                         <option>En proceso</option>
                                         <option>Cancelada</option>
                                         <option>Entregada</option>

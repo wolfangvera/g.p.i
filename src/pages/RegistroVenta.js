@@ -61,9 +61,9 @@ const RegistroVenta = () => {
                     <hr />
                     <div className="info_vendedor">
                         <div> Vendedor
-                            <select className="selector_vendedor">
+                            <select className="selector_vendedor" defaultValue="" required>
 
-                                <option>seleccionar ..</option>
+                                <option disabled value="">seleccionar ..</option>
                                 <option> Vendedor 1</option>
                                 <option> Vendedor 1</option>
                                 <option> Vendedor 1</option>
