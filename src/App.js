@@ -17,6 +17,8 @@ import ModListarVentas from './pages/ModListarVentas';
 import ModuloUsuario from './pages/ModuloUsuario';
 import RegistroProductoF from './pages/RegistroProductoF';
 
+import Ventas from './pages/admin/ventas';
+
 function App() {
   return (
     <Router>
@@ -33,9 +35,12 @@ function App() {
             </Switch>
           </AouthLayout>
         </Route>
-        <Route path={['/RegistroVenta', '/RegistroProductoF', '/GestionarProducto', '/ModListarVentas', '/ModuloUsuario']}>
+        <Route path={['/admin', '/admin/ventas', '/RegistroVenta', '/RegistroProductoF', '/GestionarProducto', '/ModListarVentas', '/ModuloUsuario']}>
           <PrivateLayout>
             <Switch>
+              <Route path='/admin/ventas'>
+                <Ventas />
+              </Route>
               <Route path='/RegistroVenta'>
                 <RegistroVenta />
               </Route>

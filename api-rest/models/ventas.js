@@ -11,7 +11,6 @@ const VentaSchema = Schema ({
     estado : { type: String, default: 'En proceso', enum:['En proceso','Cancelada','Entregada']},
     descripcion : String,
     valor_total : Number,
-    id_cliente : Number,
     nombre_cliente : String
 })
 
