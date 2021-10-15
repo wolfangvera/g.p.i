@@ -14,7 +14,7 @@ api.delete('/product/:productId', registroCtrl.deleteRegistro)
 api.get('/venta', ventaCtrl.getVentas)
 api.get('/venta/:ventaId', ventaCtrl.getVenta)
 api.post('/venta', ventaCtrl.saveVenta)
-api.put('venta/:ventaId',ventaCtrl.updateVenta)
-api.delete('venta/:ventaId',ventaCtrl.deleteVenta)
+api.put('/venta/:ventaId',ventaCtrl.updateVenta)
+api.delete('/venta/:ventaId',ventaCtrl.deleteVenta)
 
 module.exports = api
