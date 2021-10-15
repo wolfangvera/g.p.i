@@ -3,6 +3,12 @@
 .Info_user{
     clear:both;
 }
+
+.avatar {
+    padding-left: 1em;
+    width:7em;
+    padding-right: 0.5em;
+}
 .ordenar_info_usuario {
     list-style-type: none;
     display: flex;
@@ -12,6 +18,7 @@
     color:rgb(29,157,195);
     float:right;
     right:0;
+    font-size: 10px;
 
 }
 
@@ -19,3 +26,18 @@
     list-style-type: none;
 }
 
+.botonLogout{
+    color:rgb(29,157,195);
+    border:0px ;
+    background-color:transparent;
+    font-size:9.5px;
+    font-weight:bold;
+    padding-right: 0;
+    
+}
+
+.botonLogout:hover {
+    cursor:pointer;
+    transform:scale(1.1);
+
+}
