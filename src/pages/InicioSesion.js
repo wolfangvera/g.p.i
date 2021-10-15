@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../style/InicioSesion.css'
+import { LoginButton } from "../components/Loginbutton"
+
 
 const InicioSesion = () => {
     return (
@@ -28,6 +30,9 @@ const InicioSesion = () => {
                         <input className="input_inicio" type="password" placeholder="Contraseña..." id="password" required />
                     </div>
                     <input type="submit" value="¡Ingresar ahora!" onclick="Funcion()" className="boton boton_ingreso" />
+                    <div>
+                        <LoginButton/>
+                    </div>
                     <div>
                         <a href="" className="contraseña">¿Has olvidado la contraseña?</a>
                     </div>

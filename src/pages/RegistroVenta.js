@@ -16,11 +16,6 @@ const RegistroVenta = () => {
                             <label className="label_regventa">VALOR TOTAL</label>
                             <input className="input_info" type="number" placeholder="$" required />
                         </label>
-                        <label className="form">
-                            <label className="label_regventa">FECHA</label>
-                            <input className="input_info" type="date" required />
-
-                        </label>
                     </div>
                     <hr />
                     <div className="seccion_tabla">
@@ -46,12 +41,12 @@ const RegistroVenta = () => {
                         <table className="tabla_cliente">
                             <caption className="Titulo_tabla">Datos del Cliente</caption>
                             <thead className="thead">
-                                <th className="th_regventa">Identificación</th>
+                                
                                 <th className="th_regventa">Nombre</th>
 
                             </thead>
                             <tbody>
-                                <td className="td_regventa"><input className="input_info" type="text" /> </td>
+                                
                                 <td className="td_regventa"><input className="input_info" type="text" /> </td>
 
                             </tbody>
@@ -61,9 +56,9 @@ const RegistroVenta = () => {
                     <hr />
                     <div className="info_vendedor">
                         <div> Vendedor
-                            <select className="selector_vendedor">
+                            <select className="selector_vendedor" defaultValue="" required>
 
-                                <option>seleccionar ..</option>
+                                <option disabled value="">seleccionar ..</option>
                                 <option> Vendedor 1</option>
                                 <option> Vendedor 1</option>
                                 <option> Vendedor 1</option>

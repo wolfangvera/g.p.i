@@ -19,8 +19,8 @@ const ModuloUsuario = () => {
                             <td className="tdMU"> <input className="InputMU" placeholder="Ej:01658" type="text"/> </td>
                             <td className="tdMU"> <input className="InputMU" placeholder="Ej:Pepito Perez" type="text"/> </td>
                             <td className="tdMU">
-                                <select className="selectMU">
-                                    <option selected disabled="">Selecciona una opción</option>
+                                <select className="selectMU" defaultValue="" required>
+                                    <option disabled value="">Selecciona una opción</option>
                                     <option>Pendiente</option>
                                     <option>Autorizado</option>
                                     <option>No autorizado</option>
@@ -29,7 +29,7 @@ const ModuloUsuario = () => {
                             </td>
                             <td className="tdMU">
                                 <select className="selectMU"> 
-                                    <option selected disabled="">Selecciona una opción</option>
+                                    <option disabled value="">Selecciona una opción</option>
                                     <option>Administrador</option>
                                     <option>Vendedor</option>
         
@@ -43,8 +43,8 @@ const ModuloUsuario = () => {
                         <td className="tdMU"> <input className="InputMU" placeholder="Ej:01658" type="text"/> </td>
                             <td className="tdMU"> <input className="InputMU" placeholder="Ej:Pepito Perez" type="text"/> </td>
                             <td className="tdMU">
-                                <select className="selectMU">
-                                    <option selected disabled="">Selecciona una opción</option>
+                                <select className="selectMU" defaultValue="" required>
+                                    <option disabled value="">Selecciona una opción</option>
                                     <option>Pendiente</option>
                                     <option>Autorizado</option>
                                     <option>No autorizado</option>
@@ -52,8 +52,8 @@ const ModuloUsuario = () => {
                                 </select>
                             </td>
                             <td className="tdMU">
-                                <select className="selectMU"> 
-                                    <option selected disabled="">Selecciona una opción</option>
+                                <select className="selectMU" defaultValue="" required> 
+                                    <option disabled value="">Selecciona una opción</option>
                                     <option>Administrador</option>
                                     <option>Vendedor</option>
         
@@ -67,8 +67,8 @@ const ModuloUsuario = () => {
                         <td className="tdMU"> <input className="InputMU" placeholder="Ej:01658" type="text"/> </td>
                             <td className="tdMU"> <input className="InputMU" placeholder="Ej:Pepito Perez" type="text"/> </td>
                             <td className="tdMU">
-                                <select className="selectMU">
-                                    <option selected disabled="">Selecciona una opción</option>
+                                <select className="selectMU" defaultValue="" required>
+                                    <option disabled value="">Selecciona una opción</option>
                                     <option>Pendiente</option>
                                     <option>Autorizado</option>
                                     <option>No autorizado</option>
@@ -76,8 +76,8 @@ const ModuloUsuario = () => {
                                 </select>
                             </td>
                             <td className="tdMU">
-                                <select className="selectMU"> 
-                                    <option selected disabled="">Selecciona una opción</option>
+                                <select className="selectMU" defaultValue="" required> 
+                                    <option disabled value="">Selecciona una opción</option>
                                     <option>Administrador</option>
                                     <option>Vendedor</option>
         
@@ -91,8 +91,8 @@ const ModuloUsuario = () => {
                         <td className="tdMU"> <input className="InputMU" placeholder="Ej:01658" type="text"/> </td>
                             <td className="tdMU"> <input className="InputMU" placeholder="Ej:Pepito Perez" type="text"/> </td>
                             <td className="tdMU">
-                                <select className="selectMU">
-                                    <option selected disabled="">Selecciona una opción</option>
+                                <select className="selectMU" defaultValue="" required>
+                                    <option disabled value="">Selecciona una opción</option>
                                     <option>Pendiente</option>
                                     <option>Autorizado</option>
                                     <option>No autorizado</option>
@@ -100,8 +100,8 @@ const ModuloUsuario = () => {
                                 </select>
                             </td>
                             <td className="tdMU">
-                                <select className="selectMU"> 
-                                    <option selected disabled="">Selecciona una opción</option>
+                                <select className="selectMU" defaultValue="" required> 
+                                    <option disabled value="">Selecciona una opción</option>
                                     <option>Administrador</option>
                                     <option>Vendedor</option>
         
@@ -115,8 +115,8 @@ const ModuloUsuario = () => {
                         <td className="tdMU"> <input className="InputMU" placeholder="Ej:01658" type="text"/> </td>
                             <td className="tdMU"> <input className="InputMU" placeholder="Ej:Pepito Perez" type="text"/> </td>
                             <td className="tdMU">
-                                <select className="selectMU">
-                                    <option selected disabled="">Selecciona una opción</option>
+                                <select className="selectMU" defaultValue="" required>
+                                    <option disabled value="">Selecciona una opción</option>
                                     <option>Pendiente</option>
                                     <option>Autorizado</option>
                                     <option>No autorizado</option>
@@ -124,8 +124,8 @@ const ModuloUsuario = () => {
                                 </select>
                             </td>
                             <td className="tdMU">
-                                <select className="selectMU"> 
-                                    <option selected disabled="">Selecciona una opción</option>
+                                <select className="selectMU" defaultValue="" required> 
+                                    <option disabled value="">Selecciona una opción</option>
                                     <option>Administrador</option>
                                     <option>Vendedor</option>
         
@@ -139,8 +139,8 @@ const ModuloUsuario = () => {
                         <td className="tdMU"> <input className="InputMU" placeholder="Ej:01658" type="text"/> </td>
                             <td className="tdMU"> <input className="InputMU" placeholder="Ej:Pepito Perez" type="text"/> </td>
                             <td className="tdMU">
-                                <select className="selectMU">
-                                    <option selected disabled="">Selecciona una opción</option>
+                                <select className="selectMU" defaultValue="" required>
+                                    <option disabled value="">Selecciona una opción</option>
                                     <option>Pendiente</option>
                                     <option>Autorizado</option>
                                     <option>No autorizado</option>
@@ -148,8 +148,8 @@ const ModuloUsuario = () => {
                                 </select>
                             </td>
                             <td className="tdMU">
-                                <select className="selectMU"> 
-                                    <option selected disabled="">Selecciona una opción</option>
+                                <select className="selectMU" defaultValue="" required> 
+                                    <option disabled value="">Selecciona una opción</option>
                                     <option>Administrador</option>
                                     <option>Vendedor</option>
         
