@@ -14,10 +14,8 @@ const HeaderPrivate = () => {
                         </a>
                     </li>
                     
-                    <li><Link to='/RegistroProductoF'><button className="botonPrincipal">Registro de Productos</button></Link></li>
-                    <li><Link to="/GestionarProducto"><button className="botonPrincipal">Gestión de Productos </button></Link></li>
-                    <li><Link to="/RegistroVenta"><button className="botonPrincipal">Registro de Ventas</button></Link></li>
-                    <li><Link to="/ModListarVentas"><button className="botonPrincipal">Gestión de Ventas </button></Link></li>
+                    <li><Link to='/admin/productos'><button className="botonPrincipal">Productos</button></Link></li>
+                    <li><Link to="/admin/ventas"><button className="botonPrincipal">Ventas</button></Link></li>
                     <li><Link to="/ModuloUsuario"><button className="botonPrincipal">Gestión de Usuarios </button></Link></li>
 
                 </ul>
