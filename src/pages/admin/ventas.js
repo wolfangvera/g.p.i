@@ -2,28 +2,12 @@ import React, { useEffect, useState, useRef } from 'react';
 
 const ventasBackend = [
     {
-        id: "01",
-        fecha: "10/05/2021",
+        id: "25",
+        fecha: "Fecha cmabiada",
         estado:"En proceso",
         descripcion: "losproductos comprados",
         nombreCliente: "juan comprador",
         nombreVendedor: "juan vendedor",
-        valorTotal: 25000
-    },
-    {
-        id: "02",
-        fecha: "11/05/2021",
-        descripcion: "losproductos comprados segundo dia",
-        nombreCliente: "carlos comprador",
-        nombreVendedor: "carlos vendedor",
-        valorTotal: 25000
-    },
-    {
-        id: "03",
-        fecha: "12/05/2021",
-        descripcion: "losproductos comprados tercr dia",
-        nombreCliente: "carlos comprador",
-        nombreVendedor: "carlos vendedor",
         valorTotal: 25000
     }
 
@@ -53,8 +37,7 @@ const Ventas = () => {
     });
 
     return (
-        <div>
-            <h2 className="titulo_pagina_listarventas"> Modulo de Ventas</h2>
+        <div className="contenedor_listarventas">
             <button className="boton bt_adicion_producto" onClick={() => setMostrarTabla(!mostrarTabla)}> {textoBoton}</button>
             {mostrarTabla ? <TablaVentas listaVentas={ventas} /> : <FormularioAgregarVenta />}
         </div>

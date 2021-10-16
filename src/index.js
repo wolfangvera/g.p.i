@@ -5,12 +5,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const CLIENT_ID="WhNRRsNYB5KrwRNa6SMVmrktFzVPldXz";
+const DOMAIN="dev-5fn6nk1y.us.auth0.com";
+
 ReactDOM.render(
   <React.StrictMode>
     <Auth0Provider 
-      domain="dev-cfhmfvcr.us.auth0.com" 
-      clientId="JyoFNa7blBfR7wY2btsiDKpBrdELOBEe" 
-      redirectUri={window.location.origin}
+    domain={DOMAIN}
+    clientId={CLIENT_ID}
+     redirectUri={window.location.origin}
     >
       <App />
     </Auth0Provider>

@@ -15,9 +15,10 @@ const Info_user = () => {
     }
 
     return (
+        console.log(isAuthenticated),
         isAuthenticated && (
 
-        <div className="Info_user">
+        <div className="Info_user ">
             <ul class="ordenar_info_usuario">
                 <li>
                     <ul class="Opciones">
