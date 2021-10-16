@@ -10,7 +10,7 @@ const HeaderPublic = () => {
             <nav>
                 <ul className="ulHeaderPublic">
                     <li>
-                        <a href='/'>
+                        <a href='/admin/ventas'>
                             <img src={logoRegistro} class="logoHeaderPublic"alt="logo"/>
                         </a>
                     </li>
