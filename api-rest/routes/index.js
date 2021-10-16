@@ -3,6 +3,7 @@
 const express = require("express")
 const registroCtrl = require("../controllers/registro")
 const ventaCtrl =require('../controllers/ventas')
+const productoCtrl =require('../controllers/productos')
 const api = express.Router()
 
 api.get('/product', registroCtrl.getRegistros)
