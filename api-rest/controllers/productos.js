@@ -24,6 +24,7 @@ function saveProductos(req, res){
     console.log(req.body)
     let productos = Productos()
     productos.IDproducto = req.body.IDproducto
+    productos.descripcion = req.body.descripcion
     productos.valorU = req.body.valorU
     productos.cantidad = req.body.cantidad
     productos.estado = req.body.estado
