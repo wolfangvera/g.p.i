@@ -199,12 +199,12 @@ const FormularioAgregarProducto = ({
 
                     <label className="form_producto" htmlFor="valorUnitarioProducto">
                         Vlr unitario
-                        <input className="input_producto" type="number" placeholder="$" name="valorUnitario"  required />
+                        <input className="input_producto" type="number" placeholder="$" name="valorUnitarioProducto"  required />
                     </label >
 
                     <label className="form_producto" htmlFor="cantidadProducto">
                         Cantidad
-                        <input className="input_producto" type="number" placeholder="" name="cantidad"required />
+                        <input className="input_producto" type="number" placeholder="" name="cantidadProducto"required />
 
                     </label >
 
