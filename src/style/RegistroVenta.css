@@ -6,6 +6,18 @@
 .Titulo_RegVentas {
     text-align:center;
 }
+
+
+.tableProductos{
+text-align:center;
+
+}
+.nuevosProductos{
+    text-align:center;
+align-items: center;
+position:relative;
+left: 12.5rem;
+}
 .Cuadro_ingreso {
     background-color: rgb(223, 223, 223);
     border:0px solid black;
@@ -20,7 +32,8 @@
 }
 
 .ingreso_info {
-    align-items: center;   
+    align-items: center; 
+    text-align: center;  
     
 }
 

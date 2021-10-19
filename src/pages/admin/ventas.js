@@ -46,10 +46,11 @@ const Ventas = () => {
                 <TablaVentas listaVentas={ventas} />
             ) : (
                 <FormularioAgregarVenta
-                    funcionParaMostrarTabla={setMostrarTabla}
+                    setMostrarTabla={setMostrarTabla}
                     listaVentas={ventas}
-                    funcionParaAgregarProductos={setProductosVenta}
-                    funcionParaAgregarVenta={setVentas}/*listaVendedores={vendedores}*/ />
+                    listaProductosVenta={productosVenta}
+                    setProductosVenta={setProductosVenta}
+                    setVentas={setVentas}/*listaVendedores={vendedores}*/ />
             )}
             <ToastContainer
                 position="bottom-center"
@@ -151,14 +152,17 @@ const TablaVentas = ({ listaVentas }) => {
 };
 
 
-const FormularioAgregarVenta = ({ funcionParaMostrarTabla, listaVentas,/*listaProductosVenta,*/ funcionParaAgregarProductos, funcionParaAgregarVenta }) => {
+const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVenta, setProductosVenta, setVentas }) => {
     //datos de la tabla de venta
     const [idVenta, setIdVenta] = useState('');
     const [fecha, setFecha] = useState('');
     const [nombreVendedor, setNombreVendedor] = useState('');
     const [estadoVenta, setEstadoVenta] = useState('');
     const [valorTotal, setValorTotal] = useState('');
+
+    const [idCliente, setIdCliente] = useState('');
     const [nombreCliente, setNombreCliente] = useState('');
+    const [descripcion, setDescripcion] = useState('');
 
 
     //productos
@@ -166,15 +170,35 @@ const FormularioAgregarVenta = ({ funcionParaMostrarTabla, listaVentas,/*listaPr
     const [cantidadProducto, setCantidadProducto] = useState();
     const [valorUnitarioProducto, setValorUnitProducto] = useState();
 
+    const formProductos = useRef(null);
+
+
+    const submitProductos = (e) => {
+        e.preventDefault();
+        const fpd = new FormData(formProductos.current);
+
+        const nuevoProducto = {};
+        nuevoProducto[descripcion] = listaProductosVenta;
+        fpd.forEach((value, key) => {
+            nuevoProducto[key] = value;
+        });
+
+        toast.success("producto añadido")
+        setProductosVenta([...listaProductosVenta, nuevoProducto])
+        setDescripcion(descripcion)
+        console.log("los productos añaddidos son", nuevoProducto)
+        console.log("la decripcion es,", descripcion)
+    }
+
     const enviarVentasBackend = () => {
         console.log("id", idVenta, " vendedor", nombreVendedor, " nombre cliente", nombreCliente)
-        if (idVenta === '' || fecha === '' || estadoVenta === '' || /*descripcion === '' ||*/ nombreCliente === '' || nombreVendedor === '' || valorTotal === '') {
+        if (idVenta === '' || idCliente === '' || /*descripcion === '' ||*/ nombreCliente === '' || nombreVendedor === '' || valorTotal === '') {
             toast.error('Ingrese todos los campos');
         } else {
 
             toast.success('Venta Registrada con Exito');
-            funcionParaMostrarTabla(true);
-            funcionParaAgregarVenta([...listaVentas, { idVenta: idVenta, fecha: fecha, nombreVendedor: nombreVendedor, estadoVenta: estadoVenta,/*descripcion:listaProductosVenta*,*/valorTotal: valorTotal }])
+            setMostrarTabla(true);
+            setVentas([...listaVentas, { idVenta: idVenta, nombreVendedor: nombreVendedor,/*descripcion:listaProductosVenta*,*/valorTotal: valorTotal }])
         };
     };
 
@@ -186,7 +210,7 @@ const FormularioAgregarVenta = ({ funcionParaMostrarTabla, listaVentas,/*listaPr
     return (
         <div className="contenedor_RegVentas">
             <h2 className="Titulo_RegVentas">Modulo Registro de Ventas</h2>
-            <form className="Cuadro_ingreso">
+            <div className="Cuadro_ingreso">
                 <div className="ingreso_info">
                     <div className="info_venta">
                         <label className="form">
@@ -195,11 +219,11 @@ const FormularioAgregarVenta = ({ funcionParaMostrarTabla, listaVentas,/*listaPr
                         </label>
                         <label className="form">
                             <label className="label_regventa">VALOR TOTAL</label>
-                            <input className="input_info" type="number" placeholder="$" required />
+                            <input className="input_info" type="number" placeholder="$" name="valorTotal" value={valorTotal} onChange={(e) => { setValorTotal(e.target.value) }} required />
                         </label>
                     </div>
                     <hr />
-                    <div className="seccion_tabla">
+                    <form ref={formProductos} onSubmit={submitProductos} className="seccion_tabla">
                         <table className="tabla_registro">
                             <caption className="Titulo_tabla">Registro de productos</caption>
                             <thead className="thead">
@@ -208,33 +232,70 @@ const FormularioAgregarVenta = ({ funcionParaMostrarTabla, listaVentas,/*listaPr
                                 <th className="th_regventa">Precio unitario</th>
                             </thead>
                             <tbody>
-                                <td name="id_producto" className="td_regventa"><input name="idProducto" value={idProducto} onChange={(e) => { setIdProducto(e.target.value) }} className="input_info" type="text" /> </td>
-                                <td name="cantidad" className="td_regventa"><input name="cantidadProducto" value={cantidadProducto} onChange={(e) => { setCantidadProducto(e.target.value) }} className="input_info" type="text" /> </td>
-                                <td name="precio_unitario" className="td_regventa"><input name="valorUnitarioProducto" value={valorUnitarioProducto} onChange={(e) => { setValorUnitProducto(e.target.value) }} className="input_info" type="text" /> </td>
+                                <td name="id_producto" className="td_regventa">
+                                    <label htmlFor="idProducto">
+                                        <input name="idProducto" className="input_info" type="text" required />
+                                    </label>
+                                </td>
+                                <td name="cantidad" className="td_regventa">
+                                    <label htmlFor="cantidadProducto">
+
+                                        <input name="cantidadProducto" className="input_info" type="text" required />
+                                    </label>
+                                </td>
+                                <td name="precio_unitario" className="td_regventa">
+                                    <label htmlFor="valorUnitarioProducto">
+                                        <input name="valorUnitarioProducto" className="input_info" type="text" required />
+                                    </label>
+                                </td>
                             </tbody>
                         </table>
                         <div>
                             <button
                                 className="boton bt_adicion_producto"
                                 type="submit"
-                            /*onClick={() => { enviarProductosVenta() }}*/
+
                             >
                                 Adicionar producto
                             </button>
                         </div>
+                    </form>
+<div className="nuevosProductos">
+                    <table className="tableProductos">
+                        <thead className="clase1">
+                            <th className="th_listar"  >IdProducto</th>
+                            <th className="th_listar" >Cantidad</th>
+                            <th className="th_listar" >Valor unitario</th>
 
+                        </thead>
+                        <tbody>
+                            {listaProductosVenta.map((productosVenta) => {
+                                return (
+                                    <tr>
+                                        <td className="td_listar"> {productosVenta.idProducto}</td>
+                                        <td className="td_listar">{productosVenta.cantidadProducto}</td>
+                                        <td className="td_listar">{productosVenta.valorUnitarioProducto}</td>
+                                    </tr>
 
+                                );
+                            })}
+                        </tbody>
+                    </table>
                     </div>
+
+
+
                     <hr />
                     <div className="info_cliente">
                         <table className="tabla_cliente">
                             <caption className="Titulo_tabla">Datos del Cliente</caption>
                             <thead className="thead">
-
+                                <th className="th_regventa">Id Cliente</th>
                                 <th className="th_regventa">Nombre</th>
 
                             </thead>
                             <tbody>
+                                <td className="td_regventa"><input name="idCliente" value={idCliente} onChange={(e) => { setIdCliente(e.target.value) }} className="input_info" type="text" required /> </td>
 
                                 <td className="td_regventa"><input name="nombreCliente" value={nombreCliente} onChange={(e) => { setNombreCliente(e.target.value) }} className="input_info" type="text" required /> </td>
 
@@ -264,9 +325,9 @@ const FormularioAgregarVenta = ({ funcionParaMostrarTabla, listaVentas,/*listaPr
                         Registrar venta
                     </button>
                 </div>
-            </form>
+            </div>
 
-        </div>
+        </div >
 
     );
 }
