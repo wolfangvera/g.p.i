@@ -260,27 +260,27 @@ const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVe
                             </button>
                         </div>
                     </form>
-<div className="nuevosProductos">
-                    <table className="tableProductos">
-                        <thead className="clase1">
-                            <th className="th_listar"  >IdProducto</th>
-                            <th className="th_listar" >Cantidad</th>
-                            <th className="th_listar" >Valor unitario</th>
+                    <div className="nuevosProductos">
+                        <table className="tableProductos">
+                            <thead className="clase1">
+                                <th className="th_listar"  >IdProducto</th>
+                                <th className="th_listar" >Cantidad</th>
+                                <th className="th_listar" >Valor unitario</th>
 
-                        </thead>
-                        <tbody>
-                            {listaProductosVenta.map((productosVenta) => {
-                                return (
-                                    <tr>
-                                        <td className="td_listar"> {productosVenta.idProducto}</td>
-                                        <td className="td_listar">{productosVenta.cantidadProducto}</td>
-                                        <td className="td_listar">{productosVenta.valorUnitarioProducto}</td>
-                                    </tr>
+                            </thead>
+                            <tbody>
+                                {listaProductosVenta.map((productosVenta) => {
+                                    return (
+                                        <tr>
+                                            <td className="td_listar"> {productosVenta.idProducto}</td>
+                                            <td className="td_listar">{productosVenta.cantidadProducto}</td>
+                                            <td className="td_listar">{productosVenta.valorUnitarioProducto}</td>
+                                        </tr>
 
-                                );
-                            })}
-                        </tbody>
-                    </table>
+                                    );
+                                })}
+                            </tbody>
+                        </table>
                     </div>
 
 
