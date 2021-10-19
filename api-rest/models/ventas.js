@@ -5,13 +5,13 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const VentaSchema = Schema ({
-    id : Number,
+    idVenta : Number,
     fecha : {type:Date , default:Date.now()},
-    vendedor : String,
-    estado : { type: String, default: 'En proceso', enum:['En proceso','Cancelada','Entregada']},
+    nombreVendedor : String,
+    estadoVenta : { type: String, default: 'En proceso', enum:['En proceso','Cancelada','Entregada']},
     descripcion : String,
-    valor_total : Number,
-    nombre_cliente : String
+    valorTotal : Number,
+    nombreCliente : String
 })
 
 module.exports = mongoose.model('Venta', VentaSchema)

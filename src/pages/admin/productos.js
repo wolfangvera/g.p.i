@@ -1,13 +1,15 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 const productosBackend = [
     {
 
-        id: "01",
+        idProducto: "01",
         descripcion: "producto1",
-        estado: "disponible",
-        cantidad: 1400,
-        valorUnitario: 1200
+        estadoProducto: "disponible",
+        cantidadProducto: 1400,
+        valorUnitarioProducto: 1200
     }
 
 
@@ -39,7 +41,19 @@ const Productos = () => {
     return (
         <div className="contenedor_gestionP">
             <button className="boton bt_adicion_producto" onClick={() => setMostrarTabla(!mostrarTabla)}> {textoBoton}</button>
-            {mostrarTabla ? <TablaProductos listaProductos={productos} /> : <FormularioAgregarProducto />}
+            {mostrarTabla ? (
+                <TablaProductos listaProductos={productos} />
+            ) : (
+                <FormularioAgregarProducto
+                    setMostrarTabla={setMostrarTabla}
+                    listaProductos={productos}
+                    setProductos={setProductos}
+                />
+            )}
+            <ToastContainer
+                position="bottom-center"
+                autoClose={3500}
+            />
         </div>
     );
 };
@@ -62,7 +76,7 @@ const TablaProductos = ({ listaProductos }) => {
                     <div className="busquedaProducto">
                         <label className="form_productoG">
                             <label for="Busquedaproductos"> ID </label>
-                            <input className="input_BuscarproductoD" type="text" name="Busquedaproductos" id="" />
+                            <input className="input_BuscarproductoD" type="text" name="Busquedaproductos" id="idProducto" />
                         </label>
 
                         <label className="form_productoG">
@@ -101,22 +115,22 @@ const TablaProductos = ({ listaProductos }) => {
                                 <th className="th_listarP">Editar/ Guardar</th>
                             </thead>
                             <tbody>
-                                {listaProductos.map((productos)=>{
+                                {listaProductos.map((productos) => {
                                     return (
                                         <tr>
-                                        <td className="td_listarP">{productos.id}</td>
-                                        <td className="td_listarP">{productos.descripcion}</td>
-                                        <td className="td_listarP">{productos.estado}</td>
-                                        <td className="td_listarP">{productos.cantidad}</td>
-                                        <td className="td_listarP">{productos.valorUnitario}</td>
-                                        <td className="td_listarP">
-                                            <button className="input_editar" >Editar</button>
-                                        </td>
-                                    </tr>
+                                            <td className="td_listarP">{productos.idProducto}</td>
+                                            <td className="td_listarP">{productos.descripcion}</td>
+                                            <td className="td_listarP">{productos.estadoProducto}</td>
+                                            <td className="td_listarP">{productos.cantidadProducto}</td>
+                                            <td className="td_listarP">{productos.valorUnitarioProducto}</td>
+                                            <td className="td_listarP">
+                                                <button type="button" className="input_editar" >Editar</button>
+                                            </td>
+                                        </tr>
                                     )
                                 })}
 
-                               
+
                             </tbody>
                         </table>
                     </div>
@@ -132,56 +146,86 @@ const TablaProductos = ({ listaProductos }) => {
 };
 
 
-const FormularioAgregarProducto = () => {
+const FormularioAgregarProducto = ({
+    setMostrarTabla, listaProductos,
+    setProductos
+}) => {
+
+    
+    //datos de la tabla de productos
+    const form =useRef(null);
+ 
+
+
+   /* const enviarProductosBackend = () => {
+        console.log("id", idProducto, " descripcion", descripcion, " estado", estadoProducto, " cantidad", cantidadProducto, " valor unitario", valorUnitarioProducto)
+        if (idProducto === '' || descripcion === '' || estadoProducto === '' || cantidadProducto === '' || valorUnitarioProducto === '') {
+            toast.error('Ingrese todos los campos');
+        } else {
+
+            toast.success('Producto Agregado con Exito');
+            funcionParaMostrarTabla(true);
+            funcionParaAgregarProducto([...listaProductos, { idProducto: idProducto, descripcion: descripcion, estadoProducto: estadoProducto, cantidadProducto: cantidadProducto, valorUnitarioProducto: valorUnitarioProducto }])
+        };
+    };*/
+
+    const submitForm=(e)=> {
+        e.preventDefault();
+        const fd = new FormData(form.current);
+        
+        const nuevoProducto ={};
+        fd.forEach((value, key)=>{
+            nuevoProducto[key]=value;
+        });
+        setMostrarTabla(true);
+        toast.success("Producto agregado con exito" );
+        setProductos([...listaProductos,nuevoProducto])
+    };
+
 
     return (
         <div className="Contenedor_RegProductos">
             <h2 className="TituloPagina"> Módulo Registro de Producto</h2>
-            <div className="Cuadro_ingreso">
+            <div className="Cuadro_ingresoProducto">
 
-                <div className="ingreso_info">
+                <form ref={form} onSubmit={submitForm} className="ingreso_info">
+                    <label className="form_producto" htmlFor="idProducto">ID producto
+                        <input className="input_producto" type="number" placeholder="ID" name="idProducto"  required />
+                    </label >
 
-                    <ul className="ingreso_producto">
-                        <li>
-                            <label className="form_producto">
-                                <label className="label_producto">ID producto</label>
-                                <input className="input_producto" type="number" placeholder="ID" required />
-                            </label >
-                            <label className="form_producto">
-                                <label className="label_producto">Descripción</label>
-                                <input className="input_producto" type="text" required />
-                            </label >
-                        </li>
-                        <li>
+                    <label className="form_producto" htmlFor="descripcion">Descripción
+                        <input className="input_producto" type="text" name="descripcion" required />
+                    </label >
 
-                            <label className="form_producto">
-                                <label className="label_producto">Vlr unitario</label>
-                                <input className="input_producto" type="number" placeholder="$" required />
+                    <label className="form_producto" htmlFor="valorUnitarioProducto">
+                        Vlr unitario
+                        <input className="input_producto" type="number" placeholder="$" name="valorUnitario"  required />
+                    </label >
 
-                            </label >
-                            <label className="form_producto">
-                                <label className="label_producto">Cantidad</label>
-                                <input className="input_producto" type="number" placeholder="" required />
+                    <label className="form_producto" htmlFor="cantidadProducto">
+                        Cantidad
+                        <input className="input_producto" type="number" placeholder="" name="cantidad"required />
 
-                            </label >
-                        </li>
-                    </ul>
+                    </label >
 
+                    <label className="form_producto" htmlFor="estadoProducto"> Estado de producto
+                        <select className="select_producto" defaultValue="" name="estadoProducto"  required>
+                            <option disabled value=""> Seleccione...</option>
+                            <option> Disponible</option>
+                            <option> No Disponible</option>
 
-                    <div className="option">
-                        <div> Estado de producto
-                            <select className="select" defaultValue="" required>
-                                <option disabled value=""> Seleccione...</option>
-                                <option> Disponible</option>
-                                <option> No Disponible</option>
+                        </select>
+                    </label>
 
-                            </select>
-                        </div>
-                    </div>
-                    <div className="center">
-                        <button className="boton bt_registro_producto">Registrar producto</button>
-                    </div>
-                </div>
+                    <button
+                        type='submit'
+                        className="boton bt_registro_producto bt_centrado"
+                        //onClick={() => { enviarProductosBackend() }}
+                    >
+                        Registrar producto
+                    </button>
+
+                </form>
 
 
             </div>

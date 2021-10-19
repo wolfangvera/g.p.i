@@ -3,13 +3,26 @@
     text-align:center;
     margin-bottom: 5em;;
 }
+.Cuadro_ingresoProducto{
+    background-color: rgb(223, 223, 223);
+    border:0px solid black;
+    width: fit-content;
+    margin-left:auto;
+    margin-right: auto;
+    height: max-content;
+    border-radius: 20px;   
+    padding: 1rem;
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+    
+}
 
 .ingreso_producto {
-    list-style:none;
+    
     display:flex;
-    justify-content:space-around;
-    text-align: right;
+
+    text-align: center;
     padding-top: 1em;
+    
 }
 
 .input_producto {
@@ -20,7 +33,7 @@
     border-radius: 5px;
     box-shadow: 1.5px 2px 3px 2px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width:10.5em;
+    width:10.5rem;
     height: 1em;
 
 }
@@ -30,7 +43,7 @@
 }
 
 .ingreso_info {
-    text-align: center;  
+    text-align: right;  
     font-weight: bold; 
 }
 
@@ -39,23 +52,27 @@
     padding-top: 1em;
     padding-bottom: 1em;
 }
-.select {
+
+.select_producto {
     border:0px solid;
     box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     font-size: 14px;
-    height: 30px;
+    height: 2rem;
     padding: 5px;
-    width: 150px;
+    width: 10.8rem;
     align-items: right;
-    margin-left: 1cm;
-    margin-right:auto;
+    margin: 1vw;
 }
 
 .form_producto {
     padding-left: 20px;
     font-size:15px; 
     display: block;
+    text-align: right;
+    font-size: medium;
+    margin:10px;
+    border:0px;
     
 }
 
@@ -63,13 +80,12 @@
     font-size: medium;
     background-color: rgb(89, 192, 89);   
     color: white;
-    border-radius: 15px;
-    width: 160px;
-    height: 40px;
+    border-radius: 1rem;
+    width: 100%;
+    height: 2rem;
     font-weight:bold;
-    position:relative;
-    left: auto;
-    right: auto;
+    padding-right: 1;
+    margin:1rem;
 }
 
 .bt_registro_producto:hover {
@@ -79,13 +95,6 @@
     
 }
 
-.option {
-    text-align: center;
-    font-size: medium;
-    margin:10px;
-    border:0px;
-
-}
 
 
 .seccion_tabla {
