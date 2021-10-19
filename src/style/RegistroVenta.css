@@ -7,11 +7,16 @@
     text-align:center;
 }
 
-.tableProductos{
-text-align: center;
-position: relative;
-left: 24.2%;
 
+.tableProductos{
+text-align:center;
+
+}
+.nuevosProductos{
+    text-align:center;
+align-items: center;
+position:relative;
+left: 12.5rem;
 }
 .Cuadro_ingreso {
     background-color: rgb(223, 223, 223);
@@ -21,14 +26,14 @@ left: 24.2%;
     margin-right: auto;
     height: max-content;
     border-radius: 20px;   
-    padding-bottom: 4rem;
-    margin-bottom: 8rem;
+    padding-bottom: 0.2rem;
     box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
     
 }
 
 .ingreso_info {
-    align-items: center;   
+    align-items: center; 
+    text-align: center;  
     
 }
 
@@ -102,14 +107,13 @@ left: 24.2%;
     font-size: medium;
     background-color: rgb(89, 192, 89);   
     color: white;
-    border-radius: 15rem;
-    width: 70%;
+    border-radius: 15px;
+    width: 10em;
     height: 2.5em;
     font-weight:bold;
-    position:absolute;
-    bottom: -24em;
-    left:13%;
-    
+    position:relative;
+    left: auto;
+    right: auto;
 }
 
 .bt_registro_venta:hover {
@@ -122,7 +126,7 @@ left: 24.2%;
     text-align:center;
 }    
 .info_cliente {
-    margin: 1em;
+    margin: 15px;
  
 }
 .info_vendedor {
@@ -164,7 +168,9 @@ left: 24.2%;
 
 .Titulo_tabla {
     font-weight:bolder;
-    padding:1em;
-    text-align: center;
-    margin:0;
+    padding-bottom: 1em;
 }
+
+
+
+
