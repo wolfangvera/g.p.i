@@ -178,16 +178,16 @@ const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVe
         const fpd = new FormData(formProductos.current);
 
         const nuevoProducto = {};
-        nuevoProducto[descripcion] = listaProductosVenta;
         fpd.forEach((value, key) => {
             nuevoProducto[key] = value;
+
         });
 
-        toast.success("producto añadido")
+        toast.success("Producto añadido")
         setProductosVenta([...listaProductosVenta, nuevoProducto])
-        setDescripcion(descripcion)
-        console.log("los productos añaddidos son", nuevoProducto)
-        console.log("la decripcion es,", descripcion)
+        //setDescripcion
+
+        console.log()
     }
 
     const enviarVentasBackend = () => {
@@ -202,10 +202,6 @@ const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVe
         };
     };
 
-    /*const enviarProductosVenta = () => {
-        console.log("idProducto", idProducto, " cantidad", cantidadProducto, " Valor unit", valorUnitarioProducto);
-        funcionParaAgregarProductos([...listaProductosVenta, {idProducto:idProducto,cantidadProducto:cantidadProducto,valorUnitarioProducto:valorUnitarioProducto}])
-    };*/
 
     return (
         <div className="contenedor_RegVentas">
@@ -438,3 +434,6 @@ const Ventas = () => {
 */
 
 export default Ventas
+
+
+
