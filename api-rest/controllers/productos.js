@@ -21,7 +21,9 @@ function getProductos(req, res){
 
 }
 function saveProductos(req, res){
+    console.log('POST /productos/agregar')
     console.log(req.body)
+
     let productos = Productos()
     productos.idProducto = req.body.idProducto
     productos.valorUnitario = req.body.valorUnitario
@@ -30,11 +32,14 @@ function saveProductos(req, res){
     productos.estadoProducto = req.body.estadoProducto
 
     productos.save((err, productosStored) =>{
-        if (err) res.status(500).send({message:"Error al salvar en la base de datos."})
+        if (err) {
+            console.log(err)
+            return res.status(500).send({message: `Error al guardar en la BD... ${err}`});
+        }
+        res.status(200).send({productos: productosStored});
+    });
+};
 
-        res.status(200).send({productos: productosStored})
-    })
-}
 function updateProductos(req, res){
     let productoId = req.params.productoId
     let update = req.body

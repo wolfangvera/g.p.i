@@ -1,20 +1,27 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
+import axios from 'axios';
 
-const ventasBackend = [
+const ventasBackend = /* [
     {
         idVenta: "25",
         fecha: "Fecha cmabiada",
         estadoVenta: "En proceso",
         descripcion: "producto 1: 5unidades       producto2 : 3unidades",
-        idCliente : 103654556,
+        idCliente: 103654556,
         nombreCliente: "juan comprador",
         nombreVendedor: "juan vendedor",
         valorTotal: 25000
     }
 
-]
+]*/
+    axios.get(`http://localhost:3001/api/venta`)
+        .then(res => {
+            this.ventas = res.data;
+        }).catch(e => {
+            console.log(e)
+        });
 
 
 const Ventas = () => {
@@ -83,13 +90,13 @@ const TablaVentas = ({ listaVentas }) => {
                     </label>
                     <label className="label_listarventas"
                         for="fecha desde:">
-                        
+
                         <input className="input_listarventas"
                             type="text" placeholder="identificación cliente" />
                     </label>
                     <label className="label_listarventas"
                         for="fecha desde:">
-                       
+
                         <input className="input_listarventas"
                             type="text" placeholder="Nombre del cliente" />
                     </label>
@@ -118,7 +125,7 @@ const TablaVentas = ({ listaVentas }) => {
                                         <td className="td_listar"> {ventas.idCliente}</td>
                                         <td className="td_listar">{ventas.nombreCliente}</td>
                                         <td className="td_listar"> {ventas.estadoVenta}</td>
-                                        <td className="td_listar">{ventas.descripcion}</td>
+                                        <td className="td_listar">{ventas.descripcionVenta}</td>
                                         <td className="td_listar">{ventas.valorTotal}</td>
                                         <td className="td_listar">
                                             <input className="input_edit" type="button" value="Editar" />
@@ -157,6 +164,7 @@ const TablaVentas = ({ listaVentas }) => {
 };
 
 
+
 const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVenta, setProductosVenta, setVentas }) => {
     //datos de la tabla de venta
     const [idVenta, setIdVenta] = useState('');
@@ -164,11 +172,11 @@ const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVe
     const [nombreVendedor, setNombreVendedor] = useState('');
     const [estadoVenta, setEstadoVenta] = useState('');
     const [valorTotal, setValorTotal] = useState('');
+    const [valorTotalVenta, setValorTotalVenta] = useState('');
 
     const [idCliente, setIdCliente] = useState('');
     const [nombreCliente, setNombreCliente] = useState('');
-    const [descripcion, setDescripcion] = useState('');
-
+    const [descripcionVenta, setDescripcionVenta] = useState('');
 
     //productos
     const [idProducto, setIdProducto] = useState();
@@ -176,6 +184,7 @@ const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVe
     const [valorUnitarioProducto, setValorUnitProducto] = useState();
 
     const formProductos = useRef(null);
+
 
 
     const submitProductos = (e) => {
@@ -190,20 +199,47 @@ const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVe
 
         toast.success("Producto añadido")
         setProductosVenta([...listaProductosVenta, nuevoProducto])
-        //setDescripcion
 
-        console.log(valorUnitarioProducto)
+        //setDescripcion
+        let listadotoString = JSON.stringify(listaProductosVenta);
+        setDescripcionVenta(listadotoString)
+
     }
 
-    const enviarVentasBackend = () => {
+    const enviarVentasBackend = (e) => {
+
         console.log("id", idVenta, " vendedor", nombreVendedor, " nombre cliente", nombreCliente)
         if (idVenta === '' || idCliente === '' || /*descripcion === '' ||*/ nombreCliente === '' || nombreVendedor === '' || valorTotal === '') {
             toast.error('Ingrese todos los campos');
         } else {
 
-            toast.success('Venta Registrada con Exito');
+            /*toast.success('Venta Registrada con Exito');
             setMostrarTabla(true);
             setVentas([...listaVentas, { idVenta: idVenta, nombreVendedor: nombreVendedor, idCliente:idCliente , nombreCliente:nombreCliente,valorTotal: valorTotal }])
+        */
+            const VentaSchema = {
+                idVenta: idVenta,
+                nombreVendedor: nombreVendedor,
+                descripcionVenta: descripcionVenta,
+                valorTotal: valorTotal,
+                idCliente: idCliente,
+                nombreCliente: nombreCliente
+            };
+
+            axios.post(`http://localhost:3001/api/venta/agregar`, VentaSchema)
+                .then(res => {
+                    toast.success('Venta Registrada con Exito');
+                    setMostrarTabla(true);
+                    setVentas([...listaVentas, { idVenta: idVenta, nombreVendedor: nombreVendedor, idCliente: idCliente, nombreCliente: nombreCliente, valorTotal: valorTotal }])
+
+                });
+
+
+
+
+
+
+
         };
     };
 
@@ -267,7 +303,7 @@ const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVe
                                 <th className="th_listar"  >IdProducto</th>
                                 <th className="th_listar" >Cantidad</th>
                                 <th className="th_listar" >Valor unitario</th>
-
+                                <th className="th_listar" >Valor total</th>
                             </thead>
                             <tbody>
                                 {listaProductosVenta.map((productosVenta) => {
@@ -276,6 +312,8 @@ const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVe
                                             <td className="td_listar"> {productosVenta.idProducto}</td>
                                             <td className="td_listar">{productosVenta.cantidadProducto}</td>
                                             <td className="td_listar">{productosVenta.valorUnitarioProducto}</td>
+                                            <td className="td_listar">{productosVenta.cantidadProducto * productosVenta.valorUnitarioProducto}</td>
+
                                         </tr>
 
                                     );
