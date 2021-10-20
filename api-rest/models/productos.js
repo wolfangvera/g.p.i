@@ -7,7 +7,7 @@ const ProductoSchema = Schema({
     valorUnitario: Number,
     cantidadProducto: Number,
     descripcionProducto: String,
-    estadoProducto: {type: String, /*default: "", */  enum:['Disponible', 'No disponible']},
+    estadoProducto: {type: String, /*default: "", */  enum:['Disponible', 'No Disponible']},
     
 })
 

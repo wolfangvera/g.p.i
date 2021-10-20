@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'
+import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 
 const productosBackend = [
     {
@@ -119,7 +120,7 @@ const TablaProductos = ({ listaProductos }) => {
                                     return (
                                         <tr>
                                             <td className="td_listarP">{productos.idProducto}</td>
-                                            <td className="td_listarP">{productos.descripcion}</td>
+                                            <td className="td_listarP">{productos.descripcionProducto}</td>
                                             <td className="td_listarP">{productos.estadoProducto}</td>
                                             <td className="td_listarP">{productos.cantidadProducto}</td>
                                             <td className="td_listarP">{productos.valorUnitarioProducto}</td>
@@ -151,16 +152,16 @@ const FormularioAgregarProducto = ({
     setProductos
 }) => {
 
-    
+
     //datos de la tabla de productos
-    const form =useRef(null);
- 
+    const form = useRef(null);
 
 
 
-    const submitForm=(e)=> {
+
+    const submitForm = (e) => {
         e.preventDefault();
-        const fd = new FormData(form.current);
+        /*const fd = new FormData(form.current);
         
         const nuevoProducto ={};
         fd.forEach((value, key)=>{
@@ -169,7 +170,37 @@ const FormularioAgregarProducto = ({
         setMostrarTabla(true);
         toast.success("Producto agregado con exito" );
         setProductos([...listaProductos,nuevoProducto])
-        console.log(nuevoProducto)
+        */
+
+        //nivelacion-api
+        const ProductoSchema = {
+            idProducto: e.target.idProducto.value,
+            valorUnitario: e.target.valorUnitarioProducto.value,
+            cantidadProducto: e.target.cantidadProducto.value,
+            descripcionProducto: e.target.descripcionProducto.value,
+            estadoProducto: e.target.estadoProducto.value,
+
+        };
+
+        axios.post(`http://localhost:3001/api/productos/agregar`, ProductoSchema)
+            .then(res => {
+                const fd = new FormData(form.current);
+
+                const nuevoProducto = {};
+                fd.forEach((value, key) => {
+                    nuevoProducto[key] = value;
+                });
+                setMostrarTabla(true);
+                toast.success("Producto agregado con exito");
+                setProductos([...listaProductos, nuevoProducto])
+
+            });
+
+        /*alert('Datos correctos' + '\n'
+            + "id" + e.target.idProducto.value
+            + '\n' + "valorunit" + e.target.valorUnitarioProducto.value
+            + '\n' + "cantidad" + e.target.cantidadProducto.value)*/
+
     };
 
 
@@ -180,26 +211,26 @@ const FormularioAgregarProducto = ({
 
                 <form ref={form} onSubmit={submitForm} className="ingreso_info">
                     <label className="form_producto" htmlFor="idProducto">ID producto
-                        <input className="input_producto" type="number" placeholder="ID" name="idProducto"  required />
+                        <input className="input_producto" type="number" placeholder="ID" name="idProducto" id="idProducto" required />
                     </label >
 
                     <label className="form_producto" htmlFor="descripcion">Descripción
-                        <input className="input_producto" type="text" name="descripcion" required />
+                        <input className="input_producto" type="text" name="descripcionProducto" id="descripcionProducto" required />
                     </label >
 
                     <label className="form_producto" htmlFor="valorUnitarioProducto">
                         Vlr unitario
-                        <input className="input_producto" type="number" placeholder="$" name="valorUnitarioProducto"  required />
+                        <input className="input_producto" type="number" placeholder="$" name="valorUnitarioProducto" id="valorUnitarioProducto" required />
                     </label >
 
                     <label className="form_producto" htmlFor="cantidadProducto">
                         Cantidad
-                        <input className="input_producto" type="number" placeholder="" name="cantidadProducto"required />
+                        <input className="input_producto" type="number" placeholder="" name="cantidadProducto" id="cantidadProducto" required />
 
                     </label >
 
                     <label className="form_producto" htmlFor="estadoProducto"> Estado de producto
-                        <select className="select_producto" defaultValue="" name="estadoProducto"  required>
+                        <select className="select_producto" defaultValue="" name="estadoProducto" id="estadoProducto" required>
                             <option disabled value=""> Seleccione...</option>
                             <option> Disponible</option>
                             <option> No Disponible</option>
@@ -210,7 +241,7 @@ const FormularioAgregarProducto = ({
                     <button
                         type='submit'
                         className="boton bt_registro_producto bt_centrado"
-                        //onClick={() => { enviarProductosBackend() }}
+                    //onClick={() => { enviarProductosBackend() }}
                     >
                         Registrar producto
                     </button>
@@ -226,109 +257,5 @@ const FormularioAgregarProducto = ({
     );
 }
 
-/*
-const Ventas = () => {
-    const [mostrarTabla, setMostrarTabla] = useState(true);
-    const [ventas, setVentas] = useState([]);
-    const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
-    const [mostrarProductosAdicionales, setMostrarProductosAdicionales] = useState(false);
-
-    useEffect(() => {
-        console.log('Hola soy usefect')
-        //pasos
-
-    }, []);
-
-    useEffect(() => {
-        console.log("Se ejecuta cuando cambia la variable", ventas)
-    }, [ventas]);
-
-
-    const enviarDatosAlBackend = () => {
-        console.log(`Esta es la marca`, ventas)
-    }
-
-
-
-    return (
-        <div className="contenedor_RegVentas">
-            <h2 className="Titulo_RegVentas">Modulo Registro de Ventas</h2>
-            <div className="Cuadro_ingreso">
-                <div className="ingreso_info">
-                    <div className="info_venta">
-                        <label className="form">
-                            <label className="label_regventa">ID VENTA</label>
-                            <input onChange={(e) => { setVentas(e.target.value) }} className="input_info" type="number" placeholder="ID" required />
-                        </label>
-                        <label className="form">
-                            <label className="label_regventa">VALOR TOTAL</label>
-                            <input onChange={(e) => { console.log(e.target.value) }} className="input_info" type="number" placeholder="$" required />
-                        </label>
-                    </div>
-                    <hr />
-                    <div className="seccion_tabla">
-                        <table className="tabla_registro">
-                            <caption className="Titulo_tabla">Registro de productos</caption>
-                            <thead className="thead">
-                                <th className="th_regventa">ID Producto</th>
-                                <th className="th_regventa">Cantidad</th>
-                                <th className="th_regventa">Precio unitario</th>
-                            </thead>
-                            <tbody>
-                                <td className="td_regventa"><input onChange={(e) => { console.log(e.target.value) }} className="input_info" type="text" /> </td>
-                                <td className="td_regventa"><input onChange={(e) => { console.log(e.target.value) }} className="input_info" type="text" /> </td>
-                                <td className="td_regventa"><input onChange={(e) => { console.log(e.target.value) }} className="input_info" type="text" /> </td>
-                            </tbody>
-                        </table>
-                        <div>
-                            <button onClick={() => setMostrarProductosAdicionales(true)} className="boton bt_adicion_producto"> Adicionar producto</button>
-                        </div>
-
-                        {mostrarProductosAdicionales &&
-                            <div>
-                                Hola
-                            </div>
-                        }
-                    </div>
-                    <hr />
-                    <div className="info_cliente">
-                        <table className="tabla_cliente">
-                            <caption className="Titulo_tabla">Datos del Cliente</caption>
-                            <thead className="thead">
-
-                                <th className="th_regventa">Nombre</th>
-
-                            </thead>
-                            <tbody>
-
-                                <td className="td_regventa"><input onChange={(e) => { console.log(e.target.value) }} id="nombreCliente" className="input_info" type="text" /> </td>
-
-                            </tbody>
-                        </table>
-
-                    </div>
-                    <hr />
-                    <div className="info_vendedor">
-                        <div> Vendedor
-                            <select className="selector_vendedor" defaultValue="" required>
-
-                                <option disabled value="">seleccionar ..</option>
-                                <option> Vendedor 1</option>
-                                <option> Vendedor 1</option>
-                                <option> Vendedor 1</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="bt_centrado">
-                <button onClick={enviarDatosAlBackend} className="boton bt_registro_venta">Registrar venta</button>
-            </div>
-        </div>
-    )
-
-};
-
-*/
 
 export default Productos
