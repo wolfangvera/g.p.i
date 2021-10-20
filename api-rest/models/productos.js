@@ -3,11 +3,11 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 const ProductoSchema = Schema({
-    IDproducto: String,
-    valorU: Number,
-    cantidad: Number,
-    descripcion: String,
-    estado: {type: String, /*default: "", */  enum:['Disponible', 'No disponible']},
+    idProducto: String,
+    valorUnitario: Number,
+    cantidadProducto: Number,
+    descripcionProducto: String,
+    estadoProducto: {type: String, /*default: "", */  enum:['Disponible', 'No disponible']},
     
 })
 

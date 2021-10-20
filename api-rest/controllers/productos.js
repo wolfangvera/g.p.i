@@ -23,11 +23,11 @@ function getProductos(req, res){
 function saveProductos(req, res){
     console.log(req.body)
     let productos = Productos()
-    productos.IDproducto = req.body.IDproducto
-    productos.descripcion = req.body.descripcion
-    productos.valorU = req.body.valorU
-    productos.cantidad = req.body.cantidad
-    productos.estado = req.body.estado
+    productos.idProducto = req.body.idProducto
+    productos.valorUnitario = req.body.valorUnitario
+    productos.cantidadProducto = req.body.cantidadProducto
+    productos.descripcionProducto = req.body.descripcionProducto
+    productos.estadoProducto = req.body.estadoProducto
 
     productos.save((err, productosStored) =>{
         if (err) res.status(500).send({message:"Error al salvar en la base de datos."})

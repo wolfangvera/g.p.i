@@ -9,8 +9,9 @@ const VentaSchema = Schema ({
     fecha : {type:Date , default:Date.now()},
     nombreVendedor : String,
     estadoVenta : { type: String, default: 'En proceso', enum:['En proceso','Cancelada','Entregada']},
-    descripcion : String,
+    descripcionVenta : String,
     valorTotal : Number,
+    idCliente: Number,
     nombreCliente : String
 })
 

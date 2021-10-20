@@ -23,14 +23,14 @@ function getVentas(req, res){
 function saveVenta(req, res){
     console.log(req.body)
     let venta = Venta()
-    venta.id = req.body.id
-    venta.fecha = req.body.usuario
-    venta.vendedor = req.body.password
-    venta.estado =req.body.estado
-    venta.descripcion=req.body.description
-    venta.valor_total=req.body.valor_total
-    venta.id_cliente=req.body.id_cliente
-    venta.nombre_cliente=req.body.nombre_cliente
+    venta.idVenta = req.body.idVenta
+    venta.fecha = req.body.fecha
+    venta.nombreVendedor = req.body.nombreVendedor
+    venta.estadoVenta =req.body.estadoVenta
+    venta.descripcionVenta=req.body.descripcionVenta
+    venta.valorTotal=req.body.valorTotal
+    venta.idCliente=req.body.idCliente
+    venta.nombreCliente=req.body.nombreCliente
 
     venta.save((err, ventaStored) =>{
         if (err) res.status(500).send({message:"Error al registrar la venta."})
