@@ -169,7 +169,7 @@ const FormularioAgregarProducto = ({
         setMostrarTabla(true);
         toast.success("Producto agregado con exito" );
         setProductos([...listaProductos,nuevoProducto])
-        console.log(nuevoProducto)
+       
     };
 
 
