@@ -7,7 +7,8 @@ const ventasBackend = [
         idVenta: "25",
         fecha: "Fecha cmabiada",
         estadoVenta: "En proceso",
-        descripcion: "losproductos comprados",
+        descripcion: "producto 1: 5unidades       producto2 : 3unidades",
+        idCliente : 103654556,
         nombreCliente: "juan comprador",
         nombreVendedor: "juan vendedor",
         valorTotal: 25000
@@ -82,15 +83,15 @@ const TablaVentas = ({ listaVentas }) => {
                     </label>
                     <label className="label_listarventas"
                         for="fecha desde:">
-                        Fecha desde:
+                        
                         <input className="input_listarventas"
-                            type="datetime-local" />
+                            type="text" placeholder="identificación cliente" />
                     </label>
                     <label className="label_listarventas"
                         for="fecha desde:">
-                        hasta:
+                       
                         <input className="input_listarventas"
-                            type="datetime-local" />
+                            type="text" placeholder="Nombre del cliente" />
                     </label>
                 </div>
                 <hr />
@@ -99,10 +100,12 @@ const TablaVentas = ({ listaVentas }) => {
                         <thead className="clase1">
                             <th className="th_listar"  >#Orden</th>
                             <th className="th_listar" >Fecha</th>
-                            <th className="th_listar"> Responsable</th>
+                            <th className="th_listar"> Vendedor</th>
+                            <th className="th_listar" >idCliente</th>
+                            <th className="th_listar"> Nombre Cliente</th>
                             <th className="th_listar"> Estado </th>
                             <th className="th_listar"> Descripción</th>
-                            <th className="th_listar"> Precio Total</th>
+                            <th className="th_listar"> Valor Total</th>
                             <th className="th_listar"> Editar/ Guardar</th>
                         </thead>
                         <tbody>
@@ -112,6 +115,8 @@ const TablaVentas = ({ listaVentas }) => {
                                         <td className="td_listar"> {ventas.idVenta}</td>
                                         <td className="td_listar">{ventas.fecha}</td>
                                         <td className="td_listar">{ventas.nombreVendedor}</td>
+                                        <td className="td_listar"> {ventas.idCliente}</td>
+                                        <td className="td_listar">{ventas.nombreCliente}</td>
                                         <td className="td_listar"> {ventas.estadoVenta}</td>
                                         <td className="td_listar">{ventas.descripcion}</td>
                                         <td className="td_listar">{ventas.valorTotal}</td>
@@ -187,7 +192,7 @@ const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVe
         setProductosVenta([...listaProductosVenta, nuevoProducto])
         //setDescripcion
 
-        console.log()
+        console.log(valorUnitarioProducto)
     }
 
     const enviarVentasBackend = () => {
@@ -198,7 +203,7 @@ const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVe
 
             toast.success('Venta Registrada con Exito');
             setMostrarTabla(true);
-            setVentas([...listaVentas, { idVenta: idVenta, nombreVendedor: nombreVendedor,/*descripcion:listaProductosVenta*,*/valorTotal: valorTotal }])
+            setVentas([...listaVentas, { idVenta: idVenta, nombreVendedor: nombreVendedor, idCliente:idCliente , nombreCliente:nombreCliente,valorTotal: valorTotal }])
         };
     };
 

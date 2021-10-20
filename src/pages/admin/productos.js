@@ -157,17 +157,6 @@ const FormularioAgregarProducto = ({
  
 
 
-   /* const enviarProductosBackend = () => {
-        console.log("id", idProducto, " descripcion", descripcion, " estado", estadoProducto, " cantidad", cantidadProducto, " valor unitario", valorUnitarioProducto)
-        if (idProducto === '' || descripcion === '' || estadoProducto === '' || cantidadProducto === '' || valorUnitarioProducto === '') {
-            toast.error('Ingrese todos los campos');
-        } else {
-
-            toast.success('Producto Agregado con Exito');
-            funcionParaMostrarTabla(true);
-            funcionParaAgregarProducto([...listaProductos, { idProducto: idProducto, descripcion: descripcion, estadoProducto: estadoProducto, cantidadProducto: cantidadProducto, valorUnitarioProducto: valorUnitarioProducto }])
-        };
-    };*/
 
     const submitForm=(e)=> {
         e.preventDefault();
@@ -180,6 +169,7 @@ const FormularioAgregarProducto = ({
         setMostrarTabla(true);
         toast.success("Producto agregado con exito" );
         setProductos([...listaProductos,nuevoProducto])
+        console.log(nuevoProducto)
     };
 
 
