@@ -26,25 +26,35 @@ const Productos = () => {
     const [mostrarTabla, setMostrarTabla] = useState(true);
     const [textoBoton, setTextoBoton] = useState("Agregar nueva venta");
 
-    useEffect(() => {
-        //obtener lista de ventas desde el back
-        axios.get(`http://localhost:3001/api/productos`)
-            .then(result => {
-                const { products } = result.data;
-                setProductos(products)
-                console.log("esta es la informacion desde API", products)
-            }).catch(console.log)
 
-    }, []);
+
+
+    useEffect(() => {
+        //obtener lista de productos desde el back
+        const obtenerProductos = async () => {
+            await axios.get(`http://localhost:3001/api/productos`)
+                .then(result => {
+                    const { products } = result.data;
+                    setProductos(products)
+                    console.log("esta es la informacion desde API", products)
+                }).catch(console.log)
+
+        }
+
+        if (mostrarTabla) {
+            obtenerProductos();
+        }
+
+    }, [mostrarTabla]);
 
     /*useEffect(() => {
-        //obtener lista de ventas desde el back
-
-        axios.get(`http://localhost:3001/api/productos?idProducto=01`)
+        //obtener un producto desde el back especifico
+        var idProducto = '01'
+        axios.get(`http://localhost:3001/api/productos?idProducto=${idProducto}`)
             .then(result => {
-                
+
                 // setProductos(products)
-                console.log( result)
+                console.log(result.data)
             })
 
 
@@ -84,12 +94,24 @@ const Productos = () => {
 };
 
 
-const TablaProductos = ({ listaProductos }) => {
+const TablaProductos = ({ listaProductos, getByIdRequest }) => {
+    const [busqueda, setBusqueda] = useState('');
+    const [productosFiltrados, setProductosFiltrados] = useState(listaProductos);
+
 
     useEffect(() => {
         console.log("este es el estado de productos en el componente", listaProductos)
 
     }, [listaProductos])
+
+    useEffect(() => {
+        setProductosFiltrados(
+            listaProductos.filter((elemento) => {
+                return JSON.stringify(elemento).toLowerCase().includes(busqueda.toLowerCase());
+            })
+        );
+        console.log(productosFiltrados)
+    }, [busqueda, listaProductos]);
 
     return (
         <div className="contenedor_gestionP">
@@ -100,7 +122,7 @@ const TablaProductos = ({ listaProductos }) => {
                     <div className="busquedaProducto">
                         <label className="form_productoG">
                             <label for="Busquedaproductos"> ID </label>
-                            <input className="input_BuscarproductoD" type="text" name="Busquedaproductos" id="idProducto" />
+                            <input className="input_BuscarproductoD" type="text" value={busqueda} onChange={(e) => setBusqueda(e.target.value)} name="Busquedaproductos" id="idProducto" />
                         </label>
 
                         <label className="form_productoG">
@@ -116,7 +138,7 @@ const TablaProductos = ({ listaProductos }) => {
                     </div>
 
                     <div className="centrar_boton">
-                        <button class="boton bt_busquedaP" > Buscar </button>
+                        <button class="boton bt_busquedaP" onClick={() => getByIdRequest()}> Buscar </button>
 
                     </div>
 
@@ -187,7 +209,7 @@ const FormularioAgregarProducto = ({
 
 
 
-    const submitForm = (e) => {
+    const submitForm = async (e) => {
         e.preventDefault();
 
         //nivelacion-api
@@ -200,7 +222,7 @@ const FormularioAgregarProducto = ({
 
         };
 
-        axios.post(`http://localhost:3001/api/productos/agregar`, ProductoSchema)
+        await axios.post(`http://localhost:3001/api/productos/agregar`, ProductoSchema)
             .then(res => {
                 const fd = new FormData(form.current);
 

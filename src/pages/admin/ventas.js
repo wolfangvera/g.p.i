@@ -3,20 +3,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios';
 
-const ventasBackend =  [
-    {
-        idVenta: "25",
-        fecha: "Fecha cmabiada",
-        estadoVenta: "En proceso",
-        descripcion: "producto 1: 5unidades       producto2 : 3unidades",
-        idCliente: 103654556,
-        nombreCliente: "juan comprador",
-        nombreVendedor: "juan vendedor",
-        valorTotal: 25000
-    }
-
-]
-
 
 const Ventas = () => {
 
@@ -28,17 +14,22 @@ const Ventas = () => {
     const [mostrarTabla, setMostrarTabla] = useState(true);
     const [textoBoton, setTextoBoton] = useState("Agregar nueva venta");
 
-    
+
     useEffect(() => {
         //obtener lista de ventas desde el back
-        axios.get(`http://localhost:3001/api/venta`)
-        .then(result=>{
-            const {ventas} =result.data;
-            setVentas(ventas)
-            console.log("esta es la informacion desde API" , ventas)
-        }).catch(console.log)
 
-    }, []);
+        const obtenerVentas = async () => {
+            await axios.get(`http://localhost:3001/api/venta`)
+                .then(result => {
+                    const { ventas } = result.data;
+                    setVentas(ventas)
+                    console.log("esta es la informacion desde API", ventas)
+                }).catch(console.log)
+        }
+        if (mostrarTabla) {
+            obtenerVentas();
+        }
+    }, [mostrarTabla]);
 
 
     useEffect(() => {
@@ -188,7 +179,6 @@ const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVe
     const formProductos = useRef(null);
 
 
-
     const submitProductos = (e) => {
         e.preventDefault();
         const fpd = new FormData(formProductos.current);
@@ -198,6 +188,9 @@ const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVe
             nuevoProducto[key] = value;
 
         });
+
+
+
 
         toast.success("Producto añadido")
         setProductosVenta([...listaProductosVenta, nuevoProducto])
@@ -293,7 +286,6 @@ const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVe
                             <button
                                 className="boton bt_adicion_producto"
                                 type="submit"
-
                             >
                                 Adicionar producto
                             </button>
