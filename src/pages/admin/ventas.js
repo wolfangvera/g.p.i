@@ -3,7 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios';
 
-const ventasBackend = /* [
+const ventasBackend =  [
     {
         idVenta: "25",
         fecha: "Fecha cmabiada",
@@ -15,13 +15,7 @@ const ventasBackend = /* [
         valorTotal: 25000
     }
 
-]*/
-    axios.get(`http://localhost:3001/api/venta`)
-        .then(res => {
-            this.ventas = res.data;
-        }).catch(e => {
-            console.log(e)
-        });
+]
 
 
 const Ventas = () => {
@@ -34,10 +28,18 @@ const Ventas = () => {
     const [mostrarTabla, setMostrarTabla] = useState(true);
     const [textoBoton, setTextoBoton] = useState("Agregar nueva venta");
 
+    
     useEffect(() => {
         //obtener lista de ventas desde el back
-        setVentas(ventasBackend);
+        axios.get(`http://localhost:3001/api/venta`)
+        .then(result=>{
+            const {ventas} =result.data;
+            setVentas(ventas)
+            console.log("esta es la informacion desde API" , ventas)
+        }).catch(console.log)
+
     }, []);
+
 
     useEffect(() => {
         if (mostrarTabla) {
