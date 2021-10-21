@@ -3,6 +3,7 @@
 const Productos = require('../models/productos.js')
 
 function getProducto(req, res){
+    console.log('GET /productos/:productoId')
     let productoId = req.params.productoId
     Productos.findById(productoId, (err, productos) =>{
         if(err) return res.status(500).send({message:"Error al realizar la peticion."})
@@ -13,6 +14,7 @@ function getProducto(req, res){
 
 }
 function getProductos(req, res){
+    console.log('GET /productos')
     Productos.find({}, (err, productos) =>{
         if (err) return res.status(500).send({message:"Error al realizar la peticion."})
         if (!productos) return res.status(404).send({message:"No existen Productos"})
@@ -26,7 +28,7 @@ function saveProductos(req, res){
 
     let productos = Productos()
     productos.idProducto = req.body.idProducto
-    productos.valorUnitario = req.body.valorUnitario
+    productos.valorUnitarioProducto = req.body.valorUnitarioProducto
     productos.cantidadProducto = req.body.cantidadProducto
     productos.descripcionProducto = req.body.descripcionProducto
     productos.estadoProducto = req.body.estadoProducto

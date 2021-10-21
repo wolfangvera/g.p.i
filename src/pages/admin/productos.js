@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
@@ -22,14 +22,35 @@ const Productos = () => {
     const [productos, setProductos] = useState([]);
     const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
     //const [mostrarProductosAdicionales, setMostrarProductosAdicionales] = useState(false);
-
+    const [productosFiltrados, setProductosFiltrados] = useState([]);
     const [mostrarTabla, setMostrarTabla] = useState(true);
     const [textoBoton, setTextoBoton] = useState("Agregar nueva venta");
 
     useEffect(() => {
         //obtener lista de ventas desde el back
-        setProductos(productosBackend);
+        axios.get(`http://localhost:3001/api/productos`)
+            .then(result => {
+                const { products } = result.data;
+                setProductos(products)
+                console.log("esta es la informacion desde API", products)
+            }).catch(console.log)
+
     }, []);
+
+    /*useEffect(() => {
+        //obtener lista de ventas desde el back
+
+        axios.get(`http://localhost:3001/api/productos?idProducto=01`)
+            .then(result => {
+                
+                // setProductos(products)
+                console.log( result)
+            })
+
+
+    }, []);*/
+
+
 
     useEffect(() => {
         if (mostrarTabla) {
@@ -43,7 +64,10 @@ const Productos = () => {
         <div className="contenedor_gestionP">
             <button className="boton bt_adicion_producto" onClick={() => setMostrarTabla(!mostrarTabla)}> {textoBoton}</button>
             {mostrarTabla ? (
-                <TablaProductos listaProductos={productos} />
+                <TablaProductos
+                    listaProductos={productos}
+                    listaProductosFiltrado={productosFiltrados}
+                    setEjecutarConsulta={setEjecutarConsulta} />
             ) : (
                 <FormularioAgregarProducto
                     setMostrarTabla={setMostrarTabla}
@@ -72,7 +96,6 @@ const TablaProductos = ({ listaProductos }) => {
             <h2 className="TituloPaginaP">Módulo Gestión de Productos</h2>
             <div class="informacion">
                 <div className="Seccion1">
-
                     <h3 className="subtitulo_busqueda">Busqueda de productos</h3>
                     <div className="busquedaProducto">
                         <label className="form_productoG">
@@ -91,10 +114,9 @@ const TablaProductos = ({ listaProductos }) => {
                         </label>
 
                     </div>
-                    <div className="centrar_boton" >
 
-
-                        <button class="boton bt_busquedaP "> Buscar </button>
+                    <div className="centrar_boton">
+                        <button class="boton bt_busquedaP" > Buscar </button>
 
                     </div>
 
@@ -116,20 +138,26 @@ const TablaProductos = ({ listaProductos }) => {
                                 <th className="th_listarP">Editar/ Guardar</th>
                             </thead>
                             <tbody>
-                                {listaProductos.map((productos) => {
-                                    return (
-                                        <tr>
-                                            <td className="td_listarP">{productos.idProducto}</td>
-                                            <td className="td_listarP">{productos.descripcionProducto}</td>
-                                            <td className="td_listarP">{productos.estadoProducto}</td>
-                                            <td className="td_listarP">{productos.cantidadProducto}</td>
-                                            <td className="td_listarP">{productos.valorUnitarioProducto}</td>
-                                            <td className="td_listarP">
-                                                <button type="button" className="input_editar" >Editar</button>
-                                            </td>
-                                        </tr>
-                                    )
-                                })}
+                                {
+                                    listaProductos.map((productos) => {
+                                        return (
+                                            <tr>
+                                                <td className="td_listarP">{productos.idProducto}</td>
+                                                <td className="td_listarP">{productos.descripcionProducto}</td>
+                                                <td className="td_listarP">{productos.estadoProducto}</td>
+                                                <td className="td_listarP">{productos.cantidadProducto}</td>
+                                                <td className="td_listarP">{productos.valorUnitarioProducto}</td>
+                                                <td className="td_listarP">
+                                                    <button type="button" className="input_editar" >Editar</button>
+                                                </td>
+                                            </tr>
+                                        )
+                                    })
+                                }
+
+
+
+
 
 
                             </tbody>
@@ -161,21 +189,11 @@ const FormularioAgregarProducto = ({
 
     const submitForm = (e) => {
         e.preventDefault();
-        /*const fd = new FormData(form.current);
-        
-        const nuevoProducto ={};
-        fd.forEach((value, key)=>{
-            nuevoProducto[key]=value;
-        });
-        setMostrarTabla(true);
-        toast.success("Producto agregado con exito" );
-        setProductos([...listaProductos,nuevoProducto])
-        */
 
         //nivelacion-api
         const ProductoSchema = {
             idProducto: e.target.idProducto.value,
-            valorUnitario: e.target.valorUnitarioProducto.value,
+            valorUnitarioProducto: e.target.valorUnitarioProducto.value,
             cantidadProducto: e.target.cantidadProducto.value,
             descripcionProducto: e.target.descripcionProducto.value,
             estadoProducto: e.target.estadoProducto.value,
@@ -196,10 +214,6 @@ const FormularioAgregarProducto = ({
 
             });
 
-        /*alert('Datos correctos' + '\n'
-            + "id" + e.target.idProducto.value
-            + '\n' + "valorunit" + e.target.valorUnitarioProducto.value
-            + '\n' + "cantidad" + e.target.cantidadProducto.value)*/
 
     };
 
