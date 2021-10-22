@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef, Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import { nanoid } from 'nanoid';
 
 const productosBackend = [
     {
@@ -84,7 +85,7 @@ const Productos = () => {
 };
 
 
-const TablaProductos = ({ listaProductos }) => {
+const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
 
     useEffect(() => {
         console.log("este es el estado de productos en el componente", listaProductos)
@@ -135,31 +136,19 @@ const TablaProductos = ({ listaProductos }) => {
                                 <th className="th_listarP">Estado</th>
                                 <th className="th_listarP">Cantidad Stock</th>
                                 <th className="th_listarP">Vr. Unitario</th>
-                                <th className="th_listarP">Editar/ Guardar</th>
+                                <th className="th_listarP"> Editar/ Eliminar</th>
                             </thead>
                             <tbody>
-                                {
-                                    listaProductos.map((productos) => {
-                                        return (
-                                            <tr>
-                                                <td className="td_listarP">{productos.idProducto}</td>
-                                                <td className="td_listarP">{productos.descripcionProducto}</td>
-                                                <td className="td_listarP">{productos.estadoProducto}</td>
-                                                <td className="td_listarP">{productos.cantidadProducto}</td>
-                                                <td className="td_listarP">{productos.valorUnitarioProducto}</td>
-                                                <td className="td_listarP">
-                                                    <button type="button" className="input_editar" >Editar</button>
-                                                </td>
-                                            </tr>
+                                {listaProductos.map((productos) => {
+                                    return(
+                                        <FilaProducto
+                                        //key={nanoid()}
+                                        productos={productos}
+                                        //setEjecutarConsulta={setEjecutarConsulta}
+                                        />                                    
                                         )
                                     })
                                 }
-
-
-
-
-
-
                             </tbody>
                         </table>
                     </div>
@@ -174,6 +163,48 @@ const TablaProductos = ({ listaProductos }) => {
     );
 };
 
+const FilaProducto = ({productos})=> {
+    const [edit, setEdit] = useState(false);
+    return (
+        <tr>
+             {edit? (
+                <>
+                    <td><input type ="text" defaultValue = {productos.idProducto}/></td>
+                    <td><input type ="text" defaultValue = {productos.descripcionProducto}/></td>
+                    <td><input type ="text" defaultValue = {productos.estadoProducto}/></td>
+                    <td><input type ="text" defaultValue = {productos.cantidadProducto}/></td>
+                    <td><input type ="text" defaultValue = {productos.valorUnitarioProducto}/></td>
+                </>
+             ) : (
+                 <>
+
+                    <td className="td_listarP">{productos.idProducto}</td>
+                    <td className="td_listarP">{productos.descripcionProducto}</td>
+                    <td className="td_listarP">{productos.estadoProducto}</td>
+                    <td className="td_listarP">{productos.cantidadProducto}</td>
+                    <td className="td_listarP">{productos.valorUnitarioProducto}</td>
+                </>
+             )}
+            <td className="td_listarP">
+                <div className="flex w-full justify-around">
+                    {edit? (                   
+                        <i
+                        onClick={() => setEdit(!edit)}
+                        className = "fas fa-check text-green-700 hover:text-green-500'"
+                        />
+                    ):(
+                        <i 
+                        onClick={() => setEdit(!edit)}
+                        className = 'fas fa-pencil-alt text-yellow-700 hover:text-yellow-500'
+                        />
+                    )}
+                   
+                    <i className = "fas fa-trash text-red-700 hover:text-yellow-500"/>
+               </div>
+            </td>
+        </tr>
+    );
+};
 
 const FormularioAgregarProducto = ({
     setMostrarTabla, listaProductos,
