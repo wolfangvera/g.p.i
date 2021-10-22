@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef, Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import { nanoid } from 'nanoid';
 
 const productosBackend = [
     {
@@ -165,7 +166,7 @@ const TablaProductos = ({ listaProductos, getByIdRequest }) => {
                                 {
                                     listaProductos.map((productos) => {
                                         return (
-                                            <tr >
+                                            <tr key={nanoid()} >
                                                 <td className="td_listarP">{productos.idProducto}</td>
                                                 <td className="td_listarP">{productos.descripcionProducto}</td>
                                                 <td className="td_listarP">{productos.estadoProducto}</td>

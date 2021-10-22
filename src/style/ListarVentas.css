@@ -97,14 +97,21 @@ margin-left:5px;
 }
 
 
-.td_listar {
-    background-color:white;
-}
-
 .th_listar{
     font-size:15px;
     color: white;
     background-color: rgb(29, 157, 195);
+}
+
+
+
+
+table {
+    background-color:white;
+}
+
+.table_listarventas tr:nth-child(even){
+    background-color: #f2f2f2;
 }
 
 .cambio_pag {
@@ -118,12 +125,12 @@ margin-left:5px;
 
 
 
-tr:hover{
+.table_listarventas tr:hover{
     background-color: rgba(89, 192, 89, 0.431);
     
 }
 
-.table_listarventas .td_listar:nth-child(7) {
+.table_listarventas .td_listar:nth-child(9) {
     width: 1mm;
    }
 

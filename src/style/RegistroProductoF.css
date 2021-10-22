@@ -133,13 +133,6 @@ font-weight: normal;
     background-color: rgba(89, 192, 89, 0.431); 
 }
 
-.table_listarProductos tr:nth-child(even){
-    background-color: red;
-}
-
-.table_listarProductos .td:nth-child(7) {
-    width: 1mm;
-}
 
 
 .cambio_pag {

@@ -74,29 +74,37 @@
 }
 
 
-.table_listarProductos .td_listarP,.table_listarProductos .th_listarP {
+.table_listarProductos .td_listarP,.table_listarProductos th {
     padding:0.5rem;
     text-align: center;
     border:1px solid #ddd;
 }
 
 
-.table_listarProductos .tr:nth-child(even){
-    background-color: red;
-}
-
-.table_listarProductos .td:nth-child(7) {
+.table_listarProductos td:nth-child(6) {
     width: 1mm;
 }
 
-.td_listarP {
+table {
     background-color:white;
 }
 
-.th_listarP{
+.table_listarProductos tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+
+.table_listarProductos th{
     font-size:15px;
     color: white;
     background-color: rgb(29, 157, 195);
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+
+.table_listarProductos tr:hover{
+    background-color: rgba(89, 192, 89, 0.431);
+    
 }
 .cambio_pag {
     display:flex;
