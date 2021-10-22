@@ -4,15 +4,41 @@ import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios';
 
 
+const vendedoresBackend = [
+    {
+
+        nombreVendedor: "Juan"
+    },
+    {
+
+        nombreVendedor: "Carlos"
+    },
+    {
+
+        nombreVendedor: "Alberto"
+    },
+    {
+
+        nombreVendedor: "Camila"
+    }
+
+
+]
+
+
 const Ventas = () => {
 
     const [ventas, setVentas] = useState([]);
     const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
-
+    const [vendedores, setVendedores] = useState([]);
     const [productosVenta, setProductosVenta] = useState([]);
 
     const [mostrarTabla, setMostrarTabla] = useState(true);
     const [textoBoton, setTextoBoton] = useState("Agregar nueva venta");
+
+    useEffect(() => {
+        setVendedores(vendedoresBackend)
+    }, [])
 
 
     useEffect(() => {
@@ -50,6 +76,7 @@ const Ventas = () => {
                     setMostrarTabla={setMostrarTabla}
                     listaVentas={ventas}
                     listaProductosVenta={productosVenta}
+                    listaVendedores={vendedores}
                     setProductosVenta={setProductosVenta}
                     setVentas={setVentas}/*listaVendedores={vendedores}*/ />
             )}
@@ -158,7 +185,7 @@ const TablaVentas = ({ listaVentas }) => {
 
 
 
-const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVenta, setProductosVenta, setVentas }) => {
+const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaVendedores, listaProductosVenta, setProductosVenta, setVentas }) => {
     //datos de la tabla de venta
     const [idVenta, setIdVenta] = useState('');
     const [fecha, setFecha] = useState('');
@@ -208,10 +235,6 @@ const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVe
             toast.error('Ingrese todos los campos');
         } else {
 
-            /*toast.success('Venta Registrada con Exito');
-            setMostrarTabla(true);
-            setVentas([...listaVentas, { idVenta: idVenta, nombreVendedor: nombreVendedor, idCliente:idCliente , nombreCliente:nombreCliente,valorTotal: valorTotal }])
-        */
             const VentaSchema = {
                 idVenta: idVenta,
                 nombreVendedor: nombreVendedor,
@@ -342,10 +365,14 @@ const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVe
                             <select className="selector_vendedor" defaultValue="" name="vendedor" value={nombreVendedor} onChange={(e) => { setNombreVendedor(e.target.value) }} required>
 
                                 <option disabled value="">seleccionar ..</option>
-                                <option> Vendedor 1</option>
-                                <option> Vendedor 1</option>
-                                <option> Vendedor 1</option>
+                                {listaVendedores.map((vendedores) => {
+                                    return (
+                                        <option>{vendedores.nombreVendedor}</option>
+                                    );
+                                })}
                             </select>
+
+
                         </div>
                     </div>
                 </div>

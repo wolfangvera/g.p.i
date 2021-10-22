@@ -69,13 +69,24 @@
     margin-left: 2vw;
     margin-right:2vw;
     text-align: center;
-    border-collapse:collapse;  
+    border-collapse:collapse; 
+    
 }
 
-.table_listarProductos .td_listarP,.th_listarP {
-    width: 10vw;
+
+.table_listarProductos .td_listarP,.table_listarProductos .th_listarP {
+    padding:0.5rem;
     text-align: center;
-    border:1px solid rgba(0, 0, 0, 0.3);
+    border:1px solid #ddd;
+}
+
+
+.table_listarProductos .tr:nth-child(even){
+    background-color: red;
+}
+
+.table_listarProductos .td:nth-child(7) {
+    width: 1mm;
 }
 
 .td_listarP {

@@ -152,18 +152,20 @@ const TablaProductos = ({ listaProductos, getByIdRequest }) => {
                     <div class="Contenedor_Modificar_producto">
                         <table className="table_listarProductos">
                             <thead className="clase1">
-                                <th className="th_listarP">ID</th>
-                                <th className="th_listarP">Descripción</th>
-                                <th className="th_listarP">Estado</th>
-                                <th className="th_listarP">Cantidad Stock</th>
-                                <th className="th_listarP">Vr. Unitario</th>
-                                <th className="th_listarP">Editar/ Guardar</th>
+                                <tr>
+                                    <th className="th_listarP">ID</th>
+                                    <th className="th_listarP">Descripción</th>
+                                    <th className="th_listarP">Estado</th>
+                                    <th className="th_listarP">Cantidad Stock</th>
+                                    <th className="th_listarP">Vr. Unitario</th>
+                                    <th className="th_listarP">Editar/ Guardar</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 {
                                     listaProductos.map((productos) => {
                                         return (
-                                            <tr>
+                                            <tr >
                                                 <td className="td_listarP">{productos.idProducto}</td>
                                                 <td className="td_listarP">{productos.descripcionProducto}</td>
                                                 <td className="td_listarP">{productos.estadoProducto}</td>
