@@ -4,19 +4,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { nanoid } from 'nanoid';
 
-const productosBackend = [
-    {
-
-        idProducto: "01",
-        descripcion: "producto1",
-        estadoProducto: "disponible",
-        cantidadProducto: 1400,
-        valorUnitarioProducto: 1200
-    }
-
-
-]
-
 
 const Productos = () => {
 
@@ -92,6 +79,11 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
 
     }, [listaProductos])
 
+    const submitEdit =(e) => {
+        e.preventDefault();
+        console.log(e)
+    }
+
     return (
         <div className="contenedor_gestionP">
             <h2 className="TituloPaginaP">Módulo Gestión de Productos</h2>
@@ -163,17 +155,79 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
     );
 };
 
-const FilaProducto = ({productos})=> {
+const FilaProducto = ({productos, setEjecutarConsulta})=> {
     const [edit, setEdit] = useState(false);
+    const [openDialog, setOpenDialog] = useState(false);
+    const [infoNuevoProducto, setInfoNuevoProducto] = useState({
+      //_id: productos._id,
+      descripcion: productos.descripcion,
+      estado: productos.estado,
+      cantidad: productos.cantidad,
+      valorU: productos.valorU,
+    });
+
+    const actualizarProducto = async () => {
+        console.log(infoNuevoProducto);
+        //enviar la info al backend
+
+        const options ={
+            method: "PUT",
+            url: "http://localhost:3001/api/productos/:productoId",
+            headers: {"Contetn-Type": "aaplicatios/json"},
+            data: { ...infoNuevoProducto, id: productos._id}
+        }
+
+        await axios
+            .request(options)
+            .then(function (response) {
+                console.log(response.data);
+                toast.success("Prodcuto modificado con exito")
+                setEdit(false)
+            })
+            .catch(function (error){
+                toast.error("Error modificando Prodcuto")
+                console.error(error);
+            })
+        }
+    
+         
+    
     return (
         <tr>
              {edit? (
                 <>
-                    <td><input type ="text" defaultValue = {productos.idProducto}/></td>
-                    <td><input type ="text" defaultValue = {productos.descripcionProducto}/></td>
-                    <td><input type ="text" defaultValue = {productos.estadoProducto}/></td>
-                    <td><input type ="text" defaultValue = {productos.cantidadProducto}/></td>
-                    <td><input type ="text" defaultValue = {productos.valorUnitarioProducto}/></td>
+                    <td> {productos.idProducto} </td>
+                    <td>
+                        <input type ="text" 
+                        value = {infoNuevoProducto.descripcion}
+                        onChange ={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, descripcion: e.target.value})} 
+                        />
+                    </td>
+                    <td>
+                    <select className="select_producto" 
+                        value={infoNuevoProducto.estado}
+                        onChange ={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, estado: e.target.value})}  
+                        name="estadoProducto" 
+                        id="estadoProducto" required>
+                        <option disabled value=""> Seleccione...</option>
+                        <option> Disponible</option>
+                        <option> No Disponible</option>
+                        
+
+                        </select>
+                        </td>
+                    <td>
+                        <input type ="text" 
+                        value = {infoNuevoProducto.cantidad}
+                        onChange ={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, cantidad: e.target.value})}
+                        />
+                    </td>
+                    <td>
+                        <input type ="text" 
+                        value = {infoNuevoProducto.valorU}
+                        onChange ={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, valorU: e.target.value})} 
+                        />
+                    </td>
                 </>
              ) : (
                  <>
@@ -187,11 +241,13 @@ const FilaProducto = ({productos})=> {
              )}
             <td className="td_listarP">
                 <div className="flex w-full justify-around">
-                    {edit? (                   
-                        <i
-                        onClick={() => setEdit(!edit)}
-                        className = "fas fa-check text-green-700 hover:text-green-500'"
+                    {edit? (
+                            <i
+                        onClick={() => actualizarProducto()}
+                        className = "fas fa-check text-green-700 hover:text-green-500"
                         />
+                                      
+                        
                     ):(
                         <i 
                         onClick={() => setEdit(!edit)}
@@ -206,17 +262,9 @@ const FilaProducto = ({productos})=> {
     );
 };
 
-const FormularioAgregarProducto = ({
-    setMostrarTabla, listaProductos,
-    setProductos
-}) => {
-
-
+const FormularioAgregarProducto = ({setMostrarTabla, listaProductos, setProductos}) => {
     //datos de la tabla de productos
     const form = useRef(null);
-
-
-
 
     const submitForm = (e) => {
         e.preventDefault();
