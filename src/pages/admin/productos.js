@@ -5,6 +5,7 @@ import axios from 'axios';
 import { nanoid } from 'nanoid';
 
 
+
 const Productos = () => {
 
     const [productos, setProductos] = useState([]);
@@ -17,15 +18,15 @@ const Productos = () => {
     const obtenerProductos = async () => {
         const options = { method: 'GET', url: 'http://localhost:3001/api/productos' };
         await axios
-            .request(options)
-            .then(function (response) {
-                setProductos(response.data.products);
-            })
-            .catch(function (error) {
-                console.error(error);
-            });
+          .request(options)
+          .then(function (response) {
+            setProductos(response.data.products);
+          })
+          .catch(function (error) {
+            console.error(error);
+          });
         setEjecutarConsulta(false);
-    };
+      };
 
 
 
@@ -40,6 +41,7 @@ const Productos = () => {
 
 
 
+
     useEffect(() => {
         if (mostrarTabla) {
             setEjecutarConsulta(true);
@@ -48,7 +50,7 @@ const Productos = () => {
             setTextoBoton("Mostrar productos")
             setEjecutarConsulta(false)
         }
-    }, [mostrarTabla]);
+    });
 
     return (
         <div className="contenedor_gestionP">
@@ -57,8 +59,7 @@ const Productos = () => {
                 <TablaProductos
                     listaProductos={productos}
                     listaProductosFiltrado={productosFiltrados}
-                    setEjecutarConsulta={setEjecutarConsulta}
-                    setMostrarTabla={setMostrarTabla} />
+                    setEjecutarConsulta={setEjecutarConsulta} />
             ) : (
                 <FormularioAgregarProducto
                     setMostrarTabla={setMostrarTabla}
@@ -75,7 +76,7 @@ const Productos = () => {
 };
 
 
-const TablaProductos = ({ listaProductos, setEjecutarConsulta, setMostrarTabla }) => {
+const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
 
     useEffect(() => {
         console.log("este es el estado de productos en el componente", listaProductos)
@@ -136,7 +137,6 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta, setMostrarTabla }
                                             key={nanoid()}
                                             productos={productos}
                                             setEjecutarConsulta={setEjecutarConsulta}
-                                            setMostrarTabla={setMostrarTabla}
                                         />
                                     )
                                 })
@@ -155,7 +155,7 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta, setMostrarTabla }
     );
 };
 
-const FilaProducto = ({ productos, setEjecutarConsulta, setMostrarTabla }) => {
+const FilaProducto = ({ productos, setEjecutarConsulta }) => {
     const [edit, setEdit] = useState(false);
     const [infoNuevoProducto, setInfoNuevoProducto] = useState({
         descripcionProducto: productos.descripcionProducto,
@@ -219,15 +219,14 @@ const FilaProducto = ({ productos, setEjecutarConsulta, setMostrarTabla }) => {
         <tr>
             {edit ? (
                 <>
-                    <td className="td_listarP"> {productos.idProducto} </td>
-                    <td className="td_listarP">
+                    <td> {productos.idProducto} </td>
+                    <td>
                         <input type="text"
-                            className="input_info"
                             value={infoNuevoProducto.descripcionProducto}
                             onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, descripcionProducto: e.target.value })}
                         />
                     </td>
-                    <td className="td_listarP">
+                    <td>
                         <select className="select_producto"
                             value={infoNuevoProducto.estadoProducto}
                             onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, estadoProducto: e.target.value })}
@@ -240,16 +239,14 @@ const FilaProducto = ({ productos, setEjecutarConsulta, setMostrarTabla }) => {
 
                         </select>
                     </td>
-                    <td className="td_listarP">
+                    <td>
                         <input type="text"
-                            className="input_info"
                             value={infoNuevoProducto.cantidadProducto}
                             onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, cantidadProducto: e.target.value })}
                         />
                     </td>
-                    <td className="td_listarP">
+                    <td>
                         <input type="text"
-                            className="input_info"
                             value={infoNuevoProducto.valorUnitarioProducto}
                             onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, valorUnitarioProducto: e.target.value })}
                         />

@@ -3,6 +3,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { nanoid } from 'nanoid';
 import '../style/ModuloUsuario.css'
+import registro from '../../api-rest/models/registro';
 
 
 const Usuario = () => {
@@ -140,11 +141,11 @@ const FilaUsuario = ({ usuario, setEjecutarConsulta }) => {
             console.log(response.data);
             setEdit(false);
             setEjecutarConsulta(true);
-            //toast.success("usuario modificado con exito");
+            //toast.success("usuario eliminado");
 
         }).catch(function (error) {
             console.error(error);
-            //toast.error("Error modificando el usuario")            
+            //toast.error("No se pudo eliminar el usuario")            
         });
 
     }
@@ -158,8 +159,8 @@ const FilaUsuario = ({ usuario, setEjecutarConsulta }) => {
                     <td className="tdMU"> {usuario.nombre} </td>
                     <td className="tdMU">
                         <select className="selectMU"
-                            value ={infoNuevoUsuario.estadoUsuario}
-                            onChange={ (e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, estadoUsuario: e.target.value})}
+                            value ={infoNuevoUsuario.estado}
+                            onChange={ (e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, estado: e.target.value})}
                             >
                             <option disabled value="">Selecciona una opción</option>
                             <option>Pendiente</option>
@@ -170,7 +171,7 @@ const FilaUsuario = ({ usuario, setEjecutarConsulta }) => {
                     <td className="tdMU">
                         <select className="selectMU"
                             value ={infoNuevoUsuario.rolUsuario}
-                            onChange={ (e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, rolUsuario: e.target.value})}
+                            onChange={ (e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, rol: e.target.value})}
                             > 
                             <option disabled value="">Selecciona una opción</option>
                             <option>Administrador</option>

@@ -8,7 +8,7 @@ const RegistroSchema = Schema({
     nombre: String,
     usuario: String,
     estado: {type: String, default: "Pendiente", enum:['Pendiente', 'Autorizado', 'No autorizado']},
-    rol: {type: String, default: "", enum:['Administrador', 'Vendedor']},
+    rol: {type: String,  enum:['Administrador', 'Vendedor']},
     password: String
 })
 
