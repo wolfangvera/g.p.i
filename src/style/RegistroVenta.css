@@ -10,6 +10,7 @@
 
 .tableProductos{
 text-align:center;
+border-collapse:collapse; 
 
 }
 .nuevosProductos{
@@ -74,11 +75,13 @@ left: 12.5rem;
 .tabla_cliente {
     width:100%;
     border-collapse:collapse;   
+    background-color:transparent;
 }
 
 .tabla_registro {
     width:100%;
-    border-collapse:collapse;   
+    border-collapse:collapse; 
+    background-color: transparent;  
 }
 
 

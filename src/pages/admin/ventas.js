@@ -36,14 +36,17 @@ const Ventas = () => {
     const [textoBoton, setTextoBoton] = useState("Agregar nueva venta");
 
     const obtenerVentas = async () => {
-        axios.get(`http://localhost:3001/api/venta`)
-            .then(result => {
-                const { ventas } = result.data;
-                setVentas(ventas)
-                console.log("esta es la informacion desde API", ventas)
-            }).catch(console.log)
-
-    }
+        const options = { method: 'GET', url: 'http://localhost:3001/api/venta' };
+        await axios
+            .request(options)
+            .then(function (response) {
+                setVentas(response.data.ventas);
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
+        setEjecutarConsulta(false)
+    };
 
     useEffect(() => {
         //obtener lista de ventas desde el back
