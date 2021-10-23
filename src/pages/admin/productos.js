@@ -15,24 +15,40 @@ const Productos = () => {
     const [mostrarTabla, setMostrarTabla] = useState(true);
     const [textoBoton, setTextoBoton] = useState("Agregar nueva venta");
 
-    useEffect(() => {
-        //obtener lista de ventas desde el back
-        axios.get(`http://localhost:3001/api/productos`)
-            .then(result => {
-                const { products } = result.data;
-                setProductos(products)
-                console.log("esta es la informacion desde API", products)
-            }).catch(console.log)
+    const obtenerProductos = async () => {
+        const options = { method: 'GET', url: 'http://localhost:3001/api/productos' };
+        await axios
+          .request(options)
+          .then(function (response) {
+            setProductos(response.data.products);
+          })
+          .catch(function (error) {
+            console.error(error);
+          });
+        setEjecutarConsulta(false);
+      };
 
-    }, [ejecutarConsulta]);
+
+
+
+    useEffect(() => {
+        console.log('consulta', ejecutarConsulta);
+
+        if (ejecutarConsulta) {
+            obtenerProductos();
+        }
+    }, [ejecutarConsulta])
+
 
 
 
     useEffect(() => {
         if (mostrarTabla) {
+            setEjecutarConsulta(true);
             setTextoBoton("Agregar nuevo productos")
         } else {
             setTextoBoton("Mostrar productos")
+            setEjecutarConsulta(false)
         }
     });
 
@@ -67,10 +83,6 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
 
     }, [listaProductos])
 
-    /*const submitEdit =(e) => {
-        e.preventDefault();
-        console.log(e)
-    }*/
 
     return (
         <div className="contenedor_gestionP">
@@ -151,7 +163,7 @@ const FilaProducto = ({ productos, setEjecutarConsulta }) => {
         cantidadProducto: productos.cantidadProducto,
         valorUnitarioProducto: productos.valorUnitarioProducto,
     });
-   
+
     const actualizarProducto = async () => {
         console.log(infoNuevoProducto)
 
@@ -160,9 +172,9 @@ const FilaProducto = ({ productos, setEjecutarConsulta }) => {
             method: 'PUT',
             url: `http://localhost:3001/api/productos/${productos._id}`,
             headers: { 'Content-Type': 'application/json' },
-                                        // ESTO FUE LO QUE CAMBIE
+            // ESTO FUE LO QUE CAMBIE
             data: { ...infoNuevoProducto, productoId: productos._id },
-        
+
         };
 
         await axios
@@ -170,33 +182,35 @@ const FilaProducto = ({ productos, setEjecutarConsulta }) => {
             .then(function (response) {
                 console.log(response.data);
                 setEdit(false);
-                setEjecutarConsulta(true)
-                toast.success("Producto modificado con exito")
+                setEjecutarConsulta(true);
+                toast.success("Producto modificado con exito");
 
             }).catch(function (error) {
                 console.error(error);
                 toast.error("Error modificando el producto")
             });
 
-         }
+    };
 
-const eliminarProducto = () => {
-    
-const options = {
-    method: 'DELETE',
-    url: `http://localhost:3001/api/productos/${productos._id}`,
-    headers: {'Content-Type': 'application/json'},
-    data: { productoId: productos._id },
-  };
-  
-  axios.request(options).then(function (response) {
-    console.log(response.data);
-    toast.success("Producto eliminado")
-  }).catch(function (error) {
-    console.error(error);
-    toast.error("No se pudo eliminar")
-  });
-}
+    const eliminarProducto = async () => {
+
+        const options = {
+            method: 'DELETE',
+            url: `http://localhost:3001/api/productos/${productos._id}`,
+            headers: { 'Content-Type': 'application/json' },
+            data: { productoId: productos._id },
+        };
+
+        await axios.request(options)
+            .then(function (response) {
+                console.log(response.data);
+                toast.success("Producto eliminado");
+                setEjecutarConsulta(true);
+            }).catch(function (error) {
+                console.error(error);
+                toast.error("No se pudo eliminar")
+            });
+    }
 
 
 
@@ -264,9 +278,9 @@ const options = {
                         />
                     )}
 
-                    <i 
-                    onClick={()=> eliminarProducto()}
-                    className="fas fa-trash text-red-700 hover:text-yellow-500" />
+                    <i
+                        onClick={() => eliminarProducto()}
+                        className="fas fa-trash text-red-700 hover:text-yellow-500" />
                 </div>
             </td>
         </tr>
