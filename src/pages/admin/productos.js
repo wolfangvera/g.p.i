@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef, Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import { isElementOfType } from 'react-dom/test-utils';
 
 const productosBackend = [
     {
@@ -85,11 +86,23 @@ const Productos = () => {
 
 
 const TablaProductos = ({ listaProductos }) => {
+    const [busqueda, setBusqueda] = useState('');
+  const [productosFiltrados, setProductosFiltrados] = useState(listaProductos);
 
+  useEffect(() => {
+    setProductosFiltrados(
+      listaProductos.filter((elemento) => {
+        return JSON.stringify(elemento).toLowerCase().includes(busqueda.toLowerCase());
+      })
+    );
+  }, [busqueda, listaProductos]);
+ 
+    
     useEffect(() => {
         console.log("este es el estado de productos en el componente", listaProductos)
 
     }, [listaProductos])
+
 
     return (
         <div className="contenedor_gestionP">
@@ -99,26 +112,26 @@ const TablaProductos = ({ listaProductos }) => {
                     <h3 className="subtitulo_busqueda">Busqueda de productos</h3>
                     <div className="busquedaProducto">
                         <label className="form_productoG">
-                            <label for="Busquedaproductos"> ID </label>
-                            <input className="input_BuscarproductoD" type="text" name="Busquedaproductos" id="idProducto" />
+                            
                         </label>
 
                         <label className="form_productoG">
 
-                            <label for="Busquedaproductos">
-                                Descripcion
-                            </label>
+                            
 
-                            <input className="input_BuscarproductoD" type="text" name="Busquedaproductos" id="" />
+                            <input 
+                            value={busqueda}
+                            onChange={(e) => setBusqueda(e.target.value)}
+                            className="input_BuscarproductoD" type="text" name="Busquedaproductos" id="" placeholder="Buscar" 
+                            />
 
                         </label>
 
                     </div>
 
-                    <div className="centrar_boton">
-                        <button class="boton bt_busquedaP" > Buscar </button>
+                   
 
-                    </div>
+                    
 
                 </div>
 
@@ -139,7 +152,7 @@ const TablaProductos = ({ listaProductos }) => {
                             </thead>
                             <tbody>
                                 {
-                                    listaProductos.map((productos) => {
+                                    productosFiltrados.map((productos) => {
                                         return (
                                             <tr>
                                                 <td className="td_listarP">{productos.idProducto}</td>

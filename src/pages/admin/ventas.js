@@ -72,6 +72,16 @@ const Ventas = () => {
 
 
 const TablaVentas = ({ listaVentas }) => {
+    const [busqueda, setBusqueda] = useState('');
+    const [ventasFiltradas, setVentasFiltradas] = useState(listaVentas);
+  
+    useEffect(() => {
+      setVentasFiltradas(
+        listaVentas.filter((elemento) => {
+          return JSON.stringify(elemento).toLowerCase().includes(busqueda.toLowerCase());
+        })
+      );
+    }, [busqueda, listaVentas]);
 
     useEffect(() => {
         console.log("este es el estado de ventas en el componente", listaVentas)
@@ -84,24 +94,15 @@ const TablaVentas = ({ listaVentas }) => {
 
             <div className="cuadro_info">
                 <div className="busqueda">
-                    <button className="boton bt_busqueda"> Buscar </button>
-                    <label className="label_listarventas">
+                    
 
-                        <input className="input_listarventas"
-                            type="number" placeholder="Digite el # de orden" />
-                    </label>
-                    <label className="label_listarventas"
-                        for="fecha desde:">
-
-                        <input className="input_listarventas"
-                            type="text" placeholder="identificación cliente" />
-                    </label>
-                    <label className="label_listarventas"
-                        for="fecha desde:">
-
-                        <input className="input_listarventas"
-                            type="text" placeholder="Nombre del cliente" />
-                    </label>
+                        <input value={busqueda}
+                        onChange={(e) => setBusqueda(e.target.value)}
+                        className="input_listarventas"
+                            type="texto" placeholder="Buscar" />
+                    
+                    
+                    
                 </div>
                 <hr />
                 <section className="listado">
@@ -118,7 +119,8 @@ const TablaVentas = ({ listaVentas }) => {
                             <th className="th_listar"> Editar/ Guardar</th>
                         </thead>
                         <tbody>
-                            {listaVentas.map((ventas) => {
+                            {
+                            ventasFiltradas.map((ventas) => {
                                 return (
                                     <tr>
                                         <td className="td_listar"> {ventas.idVenta}</td>
