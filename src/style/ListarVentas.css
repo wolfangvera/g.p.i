@@ -88,13 +88,29 @@ margin-left:5px;
  
 }
 
-
-
 .table_listarventas .td_listar,.table_listarventas .th_listar {
     padding:0.5rem;
     text-align: center;
     border:1px solid #ddd;
 }
+
+table {
+    background-color:white;
+}
+
+.table_listarventas tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+
+.table_listarventas tr:hover{
+    background-color: rgba(89, 192, 89, 0.431);
+    
+}
+
+.table_listarventas .td_listar:nth-child(9) {
+    width: 1mm;
+   }
 
 
 .th_listar{

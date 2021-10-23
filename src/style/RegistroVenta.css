@@ -10,6 +10,7 @@
 
 .tableProductos{
 text-align:center;
+border-collapse:collapse; 
 
 }
 .nuevosProductos{
@@ -58,7 +59,7 @@ left: 12.5rem;
     border-radius: 5px;
     box-shadow: 1.5px 2px 3px 2px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width:15rem;
+    width:auto;
     height: 1em;
 }
 .input_info::-webkit-input-placeholder{
@@ -74,11 +75,13 @@ left: 12.5rem;
 .tabla_cliente {
     width:100%;
     border-collapse:collapse;   
+    background-color:transparent;
 }
 
 .tabla_registro {
     width:100%;
-    border-collapse:collapse;   
+    border-collapse:collapse; 
+    background-color: transparent;  
 }
 
 

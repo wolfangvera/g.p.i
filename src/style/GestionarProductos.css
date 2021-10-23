@@ -73,7 +73,6 @@
     
 }
 
-
 .table_listarProductos .td_listarP,.table_listarProductos th {
     padding:0.5rem;
     text-align: center;
@@ -85,16 +84,31 @@
     width: 1mm;
 }
 
-table {
+.table_listarProductos {
     background-color:white;
 }
 
+
+
+.table_listarProductos th{
+    font-size:15px;
+    color: white;
+    background-color: rgb(29, 157, 195);
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
 .table_listarProductos tr:nth-child(even){
     background-color: #f2f2f2;
 }
 
+.table_listarProductos tr:hover{
+    background-color: rgba(89, 192, 89, 0.431);
+    
+}
 
-.table_listarProductos th{
+
+
+.th_listarP{
     font-size:15px;
     color: white;
     background-color: rgb(29, 157, 195);
@@ -203,4 +217,5 @@ box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transform: scale(1.1);
 }
+
 

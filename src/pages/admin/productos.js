@@ -4,19 +4,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { nanoid } from 'nanoid';
 
-const productosBackend = [
-    {
-
-        idProducto: "01",
-        descripcion: "producto1",
-        estadoProducto: "disponible",
-        cantidadProducto: 1400,
-        valorUnitarioProducto: 1200
-    }
-
-
-]
-
 
 const Productos = () => {
 
@@ -27,49 +14,41 @@ const Productos = () => {
     const [mostrarTabla, setMostrarTabla] = useState(true);
     const [textoBoton, setTextoBoton] = useState("Agregar nueva venta");
 
+    const obtenerProductos = async () => {
+        const options = { method: 'GET', url: 'http://localhost:3001/api/productos' };
+        await axios
+            .request(options)
+            .then(function (response) {
+                setProductos(response.data.products);
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
+        setEjecutarConsulta(false);
+    };
+
 
 
 
     useEffect(() => {
-        //obtener lista de productos desde el back
-        const obtenerProductos = async () => {
-            await axios.get(`http://localhost:3001/api/productos`)
-                .then(result => {
-                    const { products } = result.data;
-                    setProductos(products)
-                    console.log("esta es la informacion desde API", products)
-                }).catch(console.log)
+        console.log('consulta', ejecutarConsulta);
 
-        }
-
-        if (mostrarTabla) {
+        if (ejecutarConsulta) {
             obtenerProductos();
         }
-
-    }, [mostrarTabla]);
-
-    /*useEffect(() => {
-        //obtener un producto desde el back especifico
-        var idProducto = '01'
-        axios.get(`http://localhost:3001/api/productos?idProducto=${idProducto}`)
-            .then(result => {
-
-                // setProductos(products)
-                console.log(result.data)
-            })
-
-
-    }, []);*/
+    }, [ejecutarConsulta])
 
 
 
     useEffect(() => {
         if (mostrarTabla) {
+            setEjecutarConsulta(true);
             setTextoBoton("Agregar nuevo productos")
         } else {
             setTextoBoton("Mostrar productos")
+            setEjecutarConsulta(false)
         }
-    });
+    }, [mostrarTabla]);
 
     return (
         <div className="contenedor_gestionP">
@@ -78,7 +57,8 @@ const Productos = () => {
                 <TablaProductos
                     listaProductos={productos}
                     listaProductosFiltrado={productosFiltrados}
-                    setEjecutarConsulta={setEjecutarConsulta} />
+                    setEjecutarConsulta={setEjecutarConsulta}
+                    setMostrarTabla={setMostrarTabla} />
             ) : (
                 <FormularioAgregarProducto
                     setMostrarTabla={setMostrarTabla}
@@ -95,24 +75,13 @@ const Productos = () => {
 };
 
 
-const TablaProductos = ({ listaProductos, getByIdRequest }) => {
-    const [busqueda, setBusqueda] = useState('');
-    const [productosFiltrados, setProductosFiltrados] = useState(listaProductos);
-
+const TablaProductos = ({ listaProductos, setEjecutarConsulta, setMostrarTabla }) => {
 
     useEffect(() => {
         console.log("este es el estado de productos en el componente", listaProductos)
 
     }, [listaProductos])
 
-    useEffect(() => {
-        setProductosFiltrados(
-            listaProductos.filter((elemento) => {
-                return JSON.stringify(elemento).toLowerCase().includes(busqueda.toLowerCase());
-            })
-        );
-        console.log(productosFiltrados)
-    }, [busqueda, listaProductos]);
 
     return (
         <div className="contenedor_gestionP">
@@ -153,38 +122,25 @@ const TablaProductos = ({ listaProductos, getByIdRequest }) => {
                     <div class="Contenedor_Modificar_producto">
                         <table className="table_listarProductos">
                             <thead className="clase1">
-                                <tr>
-                                    <th className="th_listarP">ID</th>
-                                    <th className="th_listarP">Descripción</th>
-                                    <th className="th_listarP">Estado</th>
-                                    <th className="th_listarP">Cantidad Stock</th>
-                                    <th className="th_listarP">Vr. Unitario</th>
-                                    <th className="th_listarP">Editar/ Guardar</th>
-                                </tr>
+                                <th className="th_listarP">ID</th>
+                                <th className="th_listarP">Descripción</th>
+                                <th className="th_listarP">Estado</th>
+                                <th className="th_listarP">Cantidad Stock</th>
+                                <th className="th_listarP">Vr. Unitario</th>
+                                <th className="th_listarP"> Editar/ Eliminar</th>
                             </thead>
                             <tbody>
-                                {
-                                    listaProductos.map((productos) => {
-                                        return (
-                                            <tr key={nanoid()} >
-                                                <td className="td_listarP">{productos.idProducto}</td>
-                                                <td className="td_listarP">{productos.descripcionProducto}</td>
-                                                <td className="td_listarP">{productos.estadoProducto}</td>
-                                                <td className="td_listarP">{productos.cantidadProducto}</td>
-                                                <td className="td_listarP">{productos.valorUnitarioProducto}</td>
-                                                <td className="td_listarP">
-                                                    <button type="button" className="input_editar" >Editar</button>
-                                                </td>
-                                            </tr>
-                                        )
-                                    })
+                                {listaProductos.map((productos) => {
+                                    return (
+                                        <FilaProducto
+                                            key={nanoid()}
+                                            productos={productos}
+                                            setEjecutarConsulta={setEjecutarConsulta}
+                                            setMostrarTabla={setMostrarTabla}
+                                        />
+                                    )
+                                })
                                 }
-
-
-
-
-
-
                             </tbody>
                         </table>
                     </div>
@@ -199,20 +155,146 @@ const TablaProductos = ({ listaProductos, getByIdRequest }) => {
     );
 };
 
+const FilaProducto = ({ productos, setEjecutarConsulta, setMostrarTabla }) => {
+    const [edit, setEdit] = useState(false);
+    const [infoNuevoProducto, setInfoNuevoProducto] = useState({
+        descripcionProducto: productos.descripcionProducto,
+        estadoProducto: productos.estadoProducto,
+        cantidadProducto: productos.cantidadProducto,
+        valorUnitarioProducto: productos.valorUnitarioProducto,
+    });
 
-const FormularioAgregarProducto = ({
-    setMostrarTabla, listaProductos,
-    setProductos
-}) => {
+    const actualizarProducto = async () => {
+        console.log(infoNuevoProducto)
+
+        //Enviar info al backend
+        const options = {
+            method: 'PUT',
+            url: `http://localhost:3001/api/productos/${productos._id}`,
+            headers: { 'Content-Type': 'application/json' },
+            // ESTO FUE LO QUE CAMBIE
+            data: { ...infoNuevoProducto, productoId: productos._id },
+
+        };
+
+        await axios
+            .request(options)
+            .then(function (response) {
+                console.log(response.data);
+                setEdit(false);
+                setEjecutarConsulta(true);
+                toast.success("Producto modificado con exito");
+
+            }).catch(function (error) {
+                console.error(error);
+                toast.error("Error modificando el producto")
+            });
+
+    };
+
+    const eliminarProducto = async () => {
+
+        const options = {
+            method: 'DELETE',
+            url: `http://localhost:3001/api/productos/${productos._id}`,
+            headers: { 'Content-Type': 'application/json' },
+            data: { productoId: productos._id },
+        };
+
+        await axios.request(options)
+            .then(function (response) {
+                console.log(response.data);
+                toast.success("Producto eliminado");
+                setEjecutarConsulta(true);
+            }).catch(function (error) {
+                console.error(error);
+                toast.error("No se pudo eliminar")
+            });
+    }
 
 
+
+
+    return (
+        <tr>
+            {edit ? (
+                <>
+                    <td className="td_listarP"> {productos.idProducto} </td>
+                    <td className="td_listarP">
+                        <input type="text"
+                            className="input_info"
+                            value={infoNuevoProducto.descripcionProducto}
+                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, descripcionProducto: e.target.value })}
+                        />
+                    </td>
+                    <td className="td_listarP">
+                        <select className="select_producto"
+                            value={infoNuevoProducto.estadoProducto}
+                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, estadoProducto: e.target.value })}
+                            name="estadoProducto"
+                            id="estadoProducto" required>
+                            <option disabled value=""> Seleccione...</option>
+                            <option> Disponible</option>
+                            <option> No Disponible</option>
+
+
+                        </select>
+                    </td>
+                    <td className="td_listarP">
+                        <input type="text"
+                            className="input_info"
+                            value={infoNuevoProducto.cantidadProducto}
+                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, cantidadProducto: e.target.value })}
+                        />
+                    </td>
+                    <td className="td_listarP">
+                        <input type="text"
+                            className="input_info"
+                            value={infoNuevoProducto.valorUnitarioProducto}
+                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, valorUnitarioProducto: e.target.value })}
+                        />
+                    </td>
+                </>
+            ) : (
+                <>
+
+                    <td className="td_listarP">{productos.idProducto}</td>
+                    <td className="td_listarP">{productos.descripcionProducto}</td>
+                    <td className="td_listarP">{productos.estadoProducto}</td>
+                    <td className="td_listarP">{productos.cantidadProducto}</td>
+                    <td className="td_listarP">{productos.valorUnitarioProducto}</td>
+                </>
+            )}
+            <td className="td_listarP">
+                <div className="flex w-full justify-around">
+                    {edit ? (
+                        <i
+                            onClick={() => actualizarProducto()}
+                            className="fas fa-check text-green-700 hover:text-green-500"
+                        />
+
+
+                    ) : (
+                        <i
+                            onClick={() => setEdit(!edit)}
+                            className='fas fa-pencil-alt text-yellow-700 hover:text-yellow-500'
+                        />
+                    )}
+
+                    <i
+                        onClick={() => eliminarProducto()}
+                        className="fas fa-trash text-red-700 hover:text-yellow-500" />
+                </div>
+            </td>
+        </tr>
+    );
+}
+
+const FormularioAgregarProducto = ({ setMostrarTabla, listaProductos, setProductos }) => {
     //datos de la tabla de productos
     const form = useRef(null);
 
-
-
-
-    const submitForm = async (e) => {
+    const submitForm = (e) => {
         e.preventDefault();
 
         //nivelacion-api
