@@ -92,7 +92,7 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta, setMostrarTabla }
                     <div className="busquedaProducto">
                         <label className="form_productoG">
                             <label for="Busquedaproductos"> ID </label>
-                            <input className="input_BuscarproductoD" type="text" value={busqueda} onChange={(e) => setBusqueda(e.target.value)} name="Busquedaproductos" id="idProducto" />
+                            <input className="input_BuscarproductoD" type="text"  name="Busquedaproductos" id="idProducto" />
                         </label>
 
                         <label className="form_productoG">
@@ -108,7 +108,7 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta, setMostrarTabla }
                     </div>
 
                     <div className="centrar_boton">
-                        <button class="boton bt_busquedaP" onClick={() => getByIdRequest()}> Buscar </button>
+                        <button class="boton bt_busquedaP" > Buscar </button>
 
                     </div>
 
@@ -294,7 +294,7 @@ const FormularioAgregarProducto = ({ setMostrarTabla, listaProductos, setProduct
     //datos de la tabla de productos
     const form = useRef(null);
 
-    const submitForm = (e) => {
+    const submitForm = async(e) => {
         e.preventDefault();
 
         //nivelacion-api
