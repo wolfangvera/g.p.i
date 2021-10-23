@@ -3,6 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { nanoid } from 'nanoid';
+import '/Users/hsgav/Desktop/MISIONTIC/CICLO 3/Proyecto Genius/ProyectoMinTIC/src/style/GestionarProductos.css'
 
 
 const Productos = () => {
@@ -23,20 +24,7 @@ const Productos = () => {
                 console.log("esta es la informacion desde API", products)
             }).catch(console.log)
 
-    }, []);
-
-    /*useEffect(() => {
-        //obtener lista de ventas desde el back
-
-        axios.get(`http://localhost:3001/api/productos?idProducto=01`)
-            .then(result => {
-                
-                // setProductos(products)
-                console.log( result)
-            })
-
-
-    }, []);*/
+    }, [ejecutarConsulta]);
 
 
 
@@ -79,10 +67,10 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
 
     }, [listaProductos])
 
-    const submitEdit = (e) => {
+    /*const submitEdit =(e) => {
         e.preventDefault();
         console.log(e)
-    }
+    }*/
 
     return (
         <div className="contenedor_gestionP">
@@ -134,9 +122,9 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
                                 {listaProductos.map((productos) => {
                                     return (
                                         <FilaProducto
-                                            //key={nanoid()}
+                                            key={nanoid()}
                                             productos={productos}
-                                        //setEjecutarConsulta={setEjecutarConsulta}
+                                            setEjecutarConsulta={setEjecutarConsulta}
                                         />
                                     )
                                 })
@@ -157,38 +145,59 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
 
 const FilaProducto = ({ productos, setEjecutarConsulta }) => {
     const [edit, setEdit] = useState(false);
-    const [openDialog, setOpenDialog] = useState(false);
     const [infoNuevoProducto, setInfoNuevoProducto] = useState({
-        //_id: productos._id,
-        descripcion: productos.descripcion,
-        estado: productos.estado,
-        cantidad: productos.cantidad,
-        valorU: productos.valorU,
+        descripcionProducto: productos.descripcionProducto,
+        estadoProducto: productos.estadoProducto,
+        cantidadProducto: productos.cantidadProducto,
+        valorUnitarioProducto: productos.valorUnitarioProducto,
     });
-
+   
     const actualizarProducto = async () => {
-        console.log(infoNuevoProducto);
-        //enviar la info al backend
+        console.log(infoNuevoProducto)
 
+        //Enviar info al backend
         const options = {
-            method: "PUT",
-            url: "http://localhost:3001/api/productos/:productoId",
-            headers: { "Content-Type": "application/json" },
-            data: { ...infoNuevoProducto, id: productos._id }
-        }
+            method: 'PUT',
+            url: `http://localhost:3001/api/productos/${productos._id}`,
+            headers: { 'Content-Type': 'application/json' },
+                                        // ESTO FUE LO QUE CAMBIE
+            data: { ...infoNuevoProducto, productoId: productos._id },
+        
+        };
 
         await axios
             .request(options)
             .then(function (response) {
                 console.log(response.data);
-                toast.success("Prodcuto modificado con exito")
-                setEdit(false)
-            })
-            .catch(function (error) {
-                toast.error("Error modificando Prodcuto")
+                setEdit(false);
+                setEjecutarConsulta(true)
+                toast.success("Producto modificado con exito")
+
+            }).catch(function (error) {
                 console.error(error);
-            })
-    }
+                toast.error("Error modificando el producto")
+            });
+
+         }
+
+const eliminarProducto = () => {
+    
+const options = {
+    method: 'DELETE',
+    url: `http://localhost:3001/api/productos/${productos._id}`,
+    headers: {'Content-Type': 'application/json'},
+    data: { productoId: productos._id },
+  };
+  
+  axios.request(options).then(function (response) {
+    console.log(response.data);
+    toast.success("Producto eliminado")
+  }).catch(function (error) {
+    console.error(error);
+    toast.error("No se pudo eliminar")
+  });
+}
+
 
 
 
@@ -205,8 +214,8 @@ const FilaProducto = ({ productos, setEjecutarConsulta }) => {
                     </td>
                     <td>
                         <select className="select_producto"
-                            value={infoNuevoProducto.estado}
-                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, estado: e.target.value })}
+                            value={infoNuevoProducto.estadoProducto}
+                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, estadoProducto: e.target.value })}
                             name="estadoProducto"
                             id="estadoProducto" required>
                             <option disabled value=""> Seleccione...</option>
@@ -218,14 +227,14 @@ const FilaProducto = ({ productos, setEjecutarConsulta }) => {
                     </td>
                     <td>
                         <input type="text"
-                            value={infoNuevoProducto.cantidad}
-                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, cantidad: e.target.value })}
+                            value={infoNuevoProducto.cantidadProducto}
+                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, cantidadProducto: e.target.value })}
                         />
                     </td>
                     <td>
                         <input type="text"
-                            value={infoNuevoProducto.valorU}
-                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, valorU: e.target.value })}
+                            value={infoNuevoProducto.valorUnitarioProducto}
+                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, valorUnitarioProducto: e.target.value })}
                         />
                     </td>
                 </>
@@ -255,12 +264,14 @@ const FilaProducto = ({ productos, setEjecutarConsulta }) => {
                         />
                     )}
 
-                    <i className="fas fa-trash text-red-700 hover:text-yellow-500" />
+                    <i 
+                    onClick={()=> eliminarProducto()}
+                    className="fas fa-trash text-red-700 hover:text-yellow-500" />
                 </div>
             </td>
         </tr>
     );
-};
+}
 
 const FormularioAgregarProducto = ({ setMostrarTabla, listaProductos, setProductos }) => {
     //datos de la tabla de productos

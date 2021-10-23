@@ -17,6 +17,8 @@ import ModListarVentas from './pages/ModListarVentas';
 import ModuloUsuario from './pages/ModuloUsuario';
 import RegistroProductoF from './pages/RegistroProductoF';
 
+import "tailwindcss/tailwind.css"
+
 import Productos from './pages/admin/productos';
 import Ventas from './pages/admin/ventas';
 
