@@ -79,10 +79,10 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
 
     }, [listaProductos])
 
-    const submitEdit =(e) => {
+    /*const submitEdit =(e) => {
         e.preventDefault();
         console.log(e)
-    }
+    }*/
 
     return (
         <div className="contenedor_gestionP">
@@ -134,7 +134,7 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
                                 {listaProductos.map((productos) => {
                                     return(
                                         <FilaProducto
-                                        //key={nanoid()}
+                                        key={nanoid()}
                                         productos={productos}
                                         //setEjecutarConsulta={setEjecutarConsulta}
                                         />                                    
@@ -155,11 +155,11 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
     );
 };
 
-const FilaProducto = ({productos, setEjecutarConsulta})=> {
+const FilaProducto = ({productos})=> {
     const [edit, setEdit] = useState(false);
-    const [openDialog, setOpenDialog] = useState(false);
-    const [infoNuevoProducto, setInfoNuevoProducto] = useState({
-      //_id: productos._id,
+        const [infoNuevoProducto, setInfoNuevoProducto] = useState({
+      _id: productos._id,
+      //idProducto: idProducto,
       descripcion: productos.descripcion,
       estado: productos.estado,
       cantidad: productos.cantidad,
@@ -171,9 +171,9 @@ const FilaProducto = ({productos, setEjecutarConsulta})=> {
         //enviar la info al backend
 
         const options ={
-            method: "PUT",
+            method: "PATCH",
             url: "http://localhost:3001/api/productos/:productoId",
-            headers: {"Contetn-Type": "aaplicatios/json"},
+            headers: {"Content-Type": "applicatios/json"},
             data: { ...infoNuevoProducto, id: productos._id}
         }
 
