@@ -158,8 +158,6 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
 const FilaProducto = ({productos})=> {
     const [edit, setEdit] = useState(false);
         const [infoNuevoProducto, setInfoNuevoProducto] = useState({
-      _id: productos._id,
-      //idProducto: idProducto,
       descripcion: productos.descripcion,
       estado: productos.estado,
       cantidad: productos.cantidad,
