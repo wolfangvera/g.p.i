@@ -72,10 +72,37 @@
     border-collapse:collapse;  
 }
 
-.table_listarProductos .td_listarP,.th_listarP {
-    width: 10vw;
+.table_listarProductos .td_listarP,.table_listarProductos th {
+    padding:0.5rem;
     text-align: center;
-    border:1px solid rgba(0, 0, 0, 0.3);
+    border:1px solid #ddd;
+}
+
+
+.table_listarProductos td:nth-child(6) {
+    width: 1mm;
+}
+
+table {
+    background-color:white;
+}
+
+.table_listarProductos tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+
+.table_listarProductos th{
+    font-size:15px;
+    color: white;
+    background-color: rgb(29, 157, 195);
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+
+.table_listarProductos tr:hover{
+    background-color: rgba(89, 192, 89, 0.431);
+    
 }
 
 .td_listarP {

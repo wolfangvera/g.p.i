@@ -3,7 +3,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { nanoid } from 'nanoid';
-import '/Users/hsgav/Desktop/MISIONTIC/CICLO 3/Proyecto Genius/ProyectoMinTIC/src/style/GestionarProductos.css'
 
 
 const Productos = () => {
