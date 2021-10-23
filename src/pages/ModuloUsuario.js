@@ -3,7 +3,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { nanoid } from 'nanoid';
 import '../style/ModuloUsuario.css'
-import registro from '../../api-rest/models/registro';
+
 
 
 const Usuario = () => {
