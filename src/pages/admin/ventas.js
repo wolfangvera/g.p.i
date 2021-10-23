@@ -101,6 +101,16 @@ const Ventas = () => {
 
 
 const TablaVentas = ({ listaVentas, setEjecutarConsulta, setMostrarTabla, listaVendedores }) => {
+    const [busqueda, setBusqueda] = useState('');
+    const [ventasFiltradas, setVentasFiltradas] = useState(listaVentas);
+  
+    useEffect(() => {
+      setVentasFiltradas(
+        listaVentas.filter((elemento) => {
+          return JSON.stringify(elemento).toLowerCase().includes(busqueda.toLowerCase());
+        })
+      );
+    }, [busqueda, listaVentas]);
 
     useEffect(() => {
         console.log("este es el estado de ventas en el componente", listaVentas)
@@ -113,24 +123,16 @@ const TablaVentas = ({ listaVentas, setEjecutarConsulta, setMostrarTabla, listaV
 
             <div className="cuadro_info">
                 <div className="busqueda">
-                    <button className="boton bt_busqueda"> Buscar </button>
-                    <label className="label_listarventas">
+                    
+                    <label className="label_listarventas"> Filtrar
 
-                        <input className="input_listarventas"
-                            type="number" placeholder="Digite el # de orden" />
+                        <input value={busqueda}
+                        onChange={(e) => setBusqueda(e.target.value)}
+                        className="input_listarventas"
+                            type="text" placeholder="Buscar" />
                     </label>
-                    <label className="label_listarventas"
-                        for="fecha desde:">
-
-                        <input className="input_listarventas"
-                            type="text" placeholder="identificación cliente" />
-                    </label>
-                    <label className="label_listarventas"
-                        for="fecha desde:">
-
-                        <input className="input_listarventas"
-                            type="text" placeholder="Nombre del cliente" />
-                    </label>
+                    
+                    
                 </div>
                 <hr />
                 <section className="listado">
@@ -147,7 +149,8 @@ const TablaVentas = ({ listaVentas, setEjecutarConsulta, setMostrarTabla, listaV
                             <th className="th_listar"> Editar/ Guardar</th>
                         </thead>
                         <tbody>
-                            {listaVentas.map((ventas) => {
+                            {
+                            ventasFiltradas.map((ventas) => {
                                 return (
 
                                     <FilaVenta
