@@ -18,15 +18,15 @@ const Productos = () => {
     const obtenerProductos = async () => {
         const options = { method: 'GET', url: 'http://localhost:3001/api/productos' };
         await axios
-          .request(options)
-          .then(function (response) {
-            setProductos(response.data.products);
-          })
-          .catch(function (error) {
-            console.error(error);
-          });
+            .request(options)
+            .then(function (response) {
+                setProductos(response.data.products);
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
         setEjecutarConsulta(false);
-      };
+    };
 
 
 
@@ -41,7 +41,6 @@ const Productos = () => {
 
 
 
-
     useEffect(() => {
         if (mostrarTabla) {
             setEjecutarConsulta(true);
@@ -50,7 +49,7 @@ const Productos = () => {
             setTextoBoton("Mostrar productos")
             setEjecutarConsulta(false)
         }
-    });
+    },[mostrarTabla]);
 
     return (
         <div className="contenedor_gestionP">
@@ -59,7 +58,8 @@ const Productos = () => {
                 <TablaProductos
                     listaProductos={productos}
                     listaProductosFiltrado={productosFiltrados}
-                    setEjecutarConsulta={setEjecutarConsulta} />
+                    setEjecutarConsulta={setEjecutarConsulta} 
+                    setMostrarTabla={setMostrarTabla}/>
             ) : (
                 <FormularioAgregarProducto
                     setMostrarTabla={setMostrarTabla}
@@ -76,7 +76,7 @@ const Productos = () => {
 };
 
 
-const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
+const TablaProductos = ({ listaProductos, setEjecutarConsulta, setMostrarTabla }) => {
 
     useEffect(() => {
         console.log("este es el estado de productos en el componente", listaProductos)
@@ -137,6 +137,7 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
                                             key={nanoid()}
                                             productos={productos}
                                             setEjecutarConsulta={setEjecutarConsulta}
+                                            setMostrarTabla={setMostrarTabla}
                                         />
                                     )
                                 })
@@ -155,7 +156,7 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
     );
 };
 
-const FilaProducto = ({ productos, setEjecutarConsulta }) => {
+const FilaProducto = ({ productos, setEjecutarConsulta, setMostrarTabla }) => {
     const [edit, setEdit] = useState(false);
     const [infoNuevoProducto, setInfoNuevoProducto] = useState({
         descripcionProducto: productos.descripcionProducto,
@@ -189,7 +190,7 @@ const FilaProducto = ({ productos, setEjecutarConsulta }) => {
                 console.error(error);
                 toast.error("Error modificando el producto")
             });
-
+      
     };
 
     const eliminarProducto = async () => {

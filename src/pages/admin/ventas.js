@@ -2,8 +2,9 @@ import React, { useEffect, useState, useRef } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios';
+import { nanoid } from 'nanoid';
 
-const ventasBackend =  [
+const ventasBackend = [
     {
         idVenta: "25",
         fecha: "Fecha cmabiada",
@@ -17,28 +18,52 @@ const ventasBackend =  [
 
 ]
 
+const vendedoresBackend = [
+    {
+        nombreVendedor: "Juan"
+    },
+    {
+        nombreVendedor: "Alberto"
+    },
+    {
+        nombreVendedor: "Maria"
+    },
+    {
+        nombreVendedor: "Camila"
+    },
+    {
+        nombreVendedor: "Carlos"
+    }
+]
+
 
 const Ventas = () => {
 
     const [ventas, setVentas] = useState([]);
     const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
-
+    const [vendedores, setVendedores] = useState([]);
     const [productosVenta, setProductosVenta] = useState([]);
 
     const [mostrarTabla, setMostrarTabla] = useState(true);
     const [textoBoton, setTextoBoton] = useState("Agregar nueva venta");
 
-    
+
     useEffect(() => {
         //obtener lista de ventas desde el back
         axios.get(`http://localhost:3001/api/venta`)
-        .then(result=>{
-            const {ventas} =result.data;
-            setVentas(ventas)
-            console.log("esta es la informacion desde API" , ventas)
-        }).catch(console.log)
+            .then(result => {
+                const { ventas } = result.data;
+                setVentas(ventas)
+                console.log("esta es la informacion desde API", ventas)
+            }).catch(console.log)
+
+
+//Llamado vendedores del backend
+setVendedores(vendedoresBackend)
 
     }, []);
+
+
 
 
     useEffect(() => {
@@ -53,7 +78,10 @@ const Ventas = () => {
         <div className="contenedor_listarventas">
             <button className="boton bt_adicion_producto" onClick={() => setMostrarTabla(!mostrarTabla)}> {textoBoton}</button>
             {mostrarTabla ? (
-                <TablaVentas listaVentas={ventas} />
+                <TablaVentas listaVentas={ventas}
+                    setEjecutarConsulta={setEjecutarConsulta}
+                    setMostrarTabla={setMostrarTabla}
+                    listaVendedores={vendedores} />
             ) : (
                 <FormularioAgregarVenta
                     setMostrarTabla={setMostrarTabla}
@@ -71,7 +99,7 @@ const Ventas = () => {
 };
 
 
-const TablaVentas = ({ listaVentas }) => {
+const TablaVentas = ({ listaVentas, setEjecutarConsulta, setMostrarTabla, listaVendedores }) => {
 
     useEffect(() => {
         console.log("este es el estado de ventas en el componente", listaVentas)
@@ -120,23 +148,18 @@ const TablaVentas = ({ listaVentas }) => {
                         <tbody>
                             {listaVentas.map((ventas) => {
                                 return (
-                                    <tr>
-                                        <td className="td_listar"> {ventas.idVenta}</td>
-                                        <td className="td_listar">{ventas.fecha}</td>
-                                        <td className="td_listar">{ventas.nombreVendedor}</td>
-                                        <td className="td_listar"> {ventas.idCliente}</td>
-                                        <td className="td_listar">{ventas.nombreCliente}</td>
-                                        <td className="td_listar"> {ventas.estadoVenta}</td>
-                                        <td className="td_listar">{ventas.descripcionVenta}</td>
-                                        <td className="td_listar">{ventas.valorTotal}</td>
-                                        <td className="td_listar">
-                                            <input className="input_edit" type="button" value="Editar" />
-                                        </td>
-                                    </tr>
 
-                                );
-                            })}
+                                    <FilaVenta
 
+                                        key={nanoid()}
+                                        ventas={ventas}
+                                        setEjecutarConsulta={setEjecutarConsulta}
+                                        setMostrarTabla={setMostrarTabla}
+                                        listaVendedores={listaVendedores}
+                                    />
+                                )
+                            })
+                            }
 
                         </tbody>
 
@@ -373,6 +396,153 @@ const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVe
     );
 }
 
+
+const FilaVenta = ({ ventas, setEjecutarConsulta , listaVendedores}) => {
+    const [edit, setEdit] = useState(false);
+    const [infoNuevaVenta, setInfoNuevaVenta] = useState({
+
+    });
+
+    const actualizarVenta = async () => {
+        console.log(infoNuevaVenta)
+
+        //Enviar info al backend
+        const options = {
+            method: 'PUT',
+            url: `http://localhost:3001/api/venta/${ventas._id}`,
+            headers: { 'Content-Type': 'application/json' },
+            // ESTO FUE LO QUE CAMBIE
+            data: { ...infoNuevaVenta, ventaId: ventas._id },
+
+        };
+
+        await axios
+            .request(options)
+            .then(function (response) {
+                console.log(response.data);
+                setEdit(false);
+                setEjecutarConsulta(true);
+                toast.success("Venta modificada con exito");
+
+            }).catch(function (error) {
+                console.error(error);
+                toast.error("Error modificando la venta")
+            });
+
+    };
+
+    const eliminarVenta = async () => {
+
+        const options = {
+            method: 'DELETE',
+            url: `http://localhost:3001/api/venta/${ventas._id}`,
+            headers: { 'Content-Type': 'application/json' },
+            data: { ventaId: ventas._id },
+        };
+
+        await axios.request(options)
+            .then(function (response) {
+                console.log(response.data);
+                toast.success("Venta eliminada");
+                setEjecutarConsulta(true);
+            }).catch(function (error) {
+                console.error(error);
+                toast.error("No se pudo eliminar")
+            });
+    }
+
+
+
+    return (
+        <tr>
+            {edit ? (
+                <>
+                    <td> {ventas.idVenta} </td>
+                    <td className="td_listar">{ventas.fecha}</td>
+                    <td>
+                        <select className="select_producto"
+                            value={infoNuevaVenta.nombreVendedor}
+                            onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, nombreVendedor: e.target.value })}
+                            name="nombreVendedor"
+                            id="nombreVendedor" required>
+                            <option disabled value=""> Seleccione...</option>
+                            {listaVendedores.map((vendedores) => {
+                                return (
+                                    <option> {vendedores.nombreVendedor}</option>
+
+                                );
+                            })}
+
+
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text"
+                            value={infoNuevaVenta.descripcionProducto}
+                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, descripcionProducto: e.target.value })}
+                        />
+                    </td>
+
+                    <td>
+                        <input type="text"
+                            value={infoNuevoProducto.descripcionProducto}
+                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, descripcionProducto: e.target.value })}
+                        />
+                    </td>
+
+                    <td>
+                        <input type="text"
+                            value={infoNuevoProducto.cantidadProducto}
+                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, cantidadProducto: e.target.value })}
+                        />
+                    </td>
+                    <td>
+                        <input type="text"
+                            value={infoNuevoProducto.valorUnitarioProducto}
+                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, valorUnitarioProducto: e.target.value })}
+                        />
+                    </td>
+
+
+
+                </>
+            ) : (
+                <>
+                    <td className="td_listar"> {ventas.idVenta}</td>
+                    <td className="td_listar">{ventas.fecha}</td>
+                    <td className="td_listar">{ventas.nombreVendedor}</td>
+                    <td className="td_listar"> {ventas.idCliente}</td>
+                    <td className="td_listar">{ventas.nombreCliente}</td>
+                    <td className="td_listar"> {ventas.estadoVenta}</td>
+                    <td className="td_listar">{ventas.descripcionVenta}</td>
+                    <td className="td_listar">{ventas.valorTotal}</td>
+                </>
+
+            )}
+            <td className="td_listar">
+                <div className="flex w-full justify-around">
+                    {edit ? (
+                        <i
+                            onClick={() => actualizarVenta()}
+                            className="fas fa-check text-green-700 hover:text-green-500"
+                        />
+
+
+                    ) : (
+                        <i
+                            onClick={() => setEdit(!edit)}
+                            className='fas fa-pencil-alt text-yellow-700 hover:text-yellow-500'
+                        />
+                    )}
+
+                    <i
+                        onClick={() => eliminarVenta()}
+                        className="fas fa-trash text-red-700 hover:text-yellow-500" />
+                </div>
+            </td>
+        </tr>
+    );
+}
 /*
 const Ventas = () => {
     const [mostrarTabla, setMostrarTabla] = useState(true);
