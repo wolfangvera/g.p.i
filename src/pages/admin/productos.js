@@ -79,7 +79,7 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
 
     }, [listaProductos])
 
-    const submitEdit =(e) => {
+    const submitEdit = (e) => {
         e.preventDefault();
         console.log(e)
     }
@@ -132,14 +132,14 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
                             </thead>
                             <tbody>
                                 {listaProductos.map((productos) => {
-                                    return(
+                                    return (
                                         <FilaProducto
-                                        //key={nanoid()}
-                                        productos={productos}
+                                            //key={nanoid()}
+                                            productos={productos}
                                         //setEjecutarConsulta={setEjecutarConsulta}
-                                        />                                    
-                                        )
-                                    })
+                                        />
+                                    )
+                                })
                                 }
                             </tbody>
                         </table>
@@ -155,26 +155,26 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
     );
 };
 
-const FilaProducto = ({productos, setEjecutarConsulta})=> {
+const FilaProducto = ({ productos, setEjecutarConsulta }) => {
     const [edit, setEdit] = useState(false);
     const [openDialog, setOpenDialog] = useState(false);
     const [infoNuevoProducto, setInfoNuevoProducto] = useState({
-      //_id: productos._id,
-      descripcion: productos.descripcion,
-      estado: productos.estado,
-      cantidad: productos.cantidad,
-      valorU: productos.valorU,
+        //_id: productos._id,
+        descripcion: productos.descripcion,
+        estado: productos.estado,
+        cantidad: productos.cantidad,
+        valorU: productos.valorU,
     });
 
     const actualizarProducto = async () => {
         console.log(infoNuevoProducto);
         //enviar la info al backend
 
-        const options ={
+        const options = {
             method: "PUT",
             url: "http://localhost:3001/api/productos/:productoId",
-            headers: {"Contetn-Type": "aaplicatios/json"},
-            data: { ...infoNuevoProducto, id: productos._id}
+            headers: { "Content-Type": "application/json" },
+            data: { ...infoNuevoProducto, id: productos._id }
         }
 
         await axios
@@ -184,53 +184,53 @@ const FilaProducto = ({productos, setEjecutarConsulta})=> {
                 toast.success("Prodcuto modificado con exito")
                 setEdit(false)
             })
-            .catch(function (error){
+            .catch(function (error) {
                 toast.error("Error modificando Prodcuto")
                 console.error(error);
             })
-        }
-    
-         
-    
+    }
+
+
+
     return (
         <tr>
-             {edit? (
+            {edit ? (
                 <>
                     <td> {productos.idProducto} </td>
                     <td>
-                        <input type ="text" 
-                        value = {infoNuevoProducto.descripcion}
-                        onChange ={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, descripcion: e.target.value})} 
+                        <input type="text"
+                            value={infoNuevoProducto.descripcionProducto}
+                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, descripcionProducto: e.target.value })}
                         />
                     </td>
                     <td>
-                    <select className="select_producto" 
-                        value={infoNuevoProducto.estado}
-                        onChange ={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, estado: e.target.value})}  
-                        name="estadoProducto" 
-                        id="estadoProducto" required>
-                        <option disabled value=""> Seleccione...</option>
-                        <option> Disponible</option>
-                        <option> No Disponible</option>
-                        
+                        <select className="select_producto"
+                            value={infoNuevoProducto.estado}
+                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, estado: e.target.value })}
+                            name="estadoProducto"
+                            id="estadoProducto" required>
+                            <option disabled value=""> Seleccione...</option>
+                            <option> Disponible</option>
+                            <option> No Disponible</option>
+
 
                         </select>
-                        </td>
+                    </td>
                     <td>
-                        <input type ="text" 
-                        value = {infoNuevoProducto.cantidad}
-                        onChange ={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, cantidad: e.target.value})}
+                        <input type="text"
+                            value={infoNuevoProducto.cantidad}
+                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, cantidad: e.target.value })}
                         />
                     </td>
                     <td>
-                        <input type ="text" 
-                        value = {infoNuevoProducto.valorU}
-                        onChange ={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, valorU: e.target.value})} 
+                        <input type="text"
+                            value={infoNuevoProducto.valorU}
+                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, valorU: e.target.value })}
                         />
                     </td>
                 </>
-             ) : (
-                 <>
+            ) : (
+                <>
 
                     <td className="td_listarP">{productos.idProducto}</td>
                     <td className="td_listarP">{productos.descripcionProducto}</td>
@@ -238,31 +238,31 @@ const FilaProducto = ({productos, setEjecutarConsulta})=> {
                     <td className="td_listarP">{productos.cantidadProducto}</td>
                     <td className="td_listarP">{productos.valorUnitarioProducto}</td>
                 </>
-             )}
+            )}
             <td className="td_listarP">
                 <div className="flex w-full justify-around">
-                    {edit? (
-                            <i
-                        onClick={() => actualizarProducto()}
-                        className = "fas fa-check text-green-700 hover:text-green-500"
+                    {edit ? (
+                        <i
+                            onClick={() => actualizarProducto()}
+                            className="fas fa-check text-green-700 hover:text-green-500"
                         />
-                                      
-                        
-                    ):(
-                        <i 
-                        onClick={() => setEdit(!edit)}
-                        className = 'fas fa-pencil-alt text-yellow-700 hover:text-yellow-500'
+
+
+                    ) : (
+                        <i
+                            onClick={() => setEdit(!edit)}
+                            className='fas fa-pencil-alt text-yellow-700 hover:text-yellow-500'
                         />
                     )}
-                   
-                    <i className = "fas fa-trash text-red-700 hover:text-yellow-500"/>
-               </div>
+
+                    <i className="fas fa-trash text-red-700 hover:text-yellow-500" />
+                </div>
             </td>
         </tr>
     );
 };
 
-const FormularioAgregarProducto = ({setMostrarTabla, listaProductos, setProductos}) => {
+const FormularioAgregarProducto = ({ setMostrarTabla, listaProductos, setProductos }) => {
     //datos de la tabla de productos
     const form = useRef(null);
 
