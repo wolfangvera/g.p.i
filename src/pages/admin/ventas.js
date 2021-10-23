@@ -95,12 +95,13 @@ const TablaVentas = ({ listaVentas }) => {
             <div className="cuadro_info">
                 <div className="busqueda">
                     
+                    <label className="label_listarventas"> Filtrar
 
                         <input value={busqueda}
                         onChange={(e) => setBusqueda(e.target.value)}
                         className="input_listarventas"
-                            type="texto" placeholder="Buscar" />
-                    
+                            type="text" placeholder="Buscar" />
+                    </label>
                     
                     
                 </div>

@@ -115,7 +115,7 @@ const TablaProductos = ({ listaProductos }) => {
                             
                         </label>
 
-                        <label className="form_productoG">
+                        <label className="subtitulo_busqueda"> Filtrar
 
                             
 
