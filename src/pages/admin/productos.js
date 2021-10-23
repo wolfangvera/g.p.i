@@ -49,7 +49,7 @@ const Productos = () => {
             setTextoBoton("Mostrar productos")
             setEjecutarConsulta(false)
         }
-    },[mostrarTabla]);
+    }, [mostrarTabla]);
 
     return (
         <div className="contenedor_gestionP">
@@ -58,8 +58,8 @@ const Productos = () => {
                 <TablaProductos
                     listaProductos={productos}
                     listaProductosFiltrado={productosFiltrados}
-                    setEjecutarConsulta={setEjecutarConsulta} 
-                    setMostrarTabla={setMostrarTabla}/>
+                    setEjecutarConsulta={setEjecutarConsulta}
+                    setMostrarTabla={setMostrarTabla} />
             ) : (
                 <FormularioAgregarProducto
                     setMostrarTabla={setMostrarTabla}
@@ -190,7 +190,7 @@ const FilaProducto = ({ productos, setEjecutarConsulta, setMostrarTabla }) => {
                 console.error(error);
                 toast.error("Error modificando el producto")
             });
-      
+
     };
 
     const eliminarProducto = async () => {
@@ -220,14 +220,15 @@ const FilaProducto = ({ productos, setEjecutarConsulta, setMostrarTabla }) => {
         <tr>
             {edit ? (
                 <>
-                    <td> {productos.idProducto} </td>
-                    <td>
+                    <td className="td_listarP"> {productos.idProducto} </td>
+                    <td className="td_listarP">
                         <input type="text"
+                            className="input_info"
                             value={infoNuevoProducto.descripcionProducto}
                             onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, descripcionProducto: e.target.value })}
                         />
                     </td>
-                    <td>
+                    <td className="td_listarP">
                         <select className="select_producto"
                             value={infoNuevoProducto.estadoProducto}
                             onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, estadoProducto: e.target.value })}
@@ -240,14 +241,16 @@ const FilaProducto = ({ productos, setEjecutarConsulta, setMostrarTabla }) => {
 
                         </select>
                     </td>
-                    <td>
+                    <td className="td_listarP">
                         <input type="text"
+                            className="input_info"
                             value={infoNuevoProducto.cantidadProducto}
                             onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, cantidadProducto: e.target.value })}
                         />
                     </td>
-                    <td>
+                    <td className="td_listarP">
                         <input type="text"
+                            className="input_info"
                             value={infoNuevoProducto.valorUnitarioProducto}
                             onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, valorUnitarioProducto: e.target.value })}
                         />

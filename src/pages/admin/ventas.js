@@ -3,20 +3,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios';
 import { nanoid } from 'nanoid';
+import '/Users/hsgav/Desktop/MISIONTIC/CICLO 3/Proyecto Genius/ProyectoMinTIC/src/style/GestionarProductos.css'
 
-const ventasBackend = [
-    {
-        idVenta: "25",
-        fecha: "Fecha cmabiada",
-        estadoVenta: "En proceso",
-        descripcion: "producto 1: 5unidades       producto2 : 3unidades",
-        idCliente: 103654556,
-        nombreCliente: "juan comprador",
-        nombreVendedor: "juan vendedor",
-        valorTotal: 25000
-    }
 
-]
+
 
 const vendedoresBackend = [
     {
@@ -47,9 +37,7 @@ const Ventas = () => {
     const [mostrarTabla, setMostrarTabla] = useState(true);
     const [textoBoton, setTextoBoton] = useState("Agregar nueva venta");
 
-
-    useEffect(() => {
-        //obtener lista de ventas desde el back
+    const obtenerVentas = async () => {
         axios.get(`http://localhost:3001/api/venta`)
             .then(result => {
                 const { ventas } = result.data;
@@ -58,27 +46,39 @@ const Ventas = () => {
             }).catch(console.log)
 
 
-//Llamado vendedores del backend
-setVendedores(vendedoresBackend)
+    }
 
-    }, []);
+    useEffect(() => {
+        //obtener lista de ventas desde el back
+
+
+        //Llamado vendedores del backend
+        setVendedores(vendedoresBackend)
+        if (ejecutarConsulta) {
+            obtenerVentas();
+        }
+
+    }, [ejecutarConsulta]);
 
 
 
 
     useEffect(() => {
         if (mostrarTabla) {
+            setEjecutarConsulta(true)
             setTextoBoton("Agregar nueva venta")
         } else {
             setTextoBoton("Mostrar ventas")
+            setEjecutarConsulta(false)
         }
-    });
+    }, [mostrarTabla]);
 
     return (
         <div className="contenedor_listarventas">
             <button className="boton bt_adicion_producto" onClick={() => setMostrarTabla(!mostrarTabla)}> {textoBoton}</button>
             {mostrarTabla ? (
-                <TablaVentas listaVentas={ventas}
+                <TablaVentas
+                    listaVentas={ventas}
                     setEjecutarConsulta={setEjecutarConsulta}
                     setMostrarTabla={setMostrarTabla}
                     listaVendedores={vendedores} />
@@ -87,8 +87,9 @@ setVendedores(vendedoresBackend)
                     setMostrarTabla={setMostrarTabla}
                     listaVentas={ventas}
                     listaProductosVenta={productosVenta}
+                    listaVendedores={vendedores}
                     setProductosVenta={setProductosVenta}
-                    setVentas={setVentas}/*listaVendedores={vendedores}*/ />
+                    setVentas={setVentas} />
             )}
             <ToastContainer
                 position="bottom-center"
@@ -190,7 +191,7 @@ const TablaVentas = ({ listaVentas, setEjecutarConsulta, setMostrarTabla, listaV
 
 
 
-const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVenta, setProductosVenta, setVentas }) => {
+const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVenta, setProductosVenta, setVentas, listaVendedores }) => {
     //datos de la tabla de venta
     const [idVenta, setIdVenta] = useState('');
     const [fecha, setFecha] = useState('');
@@ -333,7 +334,7 @@ const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVe
                             <tbody>
                                 {listaProductosVenta.map((productosVenta) => {
                                     return (
-                                        <tr>
+                                        <tr key={nanoid()}>
                                             <td className="td_listar"> {productosVenta.idProducto}</td>
                                             <td className="td_listar">{productosVenta.cantidadProducto}</td>
                                             <td className="td_listar">{productosVenta.valorUnitarioProducto}</td>
@@ -373,9 +374,11 @@ const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVe
                             <select className="selector_vendedor" defaultValue="" name="vendedor" value={nombreVendedor} onChange={(e) => { setNombreVendedor(e.target.value) }} required>
 
                                 <option disabled value="">seleccionar ..</option>
-                                <option> Vendedor 1</option>
-                                <option> Vendedor 1</option>
-                                <option> Vendedor 1</option>
+                                {listaVendedores.map((vendedores) => {
+                                    return (
+                                        <option key={nanoid()}>{vendedores.nombreVendedor}</option>
+                                    );
+                                })}
                             </select>
                         </div>
                     </div>
@@ -397,10 +400,15 @@ const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVe
 }
 
 
-const FilaVenta = ({ ventas, setEjecutarConsulta , listaVendedores}) => {
+const FilaVenta = ({ ventas, setEjecutarConsulta, listaVendedores }) => {
     const [edit, setEdit] = useState(false);
     const [infoNuevaVenta, setInfoNuevaVenta] = useState({
-
+        nombreVendedor: ventas.nombreVendedor,
+        estadoVenta: ventas.estadoVenta,
+        descripcionVenta: ventas.descripcionVenta,
+        valorTotal: ventas.valorTotal,
+        idCliente: ventas.idCliente,
+        nombreCliente: ventas.nombreCliente
     });
 
     const actualizarVenta = async () => {
@@ -457,9 +465,9 @@ const FilaVenta = ({ ventas, setEjecutarConsulta , listaVendedores}) => {
         <tr>
             {edit ? (
                 <>
-                    <td> {ventas.idVenta} </td>
+                    <td className="td_listar"> {ventas.idVenta} </td>
                     <td className="td_listar">{ventas.fecha}</td>
-                    <td>
+                    <td className="td_listar">
                         <select className="select_producto"
                             value={infoNuevaVenta.nombreVendedor}
                             onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, nombreVendedor: e.target.value })}
@@ -468,38 +476,57 @@ const FilaVenta = ({ ventas, setEjecutarConsulta , listaVendedores}) => {
                             <option disabled value=""> Seleccione...</option>
                             {listaVendedores.map((vendedores) => {
                                 return (
-                                    <option> {vendedores.nombreVendedor}</option>
-
+                                    <option key={nanoid()}>{vendedores.nombreVendedor}</option>
                                 );
                             })}
 
 
                         </select>
                     </td>
-                    <td>
+                    <td className="td_listar">
                         <input type="text"
-                            value={infoNuevaVenta.descripcionProducto}
-                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, descripcionProducto: e.target.value })}
+                            className="input_info"
+                            value={infoNuevaVenta.idCliente}
+                            onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, idCliente: e.target.value })}
                         />
                     </td>
 
-                    <td>
+                    <td className="td_listar">
                         <input type="text"
-                            value={infoNuevoProducto.descripcionProducto}
-                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, descripcionProducto: e.target.value })}
+                            className="input_info"
+                            value={infoNuevaVenta.nombreCliente}
+                            onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, nombreCliente: e.target.value })}
                         />
+                    </td>
+                    <td className="td_listar">
+                        <select className="select_producto"
+                            value={infoNuevaVenta.estadoVenta}
+                            onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, estadoVenta: e.target.value })}
+                            name="estadoVenta"
+                            id="estadoventa" required>
+                            <option disabled value=""> Seleccione...</option>
+                            <option> En proceso</option>
+                            <option> Cancelada</option>
+                            <option>Entregada</option>
+
+
+                        </select>
                     </td>
 
-                    <td>
-                        <input type="text"
-                            value={infoNuevoProducto.cantidadProducto}
-                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, cantidadProducto: e.target.value })}
+                    <td className="td_listar">
+                        <input
+                            type="text"
+                            className="input_info"
+                            value={infoNuevaVenta.descripcionVenta}
+                            onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, descripcionVenta: e.target.value })}
                         />
                     </td>
-                    <td>
-                        <input type="text"
-                            value={infoNuevoProducto.valorUnitarioProducto}
-                            onChange={(e) => setInfoNuevoProducto({ ...infoNuevoProducto, valorUnitarioProducto: e.target.value })}
+                    <td className="td_listar">
+                        <input
+                            type="text"
+                            className="input_info"
+                            value={infoNuevaVenta.valorTotal}
+                            onChange={(e) => setInfoNuevaVenta({ ...infoNuevaVenta, valorTotal: e.target.value })}
                         />
                     </td>
 

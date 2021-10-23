@@ -58,7 +58,7 @@ left: 12.5rem;
     border-radius: 5px;
     box-shadow: 1.5px 2px 3px 2px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width:15rem;
+    width:auto;
     height: 1em;
 }
 .input_info::-webkit-input-placeholder{
