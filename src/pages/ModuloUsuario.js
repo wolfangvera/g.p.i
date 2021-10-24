@@ -8,7 +8,7 @@ import '../style/ModuloUsuario.css'
 
 const Usuario = () => {
 
-    const [usuario, setUsuario] = useState([]);
+    const [usuarios, setUsuarios] = useState([]);
     const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
     
     
@@ -18,12 +18,16 @@ const Usuario = () => {
         await axios
             .request(options)
             .then(function (response) {
-                setUsuario(response.data.products);
+               console.log(response.data)
+                setUsuarios(response.data.products);
+                console.log("info de usuario" ,usuarios)
             })
             .catch(function (error) {
                 console.error(error);
             });
-        setEjecutarConsulta(false);    
+        setEjecutarConsulta(false);  
+        
+     
     };
 
     useEffect(() => {
@@ -36,7 +40,7 @@ const Usuario = () => {
 
     return (
         <TablaUsuarios
-            listaUsuarios = {usuario}
+            listaUsuarios = {usuarios}
             setEjecutarConsulta = {setEjecutarConsulta}           
         />
         
@@ -45,7 +49,7 @@ const Usuario = () => {
 }
 
 
-const TablaUsuarios =({listaUsuarios, setEjecutarConsulta}) => {
+const TablaUsuarios =({listaUsuarios, setEjecutarConsulta, setUsuarios}) => {
     useEffect(() => {
         console.log("este es el estado de usuarios en el componente", listaUsuarios)
 
@@ -90,23 +94,26 @@ const TablaUsuarios =({listaUsuarios, setEjecutarConsulta}) => {
 }
 
 
-const FilaUsuario = ({ usuario, setEjecutarConsulta }) => {
+const FilaUsuario = ({ usuarios, setEjecutarConsulta }) => {
     const [edit, setEdit] = useState(false);
     const [infoNuevoUsuario, setInfoNuevoUsuario] = useState({
-        nombre: usuario.nombre,
-        usuario: usuario.usuario,
-        estado: usuario.estado,
-        rolUsuario: usuario.rol,
+        
+        identificador :usuarios.identificador,
+        nombre: usuarios.nombre,
+        usuario: usuarios.usuario,
+        estado: usuarios.estado,
+        rol: usuarios.rol
     });
 
+    
     const actualizarUsuario = async () => {
         console.log(infoNuevoUsuario)
 
         const options = {
             method: 'PUT',
-            url: `http://localhost:3001/api/product/${usuario._id}`,
+            url: `http://localhost:3001/api/product/${usuarios._id}`,
             headers: { 'Content-Type': 'application/json' },
-            data: { ...infoNuevoUsuario, productId: usuario._id}
+            data: { ...infoNuevoUsuario, productId: usuarios._id}
         }
 
         await axios
@@ -129,10 +136,10 @@ const FilaUsuario = ({ usuario, setEjecutarConsulta }) => {
         console.log(infoNuevoUsuario)
 
         const options = {
-            method: 'PUT',
-            url: `http://localhost:3001/api/product/${usuario._id}`,
+            method: 'DELETE',
+            url: `http://localhost:3001/api/product/${usuarios._id}`,
             headers: { 'Content-Type': 'application/json' },
-            data: { ...infoNuevoUsuario, productId: usuario._id}
+            data: { productId: usuarios._id}
         }
 
         await axios
@@ -155,8 +162,8 @@ const FilaUsuario = ({ usuario, setEjecutarConsulta }) => {
         <tr>
             {edit ? (
                 <>
-                    <td className="tdMU"> {usuario.identificador}</td>
-                    <td className="tdMU"> {usuario.nombre} </td>
+                    <td className="tdMU"> {usuarios.identificador}</td>
+                    <td className="tdMU"> {usuarios.nombre} </td>
                     <td className="tdMU">
                         <select className="selectMU"
                             value ={infoNuevoUsuario.estado}
@@ -170,7 +177,7 @@ const FilaUsuario = ({ usuario, setEjecutarConsulta }) => {
                     </td>
                     <td className="tdMU">
                         <select className="selectMU"
-                            value ={infoNuevoUsuario.rolUsuario}
+                            value ={infoNuevoUsuario.rol}
                             onChange={ (e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, rol: e.target.value})}
                             > 
                             <option disabled value="">Selecciona una opción</option>
@@ -181,10 +188,10 @@ const FilaUsuario = ({ usuario, setEjecutarConsulta }) => {
                 </>
             ):(
                 <>
-                <td className="tdMU">{usuario.identificador}</td>
-                <td className="tdMU">{usuario.nombre} </td>
-                <td className="tdMU">{usuario.rol} </td>
-                <td className="tdMU"> {usuario.estado} </td>                               
+                <td className="tdMU">{usuarios.identificador}</td>
+                <td className="tdMU">{usuarios.nombre} </td>
+                <td className="tdMU">{usuarios.rol} </td>
+                <td className="tdMU"> {usuarios.estado} </td>                               
                 </>
             )}
 
