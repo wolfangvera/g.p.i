@@ -23,6 +23,7 @@ function getRegistros(req, res){
 function saveRegistro(req, res){
     console.log(req.body)
     let registro = Registro()
+    registro.idusuario = req.body.idusuario
     registro.nombre = req.body.nombre
     registro.usuario = req.body.usuario
     registro.password = req.body.password
