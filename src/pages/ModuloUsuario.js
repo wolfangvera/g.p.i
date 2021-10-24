@@ -1,4 +1,5 @@
 import React, { useEffect, useState} from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { nanoid } from 'nanoid';
@@ -49,7 +50,7 @@ const Usuario = () => {
 }
 
 
-const TablaUsuarios =({listaUsuarios, setEjecutarConsulta, setUsuarios}) => {
+const TablaUsuarios =({listaUsuarios, setEjecutarConsulta}) => {
     useEffect(() => {
         console.log("este es el estado de usuarios en el componente", listaUsuarios)
 
@@ -98,9 +99,9 @@ const FilaUsuario = ({ usuarios, setEjecutarConsulta }) => {
     const [edit, setEdit] = useState(false);
     const [infoNuevoUsuario, setInfoNuevoUsuario] = useState({
         
-        identificador :usuarios.identificador,
-        nombre: usuarios.nombre,
-        usuario: usuarios.usuario,
+        // identificador :usuarios.identificador,
+        // nombre: usuarios.nombre,
+        // usuario: usuarios.usuario,
         estado: usuarios.estado,
         rol: usuarios.rol
     });
@@ -122,11 +123,11 @@ const FilaUsuario = ({ usuarios, setEjecutarConsulta }) => {
             console.log(response.data);
             setEdit(false);
             setEjecutarConsulta(true);
-            //toast.success("usuario modificado con exito");
+            toast.success("usuario modificado con exito");
 
         }).catch(function (error) {
             console.error(error);
-            //toast.error("Error modificando el usuario")            
+            toast.error("Error modificando el usuario")            
         });
     }
     
@@ -148,11 +149,11 @@ const FilaUsuario = ({ usuarios, setEjecutarConsulta }) => {
             console.log(response.data);
             setEdit(false);
             setEjecutarConsulta(true);
-            //toast.success("usuario eliminado");
+            toast.success("usuario eliminado");
 
         }).catch(function (error) {
             console.error(error);
-            //toast.error("No se pudo eliminar el usuario")            
+            toast.error("No se pudo eliminar el usuario")            
         });
 
     }
@@ -162,7 +163,7 @@ const FilaUsuario = ({ usuarios, setEjecutarConsulta }) => {
         <tr>
             {edit ? (
                 <>
-                    <td className="tdMU"> {usuarios.identificador}</td>
+                    <td className="tdMU"> {usuarios.idusuario}</td>
                     <td className="tdMU"> {usuarios.nombre} </td>
                     <td className="tdMU">
                         <select className="selectMU"
@@ -188,10 +189,10 @@ const FilaUsuario = ({ usuarios, setEjecutarConsulta }) => {
                 </>
             ):(
                 <>
-                <td className="tdMU">{usuarios.identificador}</td>
-                <td className="tdMU">{usuarios.nombre} </td>
-                <td className="tdMU">{usuarios.rol} </td>
-                <td className="tdMU"> {usuarios.estado} </td>                               
+                <td className="tdMU"> {usuarios.idusuario}</td>
+                <td className="tdMU"> {usuarios.nombre} </td>               
+                <td className="tdMU"> {usuarios.estado} </td>
+                <td className="tdMU"> {usuarios.rol} </td>                             
                 </>
             )}
 
