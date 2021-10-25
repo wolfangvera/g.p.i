@@ -31,6 +31,9 @@ function saveRegistro(req, res){
     registro.usuario = req.body.usuario
     registro.password = req.body.password
     registro.correo = req.body.correo
+    registro.estado = req.body.estado
+    registro.rol = req.body.rol
+
 
     registro.save((err, registroStored) =>{
         if (err) res.status(500).send({message:"Error al salvar en la base de datos."})

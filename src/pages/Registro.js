@@ -51,7 +51,7 @@ const listaUsuarios={usuarios}
             setUsuarios([...listaUsuarios, {nombre: nombre, usuario: usuario, password: password}])
           }).catch(function (error) {
             console.error("hubo un error", error);
-            toast.error('Error al registrar');
+      
           });
     }
 
@@ -99,6 +99,10 @@ const listaUsuarios={usuarios}
 
 
             </div >
+            <ToastContainer
+                 position="bottom-center"
+                 autoClose={3500}
+             />
 
         </div >
     )
