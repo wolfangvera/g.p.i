@@ -7,6 +7,7 @@ const RegistroSchema = Schema({
     idusuario: String,
     nombre: String,
     usuario: String,
+    correo: String,
     estado: {type: String, default:"Pendiente", enum:['Pendiente', 'Autorizado', 'No autorizado']},
     rol: {type: String,  default:"Vendedor", enum:['Administrador', 'Vendedor']},
     password: String,    

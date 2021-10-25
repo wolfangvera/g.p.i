@@ -50,7 +50,7 @@ const Productos = () => {
             setTextoBoton("Mostrar productos")
             setEjecutarConsulta(false)
         }
-    });
+    }, [mostrarTabla]);
 
     return (
         <div className="contenedor_gestionP">

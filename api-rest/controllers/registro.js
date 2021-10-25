@@ -3,6 +3,7 @@
 const Registro = require('../models/registro.js')
 
 function getRegistro(req, res){
+    
     let productId = req.params.productId
     Registro.findById(productId, (err, registro) =>{
         if(err) return res.status(500).send({message:"Error al realizar la peticion."})
@@ -10,6 +11,7 @@ function getRegistro(req, res){
 
         res.status(200).send({registro})
     })
+    console.log('GET /productos/:productoId')
 
 }
 function getRegistros(req, res){
@@ -18,6 +20,7 @@ function getRegistros(req, res){
         if (!registro) return res.status(404).send({message:"No existen usuarios"})
         res.send(200, {products : registro})
     })
+    console.log('GET /productos')
 
 }
 function saveRegistro(req, res){
@@ -27,6 +30,7 @@ function saveRegistro(req, res){
     registro.nombre = req.body.nombre
     registro.usuario = req.body.usuario
     registro.password = req.body.password
+    registro.correo = req.body.correo
 
     registro.save((err, registroStored) =>{
         if (err) res.status(500).send({message:"Error al salvar en la base de datos."})

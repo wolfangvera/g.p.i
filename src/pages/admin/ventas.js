@@ -169,20 +169,7 @@ const TablaVentas = ({ listaVentas, setEjecutarConsulta, setMostrarTabla, listaV
 
 
                     </table>
-                    <ul className="cambio_pag">
-                        <li>
-                            <a href="/siguiente">
 
-                                Siguiente
-                            </a>
-                        </li>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>...</li>
-                    </ul>
                 </section>
             </div>
 
@@ -197,21 +184,14 @@ const TablaVentas = ({ listaVentas, setEjecutarConsulta, setMostrarTabla, listaV
 const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVenta, setProductosVenta, setVentas, listaVendedores }) => {
     //datos de la tabla de venta
     const [idVenta, setIdVenta] = useState('');
-    const [fecha, setFecha] = useState('');
-    const [nombreVendedor, setNombreVendedor] = useState('');
-    const [estadoVenta, setEstadoVenta] = useState('');
-    const [valorTotal, setValorTotal] = useState('');
-    const [valorTotalVenta, setValorTotalVenta] = useState('');
-
+      const [nombreVendedor, setNombreVendedor] = useState('');
+      const [valorTotal, setValorTotal] = useState('');
+  
     const [idCliente, setIdCliente] = useState('');
     const [nombreCliente, setNombreCliente] = useState('');
     const [descripcionVenta, setDescripcionVenta] = useState('');
 
-    //productos
-    const [idProducto, setIdProducto] = useState();
-    const [cantidadProducto, setCantidadProducto] = useState();
-    const [valorUnitarioProducto, setValorUnitProducto] = useState();
-
+  
     const formProductos = useRef(null);
 
 
