@@ -6,6 +6,7 @@ import { nanoid } from 'nanoid';
 
 
 
+
 const Productos = () => {
 
     const [productos, setProductos] = useState([]);
