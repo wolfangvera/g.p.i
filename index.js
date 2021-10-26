@@ -3,6 +3,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser=require('body-parser');
+const cool = require('cool-ascii-faces');
 
 const path = require('path');
 
@@ -40,7 +41,7 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
 }
 
-
+app.get('/cool', (req, res) => res.send(cool()))
 // HTTP request logger
 /*app.use(morgan('tiny'));*/
 app.use('/index', routes);
