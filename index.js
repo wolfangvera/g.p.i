@@ -32,7 +32,7 @@ if (process.env.NODE_ENV === 'production') {
 
 
 // HTTP request logger
-app.use(morgan('tiny'));
+/*app.use(morgan('tiny'));*/
 app.use('/index', routes);
 
 
