@@ -38,11 +38,12 @@ app.use((req, res, next) => {
 // Step 3
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'));
-}
-app.get('*', (request, response) => {
-    response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
+    app.use(express.static( 'client/build' ));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html')); // relative path
+    });
+};
 
 app.get('/cool', (req, res) => res.send(cool()))
 // HTTP request logger
