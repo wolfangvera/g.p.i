@@ -10,7 +10,6 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3001; // Step 1
 const api = require('./routes/index')
-const routes = require('./routes/index.js');
 
 
 
@@ -39,7 +38,7 @@ app.use((req, res, next) => {
 // Step 3
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'));
+    app.use(express.static('./client/build'))
 }
 
 app.get('/cool', (req, res) => res.send(cool()))
