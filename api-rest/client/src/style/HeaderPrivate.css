@@ -1,0 +1,31 @@
+.ulHeaderPrivate{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 2%;
+    margin: 0px;
+    align-items: center;
+}
+.headerPrivate{
+    background-image:linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+}
+.botonPrincipal{
+    border-radius: 15px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    background-color: rgb(29, 157, 195);
+    color: white;
+    width: 160px;
+    height: 40px;
+    font-weight: 700;
+}
+.botonPrincipal:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.2); 
+}
+.logoHeaderPrivate{
+    width: 70px;
+    
+}

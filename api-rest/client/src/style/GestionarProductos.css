@@ -1,0 +1,221 @@
+.contenedor_gestionP{
+    clear: both;
+}
+
+.TituloPaginaP{
+    text-align: center;
+} 
+
+.subtitulo_busqueda{
+    text-align: center;
+}
+
+.Contenedor_Modificar_producto {
+    text-align:center;
+    margin-bottom: 0em;
+
+}
+.Cuadro_ModificarP {
+    background-color: rgb(223, 223, 223);
+    border:0px solid black;
+    width: fit-content;
+    margin-left:auto;
+    margin-right: auto;
+    height: max-content;
+    border-radius: 20px;   
+    padding-bottom: 5vh;
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.listadoProductos {
+    text-align:center;
+}
+.busquedaProducto {
+    display:flex;
+    justify-content: center;
+    margin:10px;
+    align-items: center;
+}
+.Buscar_Producto{
+    margin-left:5px;
+}
+
+.bt_busquedaP {
+        width:auto;
+        font-size:small;
+        background-color:rgb(29,157,195);
+        color:white;
+        border-radius: 4px;
+        position:relative;
+        left: auto;
+        right: auto;
+        margin:0.1em;
+}
+
+.bt_busquedaP:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.2);   
+}
+
+.input_BuscarproductoD {
+    padding-top: 1vh;
+    padding-bottom: 0.5vh;
+    margin:1vw;
+    border:0px solid;
+    border-radius: 5px;
+    box-shadow: 1.5px 2px 3px 2px rgba(0, 0, 0, 0.2);
+}
+.table_listarProductos {
+    margin-left: 2vw;
+    margin-right:2vw;
+    text-align: center;
+    border-collapse:collapse; 
+    
+}
+
+.table_listarProductos .td_listarP,.table_listarProductos th {
+    padding:0.5rem;
+    text-align: center;
+    border:1px solid #ddd;
+}
+
+
+.table_listarProductos td:nth-child(6) {
+    width: 1mm;
+}
+
+.table_listarProductos {
+    background-color:white;
+}
+
+
+
+.table_listarProductos th{
+    font-size:15px;
+    color: white;
+    background-color: rgb(29, 157, 195);
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+.table_listarProductos tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.table_listarProductos tr:hover{
+    background-color: rgba(89, 192, 89, 0.431);
+    
+}
+
+
+
+.th_listarP{
+    font-size:15px;
+    color: white;
+    background-color: rgb(29, 157, 195);
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+
+.table_listarProductos tr:hover{
+    background-color: rgba(89, 192, 89, 0.431);
+    
+}
+.cambio_pag {
+    display:flex;
+    justify-content: center;
+}
+.cambio_pag>li {
+    padding-left: 5px;
+}
+
+.input_producto {
+    padding-top: 1vh;
+    padding-bottom: 0.5vh;
+    margin:1vw;
+    border:0px solid;
+    border-radius: 5px;
+    box-shadow: 1.5px 2px 3px 2px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width:10.5em;
+    height: 1em;
+    background-color: none;
+    color:black;
+    width:fit-content;
+    
+}
+
+.input_producto:hover {
+    cursor: pointer;
+    transform:scale(1.1);
+}
+
+.form_productoG {
+    padding-left: 20px;
+    font-size:15px; 
+    display: block;
+}
+.option {
+    text-align: center;
+    font-size: medium;
+    margin:10px;
+    border:0px;
+}
+.select {
+    border:0px solid;
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    width: 150px;
+    align-items: right;
+    margin-left: 1cm;
+    margin-right:auto;
+}
+.center {
+    text-align: center;
+}
+.bt_modificar_producto{
+    font-size: medium;
+    background-color: rgb(89, 192, 89);   
+    color: white;
+    border-radius: 15px;
+    width: 160px;
+    height: 40px;
+    font-weight:bold;
+    position:relative;
+    left: auto;
+    right: auto;
+}
+
+.bt_modificar_producto:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.2);  
+}
+
+.informacion{
+ background-color: rgb(223, 223, 223);
+border:0px solid black;
+width: fit-content;
+margin-left:auto;
+margin-right: auto;
+margin-bottom: 2em;
+height: max-content;
+border-radius: 20px;   
+padding-bottom: 5vh;
+box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.input_editar {
+    padding-top: 1vh;
+    padding-bottom: 0.5vh;
+    margin:1vw;
+    border:0px solid;
+    border-radius: 5px;
+    box-shadow: 1.5px 2px 3px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+

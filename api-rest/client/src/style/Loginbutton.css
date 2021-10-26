@@ -1,0 +1,20 @@
+.botonAuth0 {
+    font-size: medium;
+    background-color: rgb(197, 71, 48);   
+    color: white;
+    border-radius: 15px;
+    width: 10em;
+    height: 2.5em;
+    font-weight:bold;
+    position:relative;
+    left: auto;
+    right: auto;
+    border:0;
+}
+
+.botonAuth0:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
