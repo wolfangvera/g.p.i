@@ -37,9 +37,9 @@ app.use((req, res, next) => {
 
 // Step 3
 
-if (process.env.NODE_ENV === 'production') {
+
     app.use(express.static('./client/build'))
-}
+
 
 app.get('/cool', (req, res) => res.send(cool()))
 // HTTP request logger
