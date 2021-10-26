@@ -5,6 +5,8 @@ import axios from 'axios';
 import { nanoid } from 'nanoid';
 import '../style/ModuloUsuario.css'
 
+const URL="https://genius-software-world.herokuapp.com"
+
 
 
 const Usuario = () => {
@@ -15,7 +17,7 @@ const Usuario = () => {
 
 
     const obtenerUsuarios = async () => {
-        const options = { method: 'GET', url: 'http://localhost:3001/api/product' };
+        const options = { method: 'GET', url: `${URL}/api/product` };
         await axios
             .request(options)
             .then(function (response) {
@@ -119,7 +121,7 @@ const FilaUsuario = ({ usuarios, setEjecutarConsulta }) => {
 
         const options = {
             method: 'PUT',
-            url: `http://localhost:3001/api/product/${usuarios._id}`,
+            url: `${URL}/api/product/${usuarios._id}`,
             headers: { 'Content-Type': 'application/json' },
             data: { ...infoNuevoUsuario, productId: usuarios._id }
         }
@@ -145,7 +147,7 @@ const FilaUsuario = ({ usuarios, setEjecutarConsulta }) => {
 
         const options = {
             method: 'DELETE',
-            url: `http://localhost:3001/api/product/${usuarios._id}`,
+            url: `${URL}/api/product/${usuarios._id}`,
             headers: { 'Content-Type': 'application/json' },
             data: { productId: usuarios._id }
         }

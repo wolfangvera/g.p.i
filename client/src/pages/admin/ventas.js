@@ -3,6 +3,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios';
 import { nanoid } from 'nanoid';
+const URL="https://genius-software-world.herokuapp.com"
+
 
 
 
@@ -36,7 +38,7 @@ const Ventas = () => {
     const [textoBoton, setTextoBoton] = useState("Agregar nueva venta");
 
     const obtenerVentas = async () => {
-        const options = { method: 'GET', url: 'http://localhost:3001/api/venta' };
+        const options = { method: 'GET', url: `${URL}/api/venta` };
         await axios
             .request(options)
             .then(function (response) {
@@ -233,7 +235,7 @@ const FormularioAgregarVenta = ({ setMostrarTabla, listaVentas, listaProductosVe
                 nombreCliente: nombreCliente
             };
 
-            axios.post(`http://localhost:3001/api/venta/agregar`, VentaSchema)
+            axios.post(`${URL}/api/venta/agregar`, VentaSchema)
                 .then(res => {
                     toast.success('Venta Registrada con Exito');
                     setMostrarTabla(true);
@@ -399,7 +401,7 @@ const FilaVenta = ({ ventas, setEjecutarConsulta, listaVendedores }) => {
         //Enviar info al backend
         const options = {
             method: 'PUT',
-            url: `http://localhost:3001/api/venta/${ventas._id}`,
+            url: `${URL}/api/venta/${ventas._id}`,
             headers: { 'Content-Type': 'application/json' },
             // ESTO FUE LO QUE CAMBIE
             data: { ...infoNuevaVenta, ventaId: ventas._id },
@@ -425,7 +427,7 @@ const FilaVenta = ({ ventas, setEjecutarConsulta, listaVendedores }) => {
 
         const options = {
             method: 'DELETE',
-            url: `http://localhost:3001/api/venta/${ventas._id}`,
+            url: `${URL}/api/venta/${ventas._id}`,
             headers: { 'Content-Type': 'application/json' },
             data: { ventaId: ventas._id },
         };
