@@ -29,7 +29,7 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static('ProyectoMinTIC/build'));
 }
 
-/*
+
 // HTTP request logger
 app.use(morgan('tiny'));
 app.use('/index', routes);
@@ -38,4 +38,3 @@ app.use('/index', routes);
 
 
 app.listen(PORT, console.log(`Server is starting at ${PORT}`));
-*/
