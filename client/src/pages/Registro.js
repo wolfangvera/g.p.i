@@ -6,6 +6,8 @@ import axios from 'axios';
 import { nanoid } from 'nanoid';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+const URL="https://genius-software-world.herokuapp.com"
+
 
 const Registro = () => {
     const [usuarios, setUsuarios] = useState([]);
@@ -18,7 +20,7 @@ const Registro = () => {
     useEffect(() => {
         const options = {
             method: 'GET',
-            url: 'http://localhost:3001/api/product',
+            url: `${URL}/api/product`,
             headers: {'Content-Type': 'application/json'}
           };
           
@@ -39,7 +41,7 @@ const listaUsuarios={usuarios}
 
         const options = {
             method: 'POST',
-            url: 'http://localhost:3001/api/product/agregar',
+            url: `${URL}/api/product/agregar`,
             headers: {'Content-Type': 'application/json'},
             data: {nombre: nombre, usuario: usuario, password: password, correo:correo}
           };
