@@ -26,6 +26,7 @@ mongoose.connection.on('connected', () => {
 // Data parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use('/api', api)
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -34,6 +35,8 @@ app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
     next();
 });
+
+app.get('/cool', (req, res) => res.send(cool()))
 
 // Step 3
 
@@ -45,10 +48,9 @@ if (process.env.NODE_ENV === 'production') {
     });
 };
 
-app.get('/cool', (req, res) => res.send(cool()))
+
 // HTTP request logger
 /*app.use(morgan('tiny'));*/
-app.use('/api', api)
 
 
 
