@@ -13,7 +13,7 @@ ReactDOM.render(
     <Auth0Provider 
     domain={DOMAIN}
     clientId={CLIENT_ID}
-     redirectUri={window.location.origin}
+     redirectUri="https://genius-online.herokuapp.com/admin/productos"
     >
       <App />
     </Auth0Provider>
