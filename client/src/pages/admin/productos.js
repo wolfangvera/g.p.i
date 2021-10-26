@@ -3,7 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { nanoid } from 'nanoid';
-
+const URL="http://localhost:3001"
 
 
 
@@ -15,9 +15,9 @@ const Productos = () => {
     const [productosFiltrados, setProductosFiltrados] = useState([]);
     const [mostrarTabla, setMostrarTabla] = useState(true);
     const [textoBoton, setTextoBoton] = useState("Agregar nueva venta");
-
+    
     const obtenerProductos = async () => {
-        const options = { method: 'GET', url: 'http://localhost:3001/api/productos' };
+        const options = { method: 'GET', url: `${URL}/api/productos` };
         await axios
           .request(options)
           .then(function (response) {
@@ -173,7 +173,7 @@ const FilaProducto = ({ productos, setEjecutarConsulta }) => {
         //Enviar info al backend
         const options = {
             method: 'PUT',
-            url: `http://localhost:3001/api/productos/${productos._id}`,
+            url: `${URL}/api/productos/${productos._id}`,
             headers: { 'Content-Type': 'application/json' },
             // ESTO FUE LO QUE CAMBIE
             data: { ...infoNuevoProducto, productoId: productos._id },
@@ -199,7 +199,7 @@ const FilaProducto = ({ productos, setEjecutarConsulta }) => {
 
         const options = {
             method: 'DELETE',
-            url: `http://localhost:3001/api/productos/${productos._id}`,
+            url: `${URL}/api/productos/${productos._id}`,
             headers: { 'Content-Type': 'application/json' },
             data: { productoId: productos._id },
         };
@@ -307,7 +307,7 @@ const FormularioAgregarProducto = ({ setMostrarTabla, listaProductos, setProduct
 
         };
 
-        await axios.post(`http://localhost:3001/api/productos/agregar`, ProductoSchema)
+        await axios.post(`${URL}/api/productos/agregar`, ProductoSchema)
             .then(res => {
                 const fd = new FormData(form.current);
 
