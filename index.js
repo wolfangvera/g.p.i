@@ -47,13 +47,7 @@ app.get('/cool', (req, res) => res.send(cool()))
 /*app.use(morgan('tiny'));*/
 app.use('/api', api)
 
-app.get('/venta', (req, res) => res.send(
-    Venta.find({}, (err, ventas) => {
-        if (err) return res.status(500).send({ message: "Error al realizar la peticion." })
-        if (!ventas) return res.status(404).send({ message: "Aun no hay ventas" })
-        res.status(200).send({ ventas: ventas })
-    }))
-)
+
 
 
 
