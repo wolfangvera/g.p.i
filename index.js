@@ -9,7 +9,7 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3001; // Step 1
-
+const api = require('./routes/index')
 const routes = require('./routes/index.js');
 
 
@@ -45,7 +45,7 @@ if (process.env.NODE_ENV === 'production') {
 app.get('/cool', (req, res) => res.send(cool()))
 // HTTP request logger
 /*app.use(morgan('tiny'));*/
-app.use(routes);
+app.use('/api', api)
 
 app.get('/venta', (req, res) => res.send(
     Venta.find({}, (err, ventas) => {
